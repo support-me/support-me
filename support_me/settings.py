@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'support_me.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'supportme',
         'USER': 'supportme',
         'HOST': '127.0.0.1',
