@@ -10,6 +10,7 @@ django = "*"
 prospector = "*"
 django-allauth = "*"
 psycopg2-binary = "*"
+python-social-auth = {extras = ["django"],version = "*"}
 
 [requires]
 python_version = "3.7"
