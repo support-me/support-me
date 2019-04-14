@@ -139,3 +139,5 @@ dmypy.json
 
 .vscode
 *.pyc
+node_modules/
+static/build/
