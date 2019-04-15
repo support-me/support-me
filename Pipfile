@@ -13,6 +13,7 @@ django-allauth = "*"
 psycopg2-binary = "*"
 python-social-auth = {extras = ["django"],version = "*"}
 django-heroku = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
