@@ -147,4 +147,4 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '//'
 
-SITE_ID = 2
+SITE_ID = 3
