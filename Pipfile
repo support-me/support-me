@@ -11,6 +11,7 @@ prospector = "*"
 django-allauth = "*"
 psycopg2-binary = "*"
 python-social-auth = {extras = ["django"],version = "*"}
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
