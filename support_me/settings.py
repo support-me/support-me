@@ -43,6 +43,16 @@ INSTALLED_APPS = [
     # Our Apps
     'core.apps.CoreConfig',
     # Registration Apps
+    # The following apps are required:
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+
+
+
+
 ]
 
 MIDDLEWARE = [
@@ -72,6 +82,13 @@ TEMPLATES = [
         },
     },
 ]
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+)
 
 WSGI_APPLICATION = 'support_me.wsgi.application'
 
@@ -128,4 +145,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/core/'
+LOGIN_REDIRECT_URL = '//'
+
+SITE_ID = 2
