@@ -1,0 +1,16 @@
+{
+    "private": true,
+    "devDependencies": {
+        "browserify": "^16.2.3"
+    },
+    "dependencies": {
+        "jquery": "^3.4.0",
+        "js-cookie": "^2.2.0",
+        "watchify": "^3.11.1"
+    },
+    "scripts": {
+        "watch": "watchify static/js/main.js --debug -v -o static/build/bundle.js",
+        "build-dev": "browserify static/js/main.js --debug -o static/build/bundle.js",
+        "build": "browserify static/js/main.js -o static/build/bundle.js"
+      }
+}
