@@ -19,7 +19,8 @@ from core import views
 
 
 urlpatterns = [
-    path('core/', views.home, name='index'),
+    path('', views.home, name='home'),
+    # path('core/', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
