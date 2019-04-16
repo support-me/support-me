@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -23,6 +25,7 @@ urlpatterns = [
     # path('core/', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('oauth/', include('social_django.urls', namespace='social')),
+    path('oauth/', include('social_django.urls', namespace = 'social')),
 
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
