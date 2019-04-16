@@ -1,0 +1,16 @@
+*{
+}
+#header {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+#nav-bar{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
