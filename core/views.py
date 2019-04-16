@@ -18,3 +18,7 @@ def braFitting(request):
     else: 
         form= BraFittingForm()
     return render(request , 'bra_fitting.html', {'form': form})
+    
+def BraCare(request):
+    return render(request, 'bra_care.html')
+    
