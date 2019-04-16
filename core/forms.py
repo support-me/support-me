@@ -6,4 +6,4 @@ class BraFittingForm(forms.ModelForm):
 
     class Meta:
         model = BraFitting
-        fields = ('bra_size', 'band_measurement', 'band_size', 'bust_measurement', 'cup_size', 'bust_circumference')
+        fields = ('band_measurement', 'bust_measurement', 'bust_circumference')
