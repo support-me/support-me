@@ -82,6 +82,7 @@ class BraFitting(models.Model):
         return reverse('fitting')
     
 class Suggestion(models.Model):
+    bra_suggestion = models.CharField(verbose_name='Suggested Bra Types', max_length=100)
     breast_symmetry = models.BooleanField(verbose_name='Symmetry', blank=True, null=True, default=True)
     
     SHAPE_CHOICES = (
@@ -92,11 +93,26 @@ class Suggestion(models.Model):
     breast_tissue = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
 
     PLACEMENT_CHOICES = (
-        ('Close', 'Close'),
-        ('WideSet', 'Wide-Set')
+        ('Near', 'Near'),
+        ('Far', 'Far')
     )
     breast_placement = models.CharField(max_length=30, choices=PLACEMENT_CHOICES, default='Close')
-    
-    BRA_TYPE_CHOICES = (
-        
+    bra_wire = models.BooleanField(verbose_name='Underwire', blank=True, default=True)
+
+    BRA_PADDING_CHOICES = (
+        ('PushUp', 'Push-Up'),
+        ('Lightly-Lined', 'Lightly-Lined'),
+        ('Unlined', 'Unlined'),
+        ('Removable', 'Removable'),
     )
+    bra_padding = models.CharField(max_length=30, choices=BRA_PADDING_CHOICES, default='Lightly-Lined')
+
+    BRA_FRAME_CHOICES = (
+        ('Plunge', 'Plunge'),
+        ('Demi', 'Demi'),
+        ('Full', 'Full'),
+    )
+    bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
+
+    def get_bra_suggestion(breast_symmetry, breast_tissue, breast_placement, bra_wire, bra_padding, bra_frame):
+        
