@@ -19,6 +19,8 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 from core import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
