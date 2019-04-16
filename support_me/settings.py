@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # Our Apps
     'core.apps.CoreConfig',
     # Registration Apps
     # The following apps are required:
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -155,6 +155,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '//'
+LOGIN_REDIRECT_URL = '/'
 
-SITE_ID = 2
+SITE_ID = 3

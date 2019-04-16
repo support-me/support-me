@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+from django.conf import settings
+from django.conf.urls.static import static
 from core import views
 
 
@@ -22,7 +25,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     # path('core/', views.home, name='home'),
     path('admin/', admin.site.urls),
+    # allauth account
     path('accounts/', include('allauth.urls')),
-    path('oauth/', include('social_django.urls', namespace='social')),
-
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
