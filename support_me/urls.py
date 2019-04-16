@@ -25,13 +25,9 @@ urlpatterns = [
     # path('core/', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-<<<<<<< HEAD
-    path('oauth/', include('social_django.urls', namespace='social')),
-    path('brafitting/', views.braFitting, name='brafitting')
-=======
+    path('brafitting/', views.braFitting, name='brafitting'),
     path('oauth/', include('social_django.urls', namespace = 'social')),
     path('bra_care/', views.BraCare, name='bra_care'),
 
->>>>>>> master
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
