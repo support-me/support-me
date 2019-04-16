@@ -1,17 +1,16 @@
 *{
-    background-color: #e6e687;
-    color:#6e5858;
+}
+#header {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
 }
 #nav-bar{
     list-style: none;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    align-content: center;
-}
-#header {
-    display:flex;
-    flex-direction: column;
-    justify-content: row;
-    background-color: #8787e6;
+    width: 100%;
 }
