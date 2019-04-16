@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 import math
 
@@ -17,7 +18,7 @@ class BraFitting(models.Model):
     band_measurement = models.DecimalField(help_text='Enter in inches measurment under bust', max_digits=5, decimal_places=2)
     band_size = models.IntegerField(blank=True)
     bust_measurement = models.DecimalField(help_text='Enter measurement in inches for bust', max_digits=5, decimal_places=2)
-    cup_size = models.CharField(blank=True)
+    cup_size = models.CharField(max_length=10, blank=True)
     bust_circumference = models.BooleanField(help_text='Did you measure all the way around? That is ok! Just click here', blank=True, default=False)
     # http://www.learningaboutelectronics.com/Articles/How-to-create-a-drop-down-list-in-a-Django-form.php
     CURRENTLY_WEARING_CHOICES = (
@@ -28,8 +29,9 @@ class BraFitting(models.Model):
         ('LightlyLined', 'Lightly-Lined'),
     )
     currently_wearing = models.CharField(
+        max_length=20,
         choices=CURRENTLY_WEARING_CHOICES,
-        default='None'
+        default='None',
     )
 
     def calculate_band_size(self, band_measurement):
@@ -69,5 +71,13 @@ class BraFitting(models.Model):
         self.cup_size = CUP_OPTIONS.get(cup_size_number)
         return self.cup_size
 
-    def calculateba_bra_size(self, band_size, cup_size):
+    def calculate_bra_size(self, band_size, cup_size):
         self.bra_size = (f'{band_size} {cup_size}')
+
+    def __str__(self):
+        return self.bra_size
+
+    def get_absolute_url(self):
+        # enter name of html as argument here... calling the html 'fitting' for now
+        return reverse('fitting')
+    
