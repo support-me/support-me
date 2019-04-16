@@ -8,10 +8,13 @@ verify_ssl = true
 [packages]
 django = "*"
 prospector = "*"
+gunicorn = "*"
 django-allauth = "*"
 psycopg2-binary = "*"
 python-social-auth = {extras = ["django"],version = "*"}
+django-heroku = "*"
 psycopg2 = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
