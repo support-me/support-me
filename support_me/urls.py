@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -26,3 +28,4 @@ urlpatterns = [
     path('oauth/', include('social_django.urls', namespace='social')),
     path('brafitting/', views.braFitting, name='brafitting')
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
