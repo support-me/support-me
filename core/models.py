@@ -81,3 +81,22 @@ class BraFitting(models.Model):
         # enter name of html as argument here... calling the html 'fitting' for now
         return reverse('fitting')
     
+class Suggestion(models.Model):
+    breast_symmetry = models.BooleanField(verbose_name='Symmetry', blank=True, null=True, default=True)
+    
+    SHAPE_CHOICES = (
+        ('Teardrop', 'Teardrop'),
+        ('Round', 'Round'),
+        ('None', 'None'),
+    )
+    breast_tissue = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
+
+    PLACEMENT_CHOICES = (
+        ('Close', 'Close'),
+        ('WideSet', 'Wide-Set')
+    )
+    breast_placement = models.CharField(max_length=30, choices=PLACEMENT_CHOICES, default='Close')
+    
+    BRA_TYPE_CHOICES = (
+        
+    )
