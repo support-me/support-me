@@ -79,7 +79,7 @@ class BraFitting(models.Model):
 
     def get_absolute_url(self):
         # enter name of html as argument here... calling the html 'fitting' for now
-        return reverse('bra_fitting.html')
+        return reverse('fitting')
     
 class Suggestion(models.Model):
     bra_suggestion = models.CharField(verbose_name='Suggested Bra Types', max_length=100)

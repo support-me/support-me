@@ -13,7 +13,7 @@ def braFitting(request):
         form = BraFittingForm(request.POST)
 
         if form.is_valid():
-            calculate_band_size():
+            
             return HttpResponseRedirect(reverse('brafitting'))
     else: 
         form= BraFittingForm()
