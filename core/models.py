@@ -113,6 +113,3 @@ class Suggestion(models.Model):
         ('Full', 'Full'),
     )
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
-
-    def get_bra_suggestion(breast_symmetry, breast_tissue, breast_placement, bra_wire, bra_padding, bra_frame):
-        
