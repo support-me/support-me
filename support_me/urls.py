@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
-
+    path('brafitting/', views.braFitting, name='brafitting')
 ]
