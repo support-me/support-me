@@ -3,6 +3,7 @@ from core.models import BraFitting
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
+import math
 
 # Create your views here.
 def home(request):
@@ -21,14 +22,24 @@ def braFitting(request):
             print(bust_measurement) 
             print(bust_circumference)
 
+            # get bust_measurment below
             if not bust_circumference:
                 bust_measurement = int(bust_measurement) * 2
-
             else:
                 bust_measurement = int(bust_measurement)
-            
-            context[
-                'cup_size': cup_size,
+
+            # get band_size below
+            band_measurement_int = math.floor(int(band_measurement))
+            if band_measurement_int % 2 == 0:
+                band_size = (band_measurement_int + 4)
+                print('ifrven', band_size)
+            else:
+                band_size = (band_measurement_int + 5)
+                print('ifodd', band_size)
+
+            #cup_size = 
+            context [
+                #'cup_size': cup_size,
                 'band_measurement': band_measurement,
                 'bust_measurement': bust_measurement,
             ] 
