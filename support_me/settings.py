@@ -101,6 +101,8 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 
 )
+# will print emails to console for development 
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 WSGI_APPLICATION = 'support_me.wsgi.application'
 
