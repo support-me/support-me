@@ -26,6 +26,10 @@ ul {
     list-style: none;
     
 }
+.content{
+    margin-right: 3rem;
+    margin-left: 3rem;
+}
 #header {
     display:flex;
     flex-direction: column;

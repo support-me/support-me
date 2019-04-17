@@ -15,18 +15,6 @@
   </head>
   <body>
     {% block body %}
-
-    {% if messages %}
-    <div class="login-message-div">
-      <strong>Messages:</strong>
-      <ul>
-        {% for message in messages %}
-        <li>{{message}}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
     <div id="header">
       <h1 id="company-title">Support Me</h1>
       <ul id="nav-bar">
@@ -43,10 +31,24 @@
         {% endif %}
       </ul>
     </div>
-    {% block content %}
-    {% endblock %}
-    {% endblock %}
-    {% block extra_body %}
-    {% endblock %}
+    <div class="content">
+      {% if messages %}
+      <div class="login-message-div">
+        <strong>Messages:</strong>
+        <ul>
+          {% for message in messages %}
+          <li>{{message}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+      {% endblock %}
+      {% block extra_body %}
+      {% endblock %}
+    </div>
   </body>
 </html>
