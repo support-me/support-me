@@ -18,9 +18,6 @@ def braFitting(request):
             band_measurement = data['band_measurement']
             bust_measurement = data['bust_measurement']
             bust_circumference = data.get('bust_circumference', False)  
-            print(band_measurement)
-            print(bust_measurement) 
-            print(bust_circumference)
 
             # get bust_measurment below
             if not bust_circumference:
@@ -32,10 +29,8 @@ def braFitting(request):
             band_measurement_int = math.floor(int(band_measurement))
             if band_measurement_int % 2 == 0:
                 band_size = (band_measurement_int + 4)
-                print('ifrven', band_size)
             else:
                 band_size = (band_measurement_int + 5)
-                print('ifodd', band_size)
 
             # get cup_size below
             CUP_OPTIONS = {
@@ -56,19 +51,16 @@ def braFitting(request):
             }
             # https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
             cup_size_number = int(bust_measurement - band_size)
-            print('calcution', cup_size_number)
             cup_size = CUP_OPTIONS.get(cup_size_number)
-            print('brasizewithletter', cup_size)
     
             #print brasize
             bra_size = (f'{band_size} {cup_size}')
-            print(bra_size)
             context = {
-                #'cup_size': cup_size,
+                'cup_size': cup_size,
                 'band_measurement': band_measurement,
                 'bust_measurement': bust_measurement,
+                'bra_size': bra_size,
             }
-            print(context)
             return HttpResponseRedirect(reverse('brafitting'))
     else: 
         form= BraFittingForm()
