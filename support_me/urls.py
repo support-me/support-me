@@ -29,6 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # allauth account
     path('accounts/', include('allauth.urls')),
+    path('brafitting/', views.braFitting, name='brafitting'),
     path('oauth/', include('social_django.urls', namespace = 'social')),
     path('bra-care/', views.BraCare, name='bra-care'),
     path('suggestion-form/', views.suggestion_form, name='suggestion-form'),

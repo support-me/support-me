@@ -1,7 +1,15 @@
 from django import forms
 from django.forms import ModelForm
-from core.models import User, Profile, BraFitting, Suggestion
+from core.models import BraFitting, User, Profile, Suggestion
 from django.core.exceptions import ValidationError
+
+class BraFittingForm(forms.ModelForm):
+
+    class Meta:
+        model = BraFitting
+        
+
+        fields = ('band_measurement', 'bust_measurement', 'bust_circumference')
 
 class SuggestionForm(forms.ModelForm):
     """
