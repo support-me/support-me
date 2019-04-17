@@ -69,7 +69,7 @@ class BraFitting(models.Model):
         # https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
         cup_size_number = int(bust_measurement - band_size)
         self.cup_size = CUP_OPTIONS.get(cup_size_number)
-        return self.cup_size
+        return self.cup_size 
 
     def calculate_bra_size(self, band_size, cup_size):
         self.bra_size = (f'{band_size} {cup_size}')
