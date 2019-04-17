@@ -1,6 +1,26 @@
 *{
     /* border: 1px dotted grey; */
+    /*big heading font: font-family: 'Acme', sans-serif; */
+    /* little heading font: font-family: 'Fresca', sans-serif;  */
+    /* plain text font: font-family: 'Quicksand', sans-serif; */
     
+    
+    font-family: 'Quicksand', sans-serif;
+}
+h1{
+    font-family: 'Acme', sans-serif;
+}
+h2{
+    font-family: 'Acme', sans-serif;
+}
+h3{
+    font-family: 'Acme', sans-serif;
+}
+h4{
+    font-family: 'Fresca', sans-serif;
+}
+label{
+    font-family: 'Fresca', sans-serif;
 }
 ul {
     list-style: none;
