@@ -15,18 +15,14 @@ def braFitting(request):
         if form.is_valid():
             fitting = form.save(commit=False)
             data = form.data
-            # fitting.band_size = band_size
-            # fitting.bra_size = bra_size
-            # fitting.cup_size = cup_size
-            fitting = fitting.save(
+            fitting.save(
                 band_measurement=data['band_measurement'],
                 bust_measurement=data['bust_measurement'],
                 bust_circumference=data.get('bust_circumference', False),
             )
-            context = {
-                'fitting': fitting,
-            }
-            return HttpResponseRedirect(reverse('suggestion-form'), context)
+            fitting_id = fitting.id
+            return redirect(f'suggestion-form/{fitting_id}')
+
     else: 
         form = BraFittingForm()
     
@@ -35,6 +31,8 @@ def braFitting(request):
 def BraCare(request):
     return render(request, 'bra-care.html')
     
-def suggestion_form(request):
+def suggestion_form(request, fitting_id):
+    breakpoint()
+    fitting = BraFitting.objects.get(id=fitting_id)
     form = SuggestionForm()
-    return render(request, 'suggestion-form.html', {'form': form})
+    return render(request, 'suggestion-form.html', {'form': form, 'bra_size': fitting.bra_size})
