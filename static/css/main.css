@@ -3,6 +3,7 @@
 }
 ul {
     list-style: none;
+    
 }
 #header {
     display:flex;
@@ -26,4 +27,21 @@ ul {
 .google {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3rem;
+}
+.care-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.care-part{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+img{
+    background-color: #8787e6;
+    width: 300px;
 }
