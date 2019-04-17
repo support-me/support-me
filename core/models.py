@@ -14,7 +14,7 @@ class BraFitting(models.Model):
     """
     Model for main feature of our site. Getting user input to find bra size.
     """
-    user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='fittings')
+    user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='fittings', null=True, blank=True)
     bra_size = models.CharField(max_length=10, blank=True, null=True)
     band_measurement = models.DecimalField(help_text='Enter in inches measurment under bust', max_digits=5, decimal_places=2)
     band_size = models.IntegerField(blank=True)
@@ -86,7 +86,7 @@ class Suggestion(models.Model):
     """
     Model for creating suggestions based on bra size and questions from SuggestionForm.
     """
-    user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='suggestions')
+    user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='suggestions', null=True, blank=True)
     bra_suggestion = models.CharField(verbose_name='Suggested Bra Types', max_length=100)
     breast_symmetry = models.BooleanField(verbose_name='Symmetry', blank=True, null=True, default=True)
     
