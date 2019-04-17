@@ -13,7 +13,7 @@ def braFitting(request):
     if request.method == 'POST':
         form = BraFittingForm(request.POST)
         if form.is_valid():
-            form.save(commit=False)
+            fitting = form.save(commit=False)
             data = form.data
             band_measurement = data['band_measurement']
             bust_measurement = data['bust_measurement']
@@ -56,20 +56,11 @@ def braFitting(request):
             #print brasize
             bra_size = (f'{band_size}{cup_size}')
             #bra_size.save()
-
-
-            #form.save()
-            context = {
-            'cup_size': cup_size,
-            'band_measurement': band_measurement,
-            'band_size': band_size,
-            'bust_measurement': bust_measurement,
-            'bra_size': bra_size,
-            }
-            print(context)
-            print(data)
-
-            return HttpResponseRedirect(reverse('brafitting'), context)
+            fitting.band_size = band_size
+            fitting.bra_size = bra_size
+            fitting.cup_size = cup_size
+            fitting.save()
+            return HttpResponseRedirect(reverse('brafitting'))
     else: 
         form = BraFittingForm()
     
