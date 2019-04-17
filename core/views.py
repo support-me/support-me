@@ -11,17 +11,30 @@ def home(request):
 def braFitting(request):
     if request.method == 'POST':
         form = BraFittingForm(request.POST)
-
+        calculate_band_size()
+        calculate_cup_size()
+        calculate_bra_size()
+       
         if form.is_valid():
             data = form.data
             context = {}
-            
             band_measurement = data['band_measurement']
             bust_measurement = data['bust_measurement']
             bust_circumference = data.get('bust_circumference', False)
+            cup_size = data.get('cup_size', False)
+            
+            # bust_circumference = int(bust_circumference)
+            # band_measurement = int(band_measurement)
+
+            # cup_size = float(band_measurement) - float(bust_measurement)
+
+
             if not bust_circumference:
-                band_measurement = int(band_measurement) * 2
-                bust_measurement = int(bust_measurement) * 2 
+                band_measurement = int(band_measurement)
+                bust_measurement = int(bust_measurement) * 2
+                # cup_size = float(band_measurement) - float(bust_measurement) 
+
+            context['cup_size'] = cup_size
             context['band_measurement'] = band_measurement
             context['bust_measurement'] = bust_measurement
             print(context)
