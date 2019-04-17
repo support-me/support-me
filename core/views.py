@@ -14,7 +14,6 @@ def braFitting(request):
         form = BraFittingForm(request.POST)
         if form.is_valid():
             data = form.data
-            context = {}
             band_measurement = data['band_measurement']
             bust_measurement = data['bust_measurement']
             bust_circumference = data.get('bust_circumference', False)  
@@ -56,15 +55,17 @@ def braFitting(request):
             #print brasize
             bra_size = (f'{band_size} {cup_size}')
             context = {
-                'cup_size': cup_size,
-                'band_measurement': band_measurement,
-                'bust_measurement': bust_measurement,
-                'bra_size': bra_size,
+            'cup_size': cup_size,
+            'band_measurement': band_measurement,
+            'band_size': band_size,
+            'bust_measurement': bust_measurement,
+            'bra_size': bra_size,
             }
-            return HttpResponseRedirect(reverse('brafitting'))
+            return HttpResponseRedirect(reverse('brafitting'), context)
     else: 
-        form= BraFittingForm()
-    return render(request , 'bra_fitting.html', {'form': form})
+        form = BraFittingForm()
+    
+    return render(request , 'bra_fitting.html', {'form': form},)
     
 def BraCare(request):
     return render(request, 'bra-care.html')
