@@ -21,7 +21,18 @@ class BraFitting(models.Model):
     bust_measurement = models.DecimalField(help_text='Enter measurement in inches for bust', max_digits=5, decimal_places=2)
     cup_size = models.CharField(max_length=10, blank=True)
     bust_circumference = models.BooleanField(help_text='You may measure your bust all the way around. That is ok! Just click here', blank=True, default=False)
+    date_sized = models.DateField(verbose_name='Date of Bra Fitting', auto_now_add=True, null=True, blank=True)
     # http://www.learningaboutelectronics.com/Articles/How-to-create-a-drop-down-list-in-a-Django-form.php
+    class Meta:
+        ordering = ['date_sized']
+
+    def save(self, *args, **kwargs):
+        
+        self.calculate_band_size(band_measurement)
+        self.calculate_cup_size(band_size, bust_measurement)
+        self.calculate_bra_size(band_size, cup_size)
+        super().save(*args, **kwargs)
+
     CURRENTLY_WEARING_CHOICES = (
         ('None', 'None'),
         ('Sports', 'Sports'),
@@ -29,6 +40,7 @@ class BraFitting(models.Model):
         ('PushUp', 'Push-Up'),
         ('LightlyLined', 'Lightly-Lined'),
     )
+    
     currently_wearing = models.CharField(
         max_length=20,
         choices=CURRENTLY_WEARING_CHOICES,
@@ -45,7 +57,7 @@ class BraFitting(models.Model):
             self.band_size = (band_measurement_int + 4)
         else:
             self.band_size = (band_measurement_int + 5)
-        return self.band_size           
+        return self.band_size
 
     def calculate_cup_size(self, band_size, bust_measurement):
         """
