@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if fitting %}
+<p>{{fitting.band_measurement}}</p>
+{% else %}
+<p>that didnt work :(</p>
+{% endif %}
     <h2 class="form-title">What do you look for in your support?</h2>
     <form method="POST" class="suggestion-form">
     {% csrf_token %}
