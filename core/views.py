@@ -37,14 +37,35 @@ def braFitting(request):
                 band_size = (band_measurement_int + 5)
                 print('ifodd', band_size)
 
-            #cup_size = 
-            context [
+            # get cup_size below
+            CUP_OPTIONS = {
+                0:'AA',
+                1:'A',
+                2:'B',
+                3:'C',
+                4:'D',
+                5:'DD/E',
+                6:'DDD/F',
+                7:'G',
+                8:'H',
+                9:'I',
+                10:'J',
+                11:'K',
+                12:'L',
+                13:'M',
+            }
+            # https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
+            cup_size_number = int(bust_measurement - band_size)
+            print('calcution', cup_size_number)
+            cup_size = CUP_OPTIONS.get(cup_size_number)
+            print('brasizewithletter', cup_size)
+            context = {
                 #'cup_size': cup_size,
                 'band_measurement': band_measurement,
                 'bust_measurement': bust_measurement,
-            ] 
+            }
             print(context)
-            return HttpResponseRedirect(reverse('brafitting'), context=context)
+            return HttpResponseRedirect(reverse('brafitting'))
     else: 
         form= BraFittingForm()
     return render(request , 'bra_fitting.html', {'form': form})
