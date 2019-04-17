@@ -92,7 +92,7 @@ class BraFitting(models.Model):
         return self.cup_size 
 
     def calculate_bra_size(self, band_size, cup_size):
-        self.bra_size = (f'{band_size} {cup_size}')
+        self.bra_size = (f'{band_size}{cup_size}')
 
     def __str__(self):
         return self.bra_size
