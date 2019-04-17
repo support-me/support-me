@@ -14,12 +14,13 @@ class BraFitting(models.Model):
     """
     Model for main feature of our site. Getting user input to find bra size.
     """
+    user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='fittings')
     bra_size = models.CharField(max_length=10, blank=True, null=True)
     band_measurement = models.DecimalField(help_text='Enter in inches measurment under bust', max_digits=5, decimal_places=2)
     band_size = models.IntegerField(blank=True)
     bust_measurement = models.DecimalField(help_text='Enter measurement in inches for bust', max_digits=5, decimal_places=2)
     cup_size = models.CharField(max_length=10, blank=True)
-    bust_circumference = models.BooleanField(help_text='Did you measure all the way around? That is ok! Just click here', blank=True, default=False)
+    bust_circumference = models.BooleanField(help_text='You may measure your bust all the way around. That is ok! Just click here', blank=True, default=False)
     # http://www.learningaboutelectronics.com/Articles/How-to-create-a-drop-down-list-in-a-Django-form.php
     CURRENTLY_WEARING_CHOICES = (
         ('None', 'None'),
@@ -82,6 +83,10 @@ class BraFitting(models.Model):
         return reverse('fitting')
     
 class Suggestion(models.Model):
+    """
+    Model for creating suggestions based on bra size and questions from SuggestionForm.
+    """
+    user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='suggestions')
     bra_suggestion = models.CharField(verbose_name='Suggested Bra Types', max_length=100)
     breast_symmetry = models.BooleanField(verbose_name='Symmetry', blank=True, null=True, default=True)
     
