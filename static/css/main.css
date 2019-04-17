@@ -1,9 +1,50 @@
 *{
     /* border: 1px dotted grey; */
+    /*big heading font: font-family: 'Acme', sans-serif; */
+    /* little heading font: font-family: 'Fresca', sans-serif;  */
+    /* plain text font: font-family: 'Quicksand', sans-serif; */
+    margin: 0 auto;
+    font-family: 'Quicksand', sans-serif;
+    /*colors
+    yellow: #e6e687
+    orange: #e6b787
+    blue: #87b7e6
+    purple: #8787e6
+    green: #87e687
+    red: #e68987
+    light gray: #e6e6e6
+    medium gray: #b7b7b7
+    dark gray: #878787
+
+    Do not put the following color pairs besides eachother or overlapping:
+    -blue & green/purple/gray
+    -green & red/yellow/gray
+    
+    */
+
+}
+h1{
+    font-family: 'Acme', sans-serif;
+}
+h2{
+    font-family: 'Acme', sans-serif;
+}
+h3{
+    font-family: 'Acme', sans-serif;
+}
+h4{
+    font-family: 'Fresca', sans-serif;
+}
+label{
+    font-family: 'Fresca', sans-serif;
 }
 ul {
     list-style: none;
     
+}
+.content{
+    margin-right: 3rem;
+    margin-left: 3rem;
 }
 #header {
     display:flex;
