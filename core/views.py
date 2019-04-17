@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from core.models import BraFitting
-from core.forms import BraFittingForm
+from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
-
 
 # Create your views here.
 def home(request):
@@ -41,5 +40,8 @@ def braFitting(request):
     return render(request , 'bra_fitting.html', {'form': form})
     
 def BraCare(request):
-    return render(request, 'bra_care.html')
+    return render(request, 'bra-care.html')
     
+def suggestion_form(request):
+    form = SuggestionForm()
+    return render(request, 'suggestion-form.html', {'form': form})
