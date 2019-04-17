@@ -59,6 +59,10 @@ def braFitting(request):
             print('calcution', cup_size_number)
             cup_size = CUP_OPTIONS.get(cup_size_number)
             print('brasizewithletter', cup_size)
+    
+            #print brasize
+            bra_size = (f'{band_size} {cup_size}')
+            print(bra_size)
             context = {
                 #'cup_size': cup_size,
                 'band_measurement': band_measurement,
