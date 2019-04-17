@@ -36,11 +36,9 @@
         <li class="nav-item"><a href="{% url 'home' %}">Resources</a></li>
         <li class="nav-item"><a href="{% url 'home' %}">About Us</a></li>
         {% if user.is_authenticated %}
-        <li class="nav-item"><a href="{% url 'account_email' %}">Change E-mail</a></li>
         <li class="nav-item"><a href="{% url 'account_logout' %}">Sign Out</a></li>
         {% else %}
-        <li class="nav-item"><a href="{% url 'account_login' %}">Sign In</a></li>
-        <li class="nav-item"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+        <li class="nav-item"><a href="{% url 'account_login' %}" title="Google or Account Login">Login</a></li>
         {% endif %}
       </ul>
     </div>

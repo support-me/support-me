@@ -22,3 +22,8 @@ ul {
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
 }
+/* added this google section as placeholder- we can change the google font or put in image instead */
+.google {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+}
