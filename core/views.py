@@ -20,14 +20,13 @@ def braFitting(request):
             print(band_measurement)
             print(bust_measurement) 
             print(bust_circumference)
-            band_size = BraFitting.calculate_band_size(int(band_measurement))
-            cup_size = BraFitting.calculate_cup_size(band_size, bust_measurement)
-                     
-            # bust_circumference = int(bust_circumference)
-            # band_measurement = int(band_measurement)
 
             if not bust_circumference:
                 bust_measurement = int(bust_measurement) * 2
+
+            else:
+                bust_measurement = int(bust_measurement)
+            
             context[
                 'cup_size': cup_size,
                 'band_measurement': band_measurement,
