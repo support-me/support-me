@@ -43,23 +43,24 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # Our Apps
     'core.apps.CoreConfig',
     # Registration Apps
     # The following apps are required:
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-
 ]
+
+SITE_ID = 2
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -100,6 +101,8 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 
 )
+# will print emails to console for development 
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 WSGI_APPLICATION = 'support_me.wsgi.application'
 
@@ -156,6 +159,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '//'
-
-SITE_ID = 2
+LOGIN_REDIRECT_URL = '/'
