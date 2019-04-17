@@ -13,8 +13,19 @@ def braFitting(request):
         form = BraFittingForm(request.POST)
 
         if form.is_valid():
+            data = form.data
+            context = {}
             
-            return HttpResponseRedirect(reverse('brafitting'))
+            band_measurement = data['band_measurement']
+            bust_measurement = data['bust_measurement']
+            bust_circumference = data.get('bust_circumference', False)
+            if not bust_circumference:
+                band_measurement = int(band_measurement) * 2
+                bust_measurement = int(bust_measurement) * 2 
+            context['band_measurement'] = band_measurement
+            context['bust_measurement'] = bust_measurement
+            print(context)
+            return HttpResponseRedirect(reverse('brafitting'), context)
     else: 
         form= BraFittingForm()
     return render(request , 'bra_fitting.html', {'form': form})
