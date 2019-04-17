@@ -32,7 +32,6 @@ def BraCare(request):
     return render(request, 'bra-care.html')
     
 def suggestion_form(request, fitting_id):
-    breakpoint()
     fitting = BraFitting.objects.get(id=fitting_id)
     form = SuggestionForm()
     return render(request, 'suggestion-form.html', {'form': form, 'bra_size': fitting.bra_size})
