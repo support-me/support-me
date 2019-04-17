@@ -15,52 +15,14 @@ def braFitting(request):
         if form.is_valid():
             fitting = form.save(commit=False)
             data = form.data
-            band_measurement = data['band_measurement']
-            bust_measurement = data['bust_measurement']
-            bust_circumference = data.get('bust_circumference', False)  
+            fitting.save(
+                band_measurement=data['band_measurement'],
+                bust_measurement=data['bust_measurement'],
+                bust_circumference=data.get('bust_circumference', False),
+            )
+            fitting_id = fitting.id
+            return redirect(f'suggestion-form/{fitting_id}')
 
-            # get bust_measurment below
-            if not bust_circumference:
-                bust_measurement = int(bust_measurement) * 2
-            else:
-                bust_measurement = int(bust_measurement)
-
-            # get band_size below
-            band_measurement_int = math.floor(int(band_measurement))
-            if band_measurement_int % 2 == 0:
-                band_size = (band_measurement_int + 4)
-            else:
-                band_size = (band_measurement_int + 5)
-
-            # get cup_size below
-            CUP_OPTIONS = {
-                0:'AA',
-                1:'A',
-                2:'B',
-                3:'C',
-                4:'D',
-                5:'DD/E',
-                6:'DDD/F',
-                7:'G',
-                8:'H',
-                9:'I',
-                10:'J',
-                11:'K',
-                12:'L',
-                13:'M',
-            }
-            # https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
-            cup_size_number = int(bust_measurement - band_size)
-            cup_size = CUP_OPTIONS.get(cup_size_number)
-    
-            #print brasize
-            bra_size = (f'{band_size}{cup_size}')
-            #bra_size.save()
-            fitting.band_size = band_size
-            fitting.bra_size = bra_size
-            fitting.cup_size = cup_size
-            fitting.save()
-            return HttpResponseRedirect(reverse('brafitting'))
     else: 
         form = BraFittingForm()
     
@@ -69,6 +31,7 @@ def braFitting(request):
 def BraCare(request):
     return render(request, 'bra-care.html')
     
-def suggestion_form(request):
+def suggestion_form(request, fitting_id):
+    fitting = BraFitting.objects.get(id=fitting_id)
     form = SuggestionForm()
-    return render(request, 'suggestion-form.html', {'form': form})
+    return render(request, 'suggestion-form.html', {'form': form, 'bra_size': fitting.bra_size})
