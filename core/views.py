@@ -34,6 +34,7 @@ def BraCare(request):
     
 def suggestion_form(request, fitting_id):
     fitting = BraFitting.objects.get(id=fitting_id)
+
     if request.method == 'POST':
         form = SuggestionForm(request.POST)
         if form.is_valid():
@@ -45,7 +46,7 @@ def suggestion_form(request, fitting_id):
                 breast_placement=data['breast_placement'],
                 bra_wire=data['bra_wire']
             )
-        return render(request, 'suggestion-form.html', {'form': suggestion_form , 'bra_size': fitting.bra_size})
+            return render(request, 'suggestion-form.html', {'form': suggestion_form , 'bra_size': fitting.bra_size})
     else:
-        form = SuggestionForm(request.GET)
-    return render(request, 'suggestion-form.html', {'form': suggestion_form , 'bra_size': fitting.bra_size})
+        form = SuggestionForm()
+    return render(request, 'suggestion-form.html', {'form': form , 'bra_size': fitting.bra_size})
