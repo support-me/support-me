@@ -44,7 +44,7 @@ def suggestion_form(request, fitting_id):
                 breast_symmetry=data['breast_symmetry'],
                 breast_tissue=data['breast_tissue'],
                 breast_placement=data['breast_placement'],
-                bra_wire=data['bra_wire']
+                bra_wire=data.get('bra_wire', False)
             )
             return render(request, 'suggestion-form.html', {'form': suggestion_form , 'bra_size': fitting.bra_size})
     else:
