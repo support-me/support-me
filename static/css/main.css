@@ -57,7 +57,7 @@ ul {
     justify-content: center;
     align-content: center;
     align-items:center;
-    background-color: #e6e687;
+    background-color: #ffff86;
     border-bottom: 2px solid #8787e6;
 }
 #nav-bar {
@@ -67,10 +67,11 @@ ul {
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    background-color: #e6e687;
+    background-color: #ffff86;
+    padding: 0rem 2rem .5rem 2rem;
 }
 .nav-item{
-    background-color: #e6e687;
+    background-color: #ffff86;
 
 }
 a{
@@ -79,10 +80,13 @@ a{
 .nav-item:hover{
     color: #8787e6;
     text-decoration:  underline;
-
+}
+button{
+    background-color: #8787e6;
 }
 #company-title{
-    background-color: #e6e687;  
+    background-color: #ffff86; 
+    padding: 1rem 0rem 1rem 0rem; 
 }
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
