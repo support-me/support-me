@@ -26,9 +26,9 @@ class BraFitting(models.Model):
     class Meta:
         ordering = ['date_sized']
 
-    def save(self, band_measurement, bust_measurement, bust_circumference, *args, **kwargs):
+    def save(self, currently_wearing, band_measurement, bust_measurement, bust_circumference, *args, **kwargs):
         self.band_size = self.calculate_band_size(band_measurement)
-        self.bust_measurement = self.calculate_circumference(bust_circumference, bust_measurement)
+        self.bust_measurement = self.calculate_circumference(currently_wearing, bust_circumference, bust_measurement)
         self.cup_size = self.calculate_cup_size(self.band_size)
         self.calculate_bra_size(self.band_size, self.cup_size)
 
@@ -36,7 +36,7 @@ class BraFitting(models.Model):
 
     CURRENTLY_WEARING_CHOICES = (
         ('None', 'None'),
-        ('Sports', 'Sports'),
+        ('SportsBra', 'Sports Bra'),
         ('Bralette', 'Bralette'),
         ('PushUp', 'Push-Up'),
         ('LightlyLined', 'Lightly-Lined'),
@@ -60,10 +60,19 @@ class BraFitting(models.Model):
             self.band_size = (band_measurement_int + 5)
         return self.band_size
     
-    def calculate_circumference(self, bust_circumference, bust_measurement):
+    def calculate_circumference(self, currently_wearing, bust_circumference, bust_measurement):
         self.bust_measurement = int(bust_measurement)
         if not bust_circumference:
             self.bust_measurement = self.bust_measurement * 2
+        # Account for what is currently being worn below    
+        if currently_wearing in ['None', 'Bralette', 'SportsBra']:
+            # breakpoint()
+            self.bust_measurement = (self.bust_measurement + 1)
+        elif currently_wearing == 'PushUp':
+            # breakpoint()
+            self.bust_measurement = (self.bust_measurement - 1)
+        else:
+            self.bust_measurement = self.bust_measurement
         return self.bust_measurement
 
     def calculate_cup_size(self, band_size):

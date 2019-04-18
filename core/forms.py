@@ -9,7 +9,7 @@ class BraFittingForm(forms.ModelForm):
         model = BraFitting
         
 
-        fields = ('band_measurement', 'bust_measurement', 'bust_circumference')
+        fields = ('currently_wearing', 'band_measurement', 'bust_measurement', 'bust_circumference')
 
 class SuggestionForm(forms.ModelForm):
     """

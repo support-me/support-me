@@ -16,6 +16,7 @@ def braFitting(request):
             fitting = form.save(commit=False)
             data = form.data
             fitting.save(
+                currently_wearing=data['currently_wearing'],
                 band_measurement=data['band_measurement'],
                 bust_measurement=data['bust_measurement'],
                 bust_circumference=data.get('bust_circumference', False),
