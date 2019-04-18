@@ -23,6 +23,9 @@
     */
 
 }
+body{
+    height: 100%;
+}
 h1{
     font-family: 'Acme', sans-serif;
 }
@@ -43,8 +46,10 @@ ul {
     
 }
 .content{
-    margin-right: 3rem;
-    margin-left: 3rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    /* background-color: #e6e6e6; */
 }
 #header {
     display:flex;
@@ -52,6 +57,8 @@ ul {
     justify-content: center;
     align-content: center;
     align-items:center;
+    background-color: #e6e687;
+    border-bottom: 2px solid #8787e6;
 }
 #nav-bar {
     list-style: none;
@@ -60,6 +67,22 @@ ul {
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
+    background-color: #e6e687;
+}
+.nav-item{
+    background-color: #e6e687;
+
+}
+a{
+    color: black;
+}
+.nav-item:hover{
+    color: #8787e6;
+    text-decoration:  underline;
+
+}
+#company-title{
+    background-color: #e6e687;  
 }
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
