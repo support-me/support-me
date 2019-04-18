@@ -80,6 +80,11 @@ class BraFitting(models.Model):
         Calculates cup_size based on bust_measurement and band_size.
         """
         CUP_OPTIONS = {
+            -5:'AA',
+            -4:'AA',
+            -3:'AA',
+            -2:'AA',
+            -1:'AA',
             0:'AA',
             1:'A',
             2:'B',
