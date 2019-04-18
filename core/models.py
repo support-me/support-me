@@ -158,7 +158,7 @@ class Suggestion(models.Model):
 
     def get_suggestion(self, breast_symmetry, breast_tissue, breast_placement, bra_padding, bra_frame):
         self.bra_suggestion = f'{self.bra_padding} + {self.bra_frame}'
-        if breast_symmetry in ['Yes', 'Unknown']:
+        if breast_symmetry:
             print('this aint working')
             if breast_tissue == 'Teardrop':
                 if breast_placement == 'Near':
