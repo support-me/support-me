@@ -61,9 +61,9 @@ class BraFitting(models.Model):
         return self.band_size
     
     def calculate_circumference(self, currently_wearing, bust_circumference, bust_measurement):
-        if self.bust_measurement
-        self.bust_measurement = round(float(bust_measurement))
-        breakpoint()
+        if self.bust_measurement:
+            self.bust_measurement = round(float(bust_measurement))
+        # breakpoint()
         if not bust_circumference:
             self.bust_measurement = self.bust_measurement * 2
         # Account for what is currently being worn below    
