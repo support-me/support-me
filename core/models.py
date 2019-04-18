@@ -52,7 +52,7 @@ class BraFitting(models.Model):
         """
         Calculates band_size based on user input for band_measurent
         """
-        band_measurement_int = math.floor(int(band_measurement))
+        band_measurement_int = math.floor(float(band_measurement))
 
         if band_measurement_int % 2 == 0:
             self.band_size = (band_measurement_int + 4)
@@ -61,7 +61,9 @@ class BraFitting(models.Model):
         return self.band_size
     
     def calculate_circumference(self, currently_wearing, bust_circumference, bust_measurement):
-        self.bust_measurement = int(bust_measurement)
+        if self.bust_measurement
+        self.bust_measurement = round(float(bust_measurement))
+        breakpoint()
         if not bust_circumference:
             self.bust_measurement = self.bust_measurement * 2
         # Account for what is currently being worn below    
