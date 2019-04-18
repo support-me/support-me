@@ -151,3 +151,73 @@ class Suggestion(models.Model):
         ('Full', 'Full'),
     )
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
+
+    def get_suggestion(self, breast_symmetry, breast_tissue, breast_placement, bra_padding, bra_frame):
+        if breast_symmetry in ['Yes', 'Unknown']:
+            if breast_tisse == 'Teardrop':
+                if breast_placement == 'Near':
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Demi'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+                else:
+                    bra_padding == 'PushUp'
+                    bra_frame = 'Demi'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+            elif breast_tissue == 'Round':
+                if breast_placement == 'Near':
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Plunge'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+                else:
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Plunge'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+            else:
+                if breast_placement == 'Near':
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Plunge'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+                else:
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Plunge'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+        else:
+            if breast_tisse == 'Teardrop':
+                if breast_placement == 'Near':
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Demi'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+                else:
+                    bra_padding == 'PushUp'
+                    bra_frame = 'Demi'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+            elif breast_tissue == 'Round':
+                if breast_placement == 'Near':
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Plunge'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+                else:
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Plunge'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+            else breast_tissue == 'None':
+                if breast_placement == 'Near':
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Plunge'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
+                else:
+                    bra_padding = 'PushUp'
+                    bra_frame = 'Plunge'
+                    print(bra_padding, bra_frame)
+                    return f'{bra_padding} + {bra_frame}'
