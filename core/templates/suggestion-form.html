@@ -11,7 +11,6 @@
     <form method="POST" class="suggestion-form">
         {% csrf_token %}
         <table>{{ form.as_table }}</table>
-        <p>form is not showing</p>
         <button type="submit" class="submit-button">See Recs!</button>
     </form>
 {% endblock %}
