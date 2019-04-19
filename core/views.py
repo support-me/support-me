@@ -6,6 +6,9 @@ from django.urls import reverse
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from core.serializers import UserSerializer, GroupSerializer
+from django.contrib.admin.views.decorators import staff_member_required
+from django.utils.decorators import method_decorator
+
 import math
 
 # Create your views here.
@@ -40,7 +43,8 @@ def suggestion_form(request, fitting_id):
     form = SuggestionForm()
     return render(request, 'suggestion-form.html', {'form': form, 'bra_size': fitting.bra_size})
 
-# views for API User and Group 
+# views for API User and Group
+@method_decorator(staff_member_required, name='dispatch')
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
