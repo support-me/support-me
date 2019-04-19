@@ -44,7 +44,8 @@ def suggestion_form(request, fitting_id):
                 breast_tissue=data['breast_tissue'],
                 bra_padding=data['bra_padding'],
             )
-            return render(request, 'suggestion-form.html', {'form': suggestion_form , 'bra_size': fitting.bra_size})
+            print(suggestion.bra_suggestion)
+            return render(request, 'suggestion-form.html', {'form':form,'bra_size': fitting.bra_size})
     else:
         form = SuggestionForm()
     return render(request, 'suggestion-form.html', {'form': form , 'bra_size': fitting.bra_size})
