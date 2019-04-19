@@ -5,7 +5,7 @@ from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from core.serializers import UserSerializer, GroupSerializer
+from core.serializers import UserSerializer, GroupSerializer, ProfileSerializer
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
 
@@ -52,9 +52,19 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
+@method_decorator(staff_member_required, name='dispatch')
 class GroupViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+@method_decorator(staff_member_required, name='dispatch')
+class ProfileViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows us to view user through Proifle model, and their fittings
+    """
+    queryset = Group.objects.all()
+    serializer_class = ProfileSerializer
+    
