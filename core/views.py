@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import BraFitting
+from core.models import BraFitting, Suggestion
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
@@ -44,8 +44,14 @@ def suggestion_form(request, fitting_id):
                 breast_tissue=data['breast_tissue'],
                 bra_padding=data['bra_padding'],
             )
+            suggestion_id = suggestion.id
             print(suggestion.bra_suggestion)
-            return render(request, 'suggestion-form.html', {'form':form,'bra_size': fitting.bra_size})
+            return redirect(f'suggestion-form/{fitting_id}/{suggestion_id}')
     else:
         form = SuggestionForm()
     return render(request, 'suggestion-form.html', {'form': form , 'bra_size': fitting.bra_size})
+
+def results(request, fitting_id, suggestion_id):
+    fitting = BraFitting.objects.get(id=fitting_id)
+    suggestion = Suggestion.objects.get(id=suggestion_id)
+    return render(request, 'results.html', {'bra_size': fitting.bra_size, 'bra_suggestion': suggestion.bra_suggestion})

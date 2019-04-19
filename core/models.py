@@ -161,7 +161,7 @@ class Suggestion(models.Model):
             self.bra_frame = 'Full'
         else:
             self.bra_frame = 'Demi'
-        self.bra_suggestion = f'({bra_padding} + {self.bra_frame})'
+        self.bra_suggestion = f'I suggest a {self.bra_frame} {bra_padding} bra!'
         print(self.bra_suggestion)
         return self.bra_suggestion
         
