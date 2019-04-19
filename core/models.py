@@ -152,14 +152,16 @@ class Suggestion(models.Model):
     )
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
 
-    def save(self, breast_tissue, bra_padding, bra_frame, *args, **kwargs):
-        self.bra_suggestion = self.get_suggestion( breast_tissue, bra_padding, bra_frame)
+    def save(self, breast_tissue, bra_padding, *args, **kwargs):
+        self.bra_suggestion = self.get_suggestion(breast_tissue, bra_padding)
         super().save(*args, **kwargs)
-
-    def get_suggestion(self, breast_tissue, bra_padding, bra_frame):
-        self.bra_suggestion =f'({self.bra_padding} + {self.bra_frame})'
-        if self.breast_tissue in ['None', 'Round']:
-            self.bra_frame = ('Plunge', 'Full')
+    
+    def get_suggestion(self, breast_tissue, bra_padding):
+        if breast_tissue in ['None', 'Round']:
+            self.bra_frame = 'Full'
         else:
-            self.bra_frame = ('Demi', 'Full')
-            return self.bra_suggestion
+            self.bra_frame = 'Demi'
+        self.bra_suggestion = f'({bra_padding} + {self.bra_frame})'
+        print(self.bra_suggestion)
+        return self.bra_suggestion
+        

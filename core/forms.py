@@ -17,4 +17,4 @@ class SuggestionForm(forms.ModelForm):
     """
     class Meta:
         model = Suggestion
-        fields = ('breast_symmetry', 'breast_tissue', 'breast_placement', 'bra_padding', 'bra_wire')
+        fields = ('breast_symmetry', 'breast_tissue', 'breast_placement', 'bra_padding', 'bra_wire',)
