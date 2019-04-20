@@ -39,8 +39,8 @@ urlpatterns = [
     path ('resource/', views.resourcepage, name='resources'),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('bra-care/', views.BraCare, name='bra-care'),
-    path('brafitting/suggestion-form/<int:fitting_id>', views.suggestion_form, name='suggestion-form'),
-
+    path('brafitting/suggestion-form/<int:fitting_id>', views.suggestion_form, name = 'suggestion-form'),
+    path('brafitting/suggestion-form/suggestion-form/<int:fitting_id>/<int:suggestion_id>', views.results, name='results')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
