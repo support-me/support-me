@@ -1,18 +1,18 @@
 from django.contrib.auth.models import User, Group
-from .models import Profile
+from .models import Profile, BraFitting, Suggestion
 from rest_framework import serializers, status
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('url', 'username', 'email', 'groups')
 
-class GroupSerializer(serializers.ModelSerializer):
+class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ('url', 'name')
 
-class ProfileSerializer(serializers.ModelSerializer):
+class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     """
     Profile Serializer to return all user and profile data
     """
@@ -33,3 +33,11 @@ class ProfileSerializer(serializers.ModelSerializer):
         profile, created = Profile.objects.update_or_create(user=user, fittings=validated_data.pop('fittings'))
 
         return profile
+
+class FittingSerializer(serializers.HyperlinkedModelSerializer):
+    """
+    Fittings serializer to return data from each bra fitting session
+    """
+    class Meta:
+        model = BraFitting
+        fields = ('user', 'bra_size', 'band_measurement', 'band_size', 'bust_measurement', 'cup_size', 'bust_circumference', 'date_sized', 'currently_wearing')

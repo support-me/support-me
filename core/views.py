@@ -7,7 +7,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from core.serializers import UserSerializer, GroupSerializer, ProfileSerializer
+from core.serializers import UserSerializer, GroupSerializer, ProfileSerializer, FittingSerializer
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
 
@@ -59,6 +59,14 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+@method_decorator(staff_member_required, name='dispatch')
+class FittingView(viewsets.ModelViewSet):
+    """
+    API view for all the fittings data from each fitting session
+    """
+    queryset = BraFitting.objects.all()
+    serializer_class = FittingSerializer
 
 @method_decorator(staff_member_required, name='dispatch')
 class ProfileView(APIView):
