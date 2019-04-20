@@ -123,7 +123,6 @@ class Suggestion(models.Model):
     """
     user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='suggestions', null=True, blank=True)
     bra_suggestion = models.CharField(verbose_name='Suggested Bra Types', max_length=100)
-    breast_symmetry = models.BooleanField(verbose_name='Symmetry', blank=True, default=True)
     
     SHAPE_CHOICES = (
         ('Teardrop', 'Teardrop'),
