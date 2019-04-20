@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Profile, BraFitting, Suggestion
+from core.models import Profile, BraFitting, Suggestion, Resource
 # Register your models here.
 
 @admin.register(BraFitting)
@@ -12,4 +12,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
 @admin.register(Suggestion)
 class SuggestionAdmin(admin.ModelAdmin):
+    pass
+@admin.register(Resource)
+class ResourceAdmin(admin.ModelAdmin):
     pass

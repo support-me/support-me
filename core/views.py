@@ -1,5 +1,9 @@
 from django.shortcuts import render
+<<<<<<< HEAD
+from core.models import BraFitting, Resource
+=======
 from core.models import BraFitting, Suggestion
+>>>>>>> master
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
@@ -61,6 +65,14 @@ def results(request, fitting_id, suggestion_id):
     fitting = BraFitting.objects.get(id=fitting_id)
     suggestion = Suggestion.objects.get(id=suggestion_id)
     return render(request, 'results.html', {'bra_size': fitting.bra_size, 'bra_suggestion': suggestion.bra_suggestion})
+
+
+def resourcepage(request):
+    resources = Resource.objects.all()
+    context = {
+        'resources': resources
+    }
+    return render(request, 'resource.html', context=context)
 
 # views for API User and Group
 @method_decorator(staff_member_required, name='dispatch')
