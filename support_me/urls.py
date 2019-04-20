@@ -22,11 +22,12 @@ from core import views
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework import routers
+from rest_framework.urlpatterns import format_suffix_patterns
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'profile', views.ProfileViewSet)
 router.register(r'groups', views.GroupViewSet)
+# router.register(r'profile', views.ProfileView.as_view())
 # router.register(r'')
 
 urlpatterns = [
@@ -44,3 +45,8 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    
+# API url for Profile record
+urlpatterns += format_suffix_patterns([
+    path(r'api/profile', views.ProfileView.as_view(), name='profile-list'),
+])

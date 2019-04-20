@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from core.models import BraFitting, Profile
+from core.models import BraFitting, Profile, Suggestion
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
+from rest_framework import viewsets, status
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from core.serializers import UserSerializer, GroupSerializer, ProfileSerializer
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
@@ -59,10 +61,24 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 @method_decorator(staff_member_required, name='dispatch')
-class ProfileViewSet(viewsets.ModelViewSet):
+class ProfileView(APIView):
     """
-    API endpoint that allows us to view user through Proifle model, and their fittings
+    API view for creating and fetching Profile records
     """
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
+    def get(self, format=None):
+        """
+        Get all the profile records
+        """
+        profiles = Profile.objects.all()
+        serializer = ProfileSerializer(profiles, many=True)
+        return Response(serializer.data)
     
+    def post(self, request):
+        """
+        Creates Profile record
+        """
+        serializer = ProfileSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=ValueError):
+            serializer.create(validated_data=request.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.error_messages, status=status.HTTP_400_BAD_REQUEST)
