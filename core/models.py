@@ -128,7 +128,7 @@ class Suggestion(models.Model):
         ('Round', 'Round'),
         ('None', 'None'),
     )
-    breast_tissue = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
+    breast_shape = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
 
     PLACEMENT_CHOICES = (
         ('Near', 'Near'),
@@ -152,12 +152,12 @@ class Suggestion(models.Model):
     )
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
 
-    def save(self, breast_tissue, bra_padding, *args, **kwargs):
-        self.bra_suggestion = self.get_suggestion(breast_tissue, bra_padding)
+    def save(self, breast_shape, bra_padding, *args, **kwargs):
+        self.bra_suggestion = self.get_suggestion(breast_shape, bra_padding)
         super().save(*args, **kwargs)
     
-    def get_suggestion(self, breast_tissue, bra_padding):
-        if breast_tissue in ['None', 'Round']:
+    def get_suggestion(self, breast_shape, bra_padding):
+        if breast_shape in ['None', 'Round']:
             self.bra_frame = 'Full'
         else:
             self.bra_frame = 'Demi'

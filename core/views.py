@@ -41,7 +41,7 @@ def suggestion_form(request, fitting_id):
             suggestion = form.save(commit=False)
             data = form.cleaned_data
             suggestion.save(
-                breast_tissue=data['breast_tissue'],
+                breast_shape=data['breast_shape'],
                 bra_padding=data['bra_padding'],
             )
             suggestion_id = suggestion.id
