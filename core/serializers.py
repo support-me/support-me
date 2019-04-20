@@ -28,16 +28,38 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         :param validated_data: data containing all the details of Profile
         :return: returns Profile record
         """
-        user_data = validated_data.pop('user', 'fittings')
+        user_data = validated_data.pop('user')
         user = UserSerializer.create(UserSerializer(), validated_data=user_data)
-        profile, created = Profile.objects.update_or_create(user=user, fittings=validated_data.pop('fittings'))
+        profile, created = Profile.objects.update_or_create(user=user)
 
         return profile
 
-class FittingSerializer(serializers.HyperlinkedModelSerializer):
+class FittingSerializer(serializers.ModelSerializer):
     """
     Fittings serializer to return data from each bra fitting session
     """
+    user = UserSerializer(required=True)
+    breakpoint()
     class Meta:
         model = BraFitting
         fields = ('user', 'bra_size', 'band_measurement', 'band_size', 'bust_measurement', 'cup_size', 'bust_circumference', 'date_sized', 'currently_wearing')
+
+    def create(self, validated_data):
+        """
+        Overriding default create method of serializer.
+        """
+        user_data = validated_data.pop('user')
+        user = UserSerializer.create(UserSerializer(), validated_data=user_data)
+        fittings, created = BraFitting.objects.update_or_create(
+            user=user,
+            bra_size=validated_data.pop('bra_size'),
+            band_measurement=validated_data.pop('band_measurement'),
+            band_size=validated_data.pop('band_size'),
+            bust_measurement=validated_data.pop('bust_measurement'),
+            cup_size=validated_data.pop('cup_size'),
+            bust_circumference=validated_data.pop('bust_circumference'),
+            date_sized=validated_data.pop('date_sized'),
+            currently_wearing=validated_data.pop('bra_size'),
+            )
+        # breakpoint()
+        return fittings
