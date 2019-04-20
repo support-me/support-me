@@ -37,6 +37,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    
 ]
 
 
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     # Our Apps
     'core.apps.CoreConfig',
+    'rest_framework',
     # Registration Apps
     # The following apps are required:
     'allauth',
@@ -160,3 +162,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
