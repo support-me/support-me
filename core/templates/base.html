@@ -21,7 +21,7 @@
         <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
         <li class="nav-item"><a href="{% url 'brafitting' %}">Fit</a></li>
         <li class="nav-item"><a href="{% url 'bra-care' %}">Bra Care</a></li>
-        <li class="nav-item"><a href="{% url 'home' %}">Resources</a></li>
+        <li class="nav-item"><a href="{% url 'resources' %}">Resources</a></li>
         <li class="nav-item"><a href="{% url 'home' %}">About Us</a></li>
         {% if user.is_authenticated %}
         <li class="nav-item"><a href="{% url 'account_email' %}">{{ user.username }}</a></li>

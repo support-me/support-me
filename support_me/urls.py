@@ -30,9 +30,11 @@ urlpatterns = [
     # allauth account
     path('accounts/', include('allauth.urls')),
     path('brafitting/', views.braFitting, name='brafitting'),
+    path ('resource/', views.resourcepage, name='resources'),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('bra-care/', views.BraCare, name='bra-care'),
     path('brafitting/suggestion-form/<int:fitting_id>', views.suggestion_form, name='suggestion-form'),
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

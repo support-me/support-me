@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import BraFitting
+from core.models import BraFitting, Resource
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
@@ -36,3 +36,12 @@ def suggestion_form(request, fitting_id):
     fitting = BraFitting.objects.get(id=fitting_id)
     form = SuggestionForm()
     return render(request, 'suggestion-form.html', {'form': form, 'bra_size': fitting.bra_size})
+
+
+def resourcepage(request):
+    resources = Resource.objects.all()
+    context = {
+        'resources': resources
+    }
+    return render(request, 'resource.html', context=context)
+
