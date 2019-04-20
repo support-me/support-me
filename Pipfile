@@ -15,6 +15,7 @@ python-social-auth = {extras = ["django"],version = "*"}
 django-heroku = "*"
 psycopg2 = "*"
 whitenoise = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"

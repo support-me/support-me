@@ -3,6 +3,12 @@ from core.models import BraFitting, Suggestion
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from core.serializers import UserSerializer, GroupSerializer
+from django.contrib.admin.views.decorators import staff_member_required
+from django.utils.decorators import method_decorator
+
 import math
 
 # Create your views here.
@@ -55,3 +61,20 @@ def results(request, fitting_id, suggestion_id):
     fitting = BraFitting.objects.get(id=fitting_id)
     suggestion = Suggestion.objects.get(id=suggestion_id)
     return render(request, 'results.html', {'bra_size': fitting.bra_size, 'bra_suggestion': suggestion.bra_suggestion})
+
+# views for API User and Group
+@method_decorator(staff_member_required, name='dispatch')
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+
