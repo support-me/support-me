@@ -9,8 +9,8 @@
 {% endif %}
     <h2 class="form-title">What do you look for in your support?</h2>
     <form method="POST" class="suggestion-form">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit" class="submit-button">See Recs!</button>
+        {% csrf_token %}
+        <table>{{ form.as_table }}</table>
+        <button type="submit" class="submit-button">See Recs!</button>
     </form>
 {% endblock %}
