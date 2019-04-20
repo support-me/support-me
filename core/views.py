@@ -1,9 +1,5 @@
 from django.shortcuts import render
-<<<<<<< HEAD
-from core.models import BraFitting, Resource
-=======
-from core.models import BraFitting, Suggestion
->>>>>>> master
+from core.models import BraFitting, Suggestion, Resource
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
