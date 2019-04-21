@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import BraFitting, Suggestion, Resource, Suggestion
+from core.models import BraFitting, Suggestion, Resource, Profile
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
@@ -100,6 +100,7 @@ class ProfileView(APIView):
     """
     API view for creating and fetching Profile records
     """
+
     def get(self, format=None):
         """
         Get all the profile records

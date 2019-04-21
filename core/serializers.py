@@ -20,7 +20,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Profile
-        fields = ('user')
+        fields = ('user',)
         
     def create(self, validated_data):
         """
@@ -30,27 +30,38 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         """
         user_data = validated_data.pop('user')
         user = UserSerializer.create(UserSerializer(), validated_data=user_data)
-        profile, created = Profile.objects.update_or_create(user=user)
+        profile, _ = Profile.objects.update_or_create(user=user)
 
         return profile
 
-class FittingSerializer(serializers.ModelSerializer):
+class FittingSerializer(serializers.HyperlinkedModelSerializer):
     """
     Fittings serializer to return data from each bra fitting session
     """
-    user = UserSerializer(required=True)
-    breakpoint()
+    user = ProfileSerializer(required=True)
+    # breakpoint()
     class Meta:
         model = BraFitting
-        fields = ('user', 'bra_size', 'band_measurement', 'band_size', 'bust_measurement', 'cup_size', 'bust_circumference', 'date_sized', 'currently_wearing')
-
+        fields = (
+        'user',
+        'bra_size',
+        'band_measurement',
+        'band_size',
+        'bust_measurement',
+        'cup_size',
+        'bust_circumference',
+        'date_sized',
+        'currently_wearing',
+        )
+    breakpoint()
     def create(self, validated_data):
         """
         Overriding default create method of serializer.
         """
-        user_data = validated_data.pop('user')
-        user = UserSerializer.create(UserSerializer(), validated_data=user_data)
-        fittings, created = BraFitting.objects.update_or_create(
+        profile_data = validated_data.pop('user')
+        # breakpoint()
+        user = ProfileSerializer.create(ProfileSerializer(), validated_data=profile_data)
+        fittings, _ = BraFitting.objects.update_or_create(
             user=user,
             bra_size=validated_data.pop('bra_size'),
             band_measurement=validated_data.pop('band_measurement'),
