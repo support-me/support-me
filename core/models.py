@@ -9,6 +9,9 @@ class Profile(models.Model):
     # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     # add favorites field?
+    def __str__(self):
+        return self.user.username
+    
 
 class BraFitting(models.Model):
     """

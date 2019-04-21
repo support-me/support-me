@@ -16,11 +16,11 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     """
     Profile Serializer to return all user and profile data
     """
-    user = UserSerializer(required=True)
+    # user = UserSerializer(required=True)
 
     class Meta:
         model = Profile
-        fields = ('user',)
+        fields = ('user', 'fittings',)
         
     def create(self, validated_data):
         """
@@ -29,6 +29,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         :return: returns Profile record
         """
         user_data = validated_data.pop('user')
+        # fittings_data = validated_data.pop('fittings',)
         user = UserSerializer.create(UserSerializer(), validated_data=user_data)
         profile, _ = Profile.objects.update_or_create(user=user)
 
