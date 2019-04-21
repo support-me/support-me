@@ -13,6 +13,8 @@ class ProfileAdmin(admin.ModelAdmin):
 @admin.register(Suggestion)
 class SuggestionAdmin(admin.ModelAdmin):
     pass
+    
 @admin.register(Resource)
 class ResourceAdmin(admin.ModelAdmin):
     pass
+    

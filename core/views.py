@@ -19,9 +19,11 @@ def braFitting(request):
     if request.method == 'POST':
         form = BraFittingForm(request.POST)
         if form.is_valid():
+            # user = BraFitting.user
             fitting = form.save(commit=False)
             data = form.data
             fitting.save(
+                # user=user,
                 currently_wearing=data['currently_wearing'],
                 band_measurement=data['band_measurement'],
                 bust_measurement=data['bust_measurement'],
@@ -33,7 +35,7 @@ def braFitting(request):
     else: 
         form = BraFittingForm()
     
-    return render(request , 'bra_fitting.html', {'form': form},)
+    return render(request, 'bra_fitting.html', {'form': form},)
     
 def BraCare(request):
     return render(request, 'bra-care.html')
@@ -88,19 +90,31 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 @method_decorator(staff_member_required, name='dispatch')
-class FittingView(viewsets.ModelViewSet):
+class FittingView(APIView):
     """
     API view for all the fittings data from each fitting session
     """
-    queryset = BraFitting.objects.all()
-    serializer_class = FittingSerializer
+    def get(self, format=None):
+        # user = BraFitting.user
+        fitting = BraFitting.objects.all()
+        serializer = FittingSerializer(fitting, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        """
+        Creates Profile record
+        """
+        serializer = FittingSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=ValueError):
+            serializer.create(validated_data=request.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.error_messages, status=status.HTTP_400_BAD_REQUEST)
 
 @method_decorator(staff_member_required, name='dispatch')
 class ProfileView(APIView):
     """
     API view for creating and fetching Profile records
     """
-
     def get(self, format=None):
         """
         Get all the profile records

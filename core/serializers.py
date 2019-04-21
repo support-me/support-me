@@ -16,11 +16,11 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     """
     Profile Serializer to return all user and profile data
     """
-    # user = UserSerializer(required=True)
+    user = UserSerializer(required=True)
 
     class Meta:
         model = Profile
-        fields = ('user', 'fittings',)
+        fields = ('user',)
         
     def create(self, validated_data):
         """
@@ -39,7 +39,7 @@ class FittingSerializer(serializers.HyperlinkedModelSerializer):
     """
     Fittings serializer to return data from each bra fitting session
     """
-    user = ProfileSerializer(required=True)
+    user = UserSerializer(required=True)
     # breakpoint()
     class Meta:
         model = BraFitting
@@ -54,14 +54,14 @@ class FittingSerializer(serializers.HyperlinkedModelSerializer):
         'date_sized',
         'currently_wearing',
         )
-    breakpoint()
+    # breakpoint()
     def create(self, validated_data):
         """
         Overriding default create method of serializer.
         """
-        profile_data = validated_data.pop('user')
+        user_data = validated_data.pop('user')
         # breakpoint()
-        user = ProfileSerializer.create(ProfileSerializer(), validated_data=profile_data)
+        user = UserSerializer.create(UserSerializer(), validated_data=user_data)
         fittings, _ = BraFitting.objects.update_or_create(
             user=user,
             bra_size=validated_data.pop('bra_size'),
@@ -73,5 +73,5 @@ class FittingSerializer(serializers.HyperlinkedModelSerializer):
             date_sized=validated_data.pop('date_sized'),
             currently_wearing=validated_data.pop('bra_size'),
             )
-        # breakpoint()
+        breakpoint()
         return fittings

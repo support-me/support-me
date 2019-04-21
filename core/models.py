@@ -7,7 +7,7 @@ import math
 
 class Profile(models.Model):
     # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(to=User, on_delete=models.CASCADE)
     # add favorites field?
     def __str__(self):
         return self.user.username
@@ -17,7 +17,7 @@ class BraFitting(models.Model):
     """
     Model for main feature of our site. Getting user input to find bra size.
     """
-    user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='fittings', null=True, blank=True)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='fittings', null=True, blank=True)
     bra_size = models.CharField(max_length=10, blank=True, null=True)
     band_measurement = models.DecimalField(help_text='Enter in inches measurment under bust', max_digits=5, decimal_places=2)
     band_size = models.IntegerField(blank=True)
@@ -34,7 +34,7 @@ class BraFitting(models.Model):
         self.bust_measurement = self.calculate_circumference(currently_wearing, bust_circumference, bust_measurement)
         self.cup_size = self.calculate_cup_size(self.band_size)
         self.calculate_bra_size(self.band_size, self.cup_size)
-
+        # self.user = user
         super().save(*args, **kwargs)
 
     CURRENTLY_WEARING_CHOICES = (
@@ -124,7 +124,7 @@ class Suggestion(models.Model):
     """
     Model for creating suggestions based on bra size and questions from SuggestionForm.
     """
-    user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='suggestions', null=True, blank=True)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='suggestions', null=True, blank=True)
     bra_suggestion = models.CharField(verbose_name='Suggested Bra Types', max_length=100)
     
     SHAPE_CHOICES = (
