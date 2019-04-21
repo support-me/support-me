@@ -19,15 +19,17 @@ def braFitting(request):
     if request.method == 'POST':
         form = BraFittingForm(request.POST)
         if form.is_valid():
-            # fitting_user = BraFitting.fitting_user
+            fitting_user = request.user
             fitting = form.save(commit=False)
             data = form.data
             fitting.save(
+                fitting_user=fitting_user,
                 currently_wearing=data['currently_wearing'],
                 band_measurement=data['band_measurement'],
                 bust_measurement=data['bust_measurement'],
                 bust_circumference=data.get('bust_circumference', False),
             )
+            breakpoint()
             fitting_id = fitting.id
             return redirect(f'suggestion-form/{fitting_id}')
 
@@ -90,25 +92,28 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 @method_decorator(staff_member_required, name='dispatch')
-class FittingView(APIView):
+class FittingView(viewsets.ModelViewSet):
     """
     API view for all the fittings data from each fitting session
     """
-    def get(self, format=None):
-        # user = BraFitting.user
-        fitting = BraFitting.objects.all()
-        serializer = FittingSerializer(fitting, many=True)
-        return Response(serializer.data)
+    # context={'request': request}
+    queryset = BraFitting.objects.all()
+    serializer_class = FittingSerializer
+    # def get(self, request, format=None):
+    #     # user = BraFitting.user
+    #     fitting = BraFitting.objects.all()
+    #     serializer = FittingSerializer(fitting, many=True)
+    #     return Response(serializer.data)
 
-    def post(self, request):
-        """
-        Creates Profile record
-        """
-        serializer = FittingSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=ValueError):
-            serializer.create(validated_data=request.data)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.error_messages, status=status.HTTP_400_BAD_REQUEST)
+    # def post(self, request):
+    #     """
+    #     Creates Profile record
+    #     """
+    #     serializer = FittingSerializer(data=request.data)
+    #     if serializer.is_valid(raise_exception=ValueError):
+    #         serializer.create(validated_data=request.data)
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.error_messages, status=status.HTTP_400_BAD_REQUEST)
 
 @method_decorator(staff_member_required, name='dispatch')
 class ProfileView(APIView):

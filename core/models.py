@@ -29,11 +29,12 @@ class BraFitting(models.Model):
     class Meta:
         ordering = ['date_sized']
 
-    def save(self, currently_wearing, band_measurement, bust_measurement, bust_circumference, *args, **kwargs):
+    def save(self, fitting_user, currently_wearing, band_measurement, bust_measurement, bust_circumference, *args, **kwargs):
         self.band_size = self.calculate_band_size(band_measurement)
         self.bust_measurement = self.calculate_circumference(currently_wearing, bust_circumference, bust_measurement)
         self.cup_size = self.calculate_cup_size(self.band_size)
         self.calculate_bra_size(self.band_size, self.cup_size)
+        self.fitting_user = fitting_user
         super().save(*args, **kwargs)
 
     CURRENTLY_WEARING_CHOICES = (

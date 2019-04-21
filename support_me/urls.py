@@ -28,7 +28,7 @@ admin.autodiscover()
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-# router.register(r'fittings', views.FittingView.as_view())
+router.register(r'fittings', views.FittingView)
 # router.register(r'profile', views.ProfileView.as_view())
 # router.register(r'')
 
@@ -53,5 +53,5 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # API url for Profile record
 urlpatterns += format_suffix_patterns([
     path(r'api/profile', views.ProfileView.as_view(), name='profile-list'),
-    path('api/fittings/', views.FittingView.as_view(), name='fittings-list'),
+    # path('api/fittings/', views.FittingView.as_view(), name='fittings-list'),
 ])

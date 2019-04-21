@@ -73,5 +73,4 @@ class FittingSerializer(serializers.HyperlinkedModelSerializer):
             date_sized=validated_data.pop('date_sized'),
             currently_wearing=validated_data.pop('bra_size'),
             )
-        breakpoint()
         return fittings
