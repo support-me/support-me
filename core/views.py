@@ -92,28 +92,12 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 @method_decorator(staff_member_required, name='dispatch')
-class FittingView(viewsets.ModelViewSet):
+class FittingViewSet(viewsets.ModelViewSet):
     """
-    API view for all the fittings data from each fitting session
+    API view for all the fittings data from each fitting session.
     """
-    # context={'request': request}
     queryset = BraFitting.objects.all()
     serializer_class = FittingSerializer
-    # def get(self, request, format=None):
-    #     # user = BraFitting.user
-    #     fitting = BraFitting.objects.all()
-    #     serializer = FittingSerializer(fitting, many=True)
-    #     return Response(serializer.data)
-
-    # def post(self, request):
-    #     """
-    #     Creates Profile record
-    #     """
-    #     serializer = FittingSerializer(data=request.data)
-    #     if serializer.is_valid(raise_exception=ValueError):
-    #         serializer.create(validated_data=request.data)
-    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    #     return Response(serializer.error_messages, status=status.HTTP_400_BAD_REQUEST)
 
 @method_decorator(staff_member_required, name='dispatch')
 class ProfileView(APIView):

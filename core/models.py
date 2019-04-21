@@ -10,14 +10,14 @@ class Profile(models.Model):
     site_user = models.OneToOneField(to=User, on_delete=models.CASCADE)
     # add favorites field?
     def __str__(self):
-        return self.user.username
+        return self.site_user.username
     
 
 class BraFitting(models.Model):
     """
     Model for main feature of our site. Getting user input to find bra size.
     """
-    fitting_user = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='fittings', blank=True, null=True)
+    fitting_user = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='fittings', blank=True)
     bra_size = models.CharField(max_length=10, blank=True, null=True)
     band_measurement = models.DecimalField(help_text='Enter in inches measurment under bust', max_digits=5, decimal_places=2)
     band_size = models.IntegerField(blank=True)
@@ -124,7 +124,7 @@ class Suggestion(models.Model):
     """
     Model for creating suggestions based on bra size and questions from SuggestionForm.
     """
-    fitting_session = models.ForeignKey(to=BraFitting, on_delete=models.CASCADE, related_name='suggestions', null=True, blank=True)
+    fitting_session = models.ForeignKey(to=BraFitting, on_delete=models.CASCADE, related_name='suggestions', blank=True)
     bra_suggestion = models.CharField(verbose_name='Suggested Bra Types', max_length=100)
     
     SHAPE_CHOICES = (
