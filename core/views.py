@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from core.models import BraFitting, Suggestion, Resource, Profile
 from core.forms import BraFittingForm, SuggestionForm
-from django.shortcuts import HttpResponseRedirect, render, redirect
+from django.shortcuts import HttpResponseRedirect, render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, status
@@ -19,11 +19,10 @@ def braFitting(request):
     if request.method == 'POST':
         form = BraFittingForm(request.POST)
         if form.is_valid():
-            # user = BraFitting.user
+            # fitting_user = BraFitting.fitting_user
             fitting = form.save(commit=False)
             data = form.data
             fitting.save(
-                # user=user,
                 currently_wearing=data['currently_wearing'],
                 band_measurement=data['band_measurement'],
                 bust_measurement=data['bust_measurement'],
@@ -35,7 +34,8 @@ def braFitting(request):
     else: 
         form = BraFittingForm()
     
-    return render(request, 'bra_fitting.html', {'form': form},)
+    return render(request, 'bra_fitting.html', {
+        'form': form,})
     
 def BraCare(request):
     return render(request, 'bra-care.html')
@@ -57,7 +57,7 @@ def suggestion_form(request, fitting_id):
             return redirect(f'suggestion-form/{fitting_id}/{suggestion_id}')
     else:
         form = SuggestionForm()
-    return render(request, 'suggestion-form.html', {'form': form , 'bra_size': fitting.bra_size})
+    return render(request, 'suggestion-form.html', {'form': form, 'bra_size': fitting.bra_size})
 
 def results(request, fitting_id, suggestion_id):
     fitting = BraFitting.objects.get(id=fitting_id)

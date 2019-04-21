@@ -16,11 +16,11 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     """
     Profile Serializer to return all user and profile data
     """
-    user = UserSerializer(required=True)
+    site_user = UserSerializer(required=True)
 
     class Meta:
         model = Profile
-        fields = ('user',)
+        fields = ('site_user',)
         
     def create(self, validated_data):
         """
@@ -28,10 +28,10 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         :param validated_data: data containing all the details of Profile
         :return: returns Profile record
         """
-        user_data = validated_data.pop('user')
+        user_data = validated_data.pop('site_user')
         # fittings_data = validated_data.pop('fittings',)
-        user = UserSerializer.create(UserSerializer(), validated_data=user_data)
-        profile, _ = Profile.objects.update_or_create(user=user)
+        site_user = UserSerializer.create(UserSerializer(), validated_data=user_data)
+        profile, _ = Profile.objects.update_or_create(site_user=site_user)
 
         return profile
 
@@ -39,12 +39,12 @@ class FittingSerializer(serializers.HyperlinkedModelSerializer):
     """
     Fittings serializer to return data from each bra fitting session
     """
-    user = UserSerializer(required=True)
+    fitting_user = UserSerializer(required=True)
     # breakpoint()
     class Meta:
         model = BraFitting
         fields = (
-        'user',
+        'fitting_user',
         'bra_size',
         'band_measurement',
         'band_size',
@@ -59,11 +59,11 @@ class FittingSerializer(serializers.HyperlinkedModelSerializer):
         """
         Overriding default create method of serializer.
         """
-        user_data = validated_data.pop('user')
+        user_data = validated_data.pop('fitting_user')
         # breakpoint()
-        user = UserSerializer.create(UserSerializer(), validated_data=user_data)
+        fitting_user = UserSerializer.create(UserSerializer(), validated_data=user_data)
         fittings, _ = BraFitting.objects.update_or_create(
-            user=user,
+            fitting_user=fitting_user,
             bra_size=validated_data.pop('bra_size'),
             band_measurement=validated_data.pop('band_measurement'),
             band_size=validated_data.pop('band_size'),
