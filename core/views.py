@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import BraFitting, Profile, Suggestion
+from core.models import BraFitting, Suggestion, Resource, Suggestion
 from core.forms import BraFittingForm, SuggestionForm
 from django.shortcuts import HttpResponseRedirect, render, redirect
 from django.urls import reverse
@@ -40,8 +40,35 @@ def BraCare(request):
     
 def suggestion_form(request, fitting_id):
     fitting = BraFitting.objects.get(id=fitting_id)
-    form = SuggestionForm()
-    return render(request, 'suggestion-form.html', {'form': form, 'bra_size': fitting.bra_size})
+
+    if request.method == 'POST':
+        form = SuggestionForm(request.POST)
+        if form.is_valid():
+            suggestion = form.save(commit=False)
+            data = form.cleaned_data
+            suggestion.save(
+                breast_shape=data['breast_shape'],
+                bra_padding=data['bra_padding'],
+            )
+            suggestion_id = suggestion.id
+            print(suggestion.bra_suggestion)
+            return redirect(f'suggestion-form/{fitting_id}/{suggestion_id}')
+    else:
+        form = SuggestionForm()
+    return render(request, 'suggestion-form.html', {'form': form , 'bra_size': fitting.bra_size})
+
+def results(request, fitting_id, suggestion_id):
+    fitting = BraFitting.objects.get(id=fitting_id)
+    suggestion = Suggestion.objects.get(id=suggestion_id)
+    return render(request, 'results.html', {'bra_size': fitting.bra_size, 'bra_suggestion': suggestion.bra_suggestion})
+
+
+def resourcepage(request):
+    resources = Resource.objects.all()
+    context = {
+        'resources': resources
+    }
+    return render(request, 'resource.html', context=context)
 
 # views for API User and Group
 @method_decorator(staff_member_required, name='dispatch')

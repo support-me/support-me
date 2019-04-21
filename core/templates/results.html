@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Results:</h1>
+<p>You did it! Now you know how to do your own bra fitting and get a bra size and style that supports you! </p>
+{% if bra_size %}
+    <p>Your estimated bra size is: {{bra_size}}</p>
+{% endif %}
+{% if bra_suggestion %}
+    <p>I suggest a {{bra_suggestion}} bra for you.</p>
+{% endif %}
+<p>Bra fitting is an art that takes in some science. So if you try this size bra on and do not feel comfortable in it that is okay. You can try a different size or frame. Do what is best for you and makes you feel most comfortable and confident!</p>
+{% if user.is_authenticated %}
+    <p>Go to your <a href="{% url 'home' %}">Profile</a> to see your bra history.</p>
+{% else %}
+    <p>Here are some top <a href="{% url 'bra-care' %}">bra care</a> tips!</p>
+{% endif %}
+{% endblock %}

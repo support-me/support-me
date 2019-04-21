@@ -123,14 +123,13 @@ class Suggestion(models.Model):
     """
     user = models.ForeignKey(to=Profile, on_delete=models.CASCADE, related_name='suggestions', null=True, blank=True)
     bra_suggestion = models.CharField(verbose_name='Suggested Bra Types', max_length=100)
-    breast_symmetry = models.BooleanField(verbose_name='Symmetry', blank=True, null=True, default=True)
     
     SHAPE_CHOICES = (
         ('Teardrop', 'Teardrop'),
         ('Round', 'Round'),
         ('None', 'None'),
     )
-    breast_tissue = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
+    breast_shape = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
 
     PLACEMENT_CHOICES = (
         ('Near', 'Near'),
@@ -153,3 +152,25 @@ class Suggestion(models.Model):
         ('Full', 'Full'),
     )
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
+
+    def save(self, breast_shape, bra_padding, *args, **kwargs):
+        self.bra_suggestion = self.get_suggestion(breast_shape, bra_padding)
+        super().save(*args, **kwargs)
+    
+    def get_suggestion(self, breast_shape, bra_padding):
+        if breast_shape in ['None', 'Round']:
+            self.bra_frame = 'Full'
+        else:
+            self.bra_frame = 'Demi'
+        self.bra_suggestion = f'{self.bra_frame} {bra_padding}'
+        print(self.bra_suggestion)
+        return self.bra_suggestion
+        
+class Resource(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
+    url = models.URLField(blank=False)
+
+
+    def __str__(self):
+        return self.title

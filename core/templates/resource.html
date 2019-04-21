@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block content %}
+{% for resource in resources.all %}
+<div class="resource-con"> 
+<h1> {{resource.title}} </h1>
+<h4>{{resource.description}}</h4>
+<a href="{{resource.url}} " target="blank"> Learn more Here  </a>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}
