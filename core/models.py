@@ -9,6 +9,8 @@ class Profile(models.Model):
     # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
     site_user = models.OneToOneField(to=User, on_delete=models.CASCADE)
     # add favorites field?
+
+
     def __str__(self):
         return self.site_user.username
     
@@ -26,8 +28,11 @@ class BraFitting(models.Model):
     bust_circumference = models.BooleanField(help_text='You may measure your bust all the way around. That is ok! Just click here', blank=True, default=False)
     date_sized = models.DateField(verbose_name='Date of Bra Fitting', auto_now_add=True, null=True, blank=True)
     # http://www.learningaboutelectronics.com/Articles/How-to-create-a-drop-down-list-in-a-Django-form.php
+
+
     class Meta:
         ordering = ['date_sized']
+
 
     def save(self, fitting_user, currently_wearing, band_measurement, bust_measurement, bust_circumference, *args, **kwargs):
         self.band_size = self.calculate_band_size(band_measurement)
@@ -51,6 +56,7 @@ class BraFitting(models.Model):
         default='None',
     )
 
+
     def calculate_band_size(self, band_measurement):
         """
         Calculates band_size based on user input for band_measurent
@@ -63,22 +69,21 @@ class BraFitting(models.Model):
             self.band_size = (band_measurement_int + 5)
         return self.band_size
     
+
     def calculate_circumference(self, currently_wearing, bust_circumference, bust_measurement):
         if self.bust_measurement:
             self.bust_measurement = round(float(bust_measurement))
-        # breakpoint()
         if not bust_circumference:
             self.bust_measurement = self.bust_measurement * 2
         # Account for what is currently being worn below    
         if currently_wearing in ['None', 'Bralette', 'SportsBra']:
-            # breakpoint()
             self.bust_measurement = (self.bust_measurement + 1)
         elif currently_wearing == 'PushUp':
-            # breakpoint()
             self.bust_measurement = (self.bust_measurement - 1)
         else:
             self.bust_measurement = self.bust_measurement
         return self.bust_measurement
+
 
     def calculate_cup_size(self, band_size):
         """
@@ -110,11 +115,14 @@ class BraFitting(models.Model):
         self.cup_size = CUP_OPTIONS.get(cup_size_number)
         return self.cup_size 
 
+
     def calculate_bra_size(self, band_size, cup_size):
         self.bra_size = (f'{band_size}{cup_size}')
 
+
     def __str__(self):
         return self.bra_size
+
 
     def get_absolute_url(self):
         # enter name of html as argument here... calling the html 'fitting' for now
@@ -156,10 +164,12 @@ class Suggestion(models.Model):
     )
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
 
+
     def save(self, breast_shape, bra_padding, *args, **kwargs):
         self.bra_suggestion = self.get_suggestion(breast_shape, bra_padding)
         super().save(*args, **kwargs)
     
+
     def get_suggestion(self, breast_shape, bra_padding):
         if breast_shape in ['None', 'Round']:
             self.bra_frame = 'Full'

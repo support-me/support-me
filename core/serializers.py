@@ -3,11 +3,15 @@ from .models import Profile, BraFitting, Suggestion
 from rest_framework import serializers, status
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+
     class Meta:
         model = User
         fields = ('url', 'username', 'email', 'groups')
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
+
+
     class Meta:
         model = Group
         fields = ('url', 'name')
@@ -18,10 +22,12 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     """
     site_user = UserSerializer(required=True)
 
+
     class Meta:
         model = Profile
         fields = ('site_user',)
         
+
     def create(self, validated_data):
         """
         Overriding the default create method of serializer.
@@ -40,7 +46,8 @@ class FittingSerializer(serializers.HyperlinkedModelSerializer):
     Fittings serializer to return data from each bra fitting session
     """
     fitting_user = UserSerializer(required=True)
-    # breakpoint()
+
+
     class Meta:
         model = BraFitting
         fields = (
@@ -54,13 +61,14 @@ class FittingSerializer(serializers.HyperlinkedModelSerializer):
         'date_sized',
         'currently_wearing',
         )
-    # breakpoint()
+
+
     def create(self, validated_data):
         """
         Overriding default create method of serializer.
         """
         user_data = validated_data.pop('fitting_user')
-        # breakpoint()
+
         fitting_user = UserSerializer.create(UserSerializer(), validated_data=user_data)
         fittings, _ = BraFitting.objects.update_or_create(
             fitting_user=fitting_user,

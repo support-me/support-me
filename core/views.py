@@ -29,7 +29,6 @@ def braFitting(request):
                 bust_measurement=data['bust_measurement'],
                 bust_circumference=data.get('bust_circumference', False),
             )
-            breakpoint()
             fitting_id = fitting.id
             return redirect(f'suggestion-form/{fitting_id}')
 
