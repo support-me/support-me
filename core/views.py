@@ -47,11 +47,9 @@ def suggestion_form(request, fitting_id):
     if request.method == 'POST':
         form = SuggestionForm(request.POST)
         if form.is_valid():
-            fitting_session = fitting
             suggestion = form.save(commit=False)
             data = form.cleaned_data
             suggestion.save(
-                fitting_session=fitting_session,
                 breast_shape=data['breast_shape'],
                 bra_padding=data['bra_padding'],
             )
