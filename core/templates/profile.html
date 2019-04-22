@@ -1,21 +1,30 @@
 {% extends "base.html"%}
 {% block content %}
 <p> Profile </p>
-Welcome {{ user }}, Here is your history.
 
-{% for bra_size in brafitting %}
-    {% for user in user.bra_size.all%}
-    {{user.brafitting}}
+Welcome {{ user }}, your measurement history is down below .
+
+{% for brafitting in brafitting %}
+
+{% if brafitting.bra_size %}
+    <p>Your estimated bra size is: {{brafitting.bra_size}}</p>
+{% endif %}
+
+{% for suggestion in suggestion %}
+{% if suggestion.bra_suggestion %}
+    <p>I suggest a {{suggestion.bra_suggestion}} bra for you.</p>
+    
+{% else %}
+
+<p> You have no measurements saved, click <a href="{% url 'brafitting' %}"> Here
+</a> to start </p>
+{% endif %}
+
+{% endfor %}
 {% endfor %}
 
-
-{% endfor %}
 {% endblock %}   
 
 
 
 
-<!-- {% for profile in profile.brafitting.all %}
-    <p>  {{profile.brafitting}} </p>
-    {% endfor %}
- -->

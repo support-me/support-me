@@ -10,6 +10,8 @@ from rest_framework.response import Response
 from core.serializers import UserSerializer, GroupSerializer, ProfileSerializer, FittingSerializer
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def home(request):
@@ -124,10 +126,15 @@ class ProfileView(APIView):
         return Response(serializer.error_messages, status=status.HTTP_400_BAD_REQUEST)
 
 
-def profile(request, ):
+# @login_required
+def profile(request):
+    profile = Profile.objects.get(site_user=request.user)
+    brafitting = BraFitting.objects.filter()
+    suggestion = Suggestion.objects.filter()
+
     context = {
-        'profile': User.objects.all()
-
+        'profile': profile,
+        'brafitting': brafitting,
+        'suggestion': suggestion,
     }
-    return render(request, 'profile.html' , context)
-
+    return render(request, 'profile.html', context)
