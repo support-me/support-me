@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% block content %}
+<p> Profile </p>
+Welcome {{ user }}, Here is your history.
+
+{% for bra_size in brafitting %}
+    {% for user in user.bra_size.all%}
+    {{user.brafitting}}
+{% endfor %}
+
+
+{% endfor %}
+{% endblock %}   
+
+
+
+
+<!-- {% for profile in profile.brafitting.all %}
+    <p>  {{profile.brafitting}} </p>
+    {% endfor %}
+ -->

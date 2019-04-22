@@ -122,3 +122,12 @@ class ProfileView(APIView):
             serializer.create(validated_data=request.data)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.error_messages, status=status.HTTP_400_BAD_REQUEST)
+
+
+def profile(request, ):
+    context = {
+        'profile': User.objects.all()
+
+    }
+    return render(request, 'profile.html' , context)
+
