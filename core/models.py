@@ -165,7 +165,8 @@ class Suggestion(models.Model):
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
 
 
-    def save(self, breast_shape, bra_padding, *args, **kwargs):
+    def save(self, fitting_session, breast_shape, bra_padding, *args, **kwargs):
+        self.fitting_session = fitting_session
         self.bra_suggestion = self.get_suggestion(breast_shape, bra_padding)
         super().save(*args, **kwargs)
     
