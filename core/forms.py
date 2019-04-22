@@ -24,4 +24,5 @@ class SuggestionForm(forms.ModelForm):
         widgets = {
             'breast_shape': forms.RadioSelect,
             'breast_placement': forms.RadioSelect,
+            'bra_padding': forms.RadioSelect,
         }
