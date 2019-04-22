@@ -88,11 +88,15 @@ button{
 
 
 /* FITTING FORM SECTION */
+.bra-fitting-content {
+    padding: 2rem 0 4rem 0;
+}
 .fit-intro {
     padding: 1rem 0 1rem 0;
 }
 .bra-fit-setup {
-    padding: 1rem 0 1rem 0;
+    padding: 2rem;
+    margin-top: 2rem;
     border: 1px solid black;
 }
 .fitting-form {
@@ -101,6 +105,14 @@ button{
 }
 .fitting-step {
     padding: 2rem;
+}
+.fitting-block {
+    display: flex;
+    flex-direction: row;
+}
+.fitting-block-pic {
+    width: 200px;
+    height: 200px;
 }
 .fit-materials-list {
     list-style-type: disc;

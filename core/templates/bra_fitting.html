@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-{% comment %} <script>$("#fitting-form").steps()</script> {% endcomment %}
-
+<main class="bra-fitting-content">
+    <h3>Bra Fitting</h3>
     <div class="fit-intro">
         <p>Welcome! We are excited to be assisting you in your bra fitting today. Our goal is to teach you how to find a bra that gives you the support you want.</p>
         <i>There is one out there and we will give you the information that you need in order to find it.</i>
@@ -22,32 +22,47 @@
         </p>
     </div>
     </div>
+
     <form class="fitting-form" method="POST">
     {% csrf_token %}
     {{ form.non_field_errors }}
     <div class="fitting-step step-one">
         <h3 id="currently-wearing-label">Currently Wearing</h3>
+        <div class="form-question-info"><p>So we will do everything to make this a safe and fun bra fitting experience for you. In order to do that, get as comfortable as possible. So go put on your most comfy t-shirt. If you have a bra you are more than welcome to wear one for the fitting. If you don't have a bra, no worries, that doesn't impact the fitting one bit!
+        </p>
+        </div>
+        <div class="fitting-block">
             <div class="form-question-body">{{ form.currently_wearing }}</div>
-            <div class="form-question-info"><p>So I will do everything to make this a safe and fun bra fitting experience for you. In order to do that you need to be as comfortable as you can be. So go put on your most comfy t-shirt. If you have a bra you are more than welcome to wear one for the fitting. If you don't have a bra, no worries, that doesn't impact the fitting one bit!
-            </p>
-            </div>
+            <img class="fitting-block-pic" src="http://placekitten.com/200/200">
+        </div>
     </div>
 
     <div class="fitting-step step-two">
         <h3 id="band-measurement-wearing-label">Band Measurement</h3>
+        <div class="form-question-info">This is not your band <i>size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement. 
+            <ul class="fit-materials-list">
+                <li>If your band measurement was an odd number we will add <strong>5</strong> inches to get your band size.</li>
+                <li>If your band measurement was and even number we will add <strong>4</strong> inches to get your band measurement.</li>
+            </ul>
+            This number is a tool to find your best support not a definition of who you are!
+        </div>
+        <div class="fitting-block">
             <div class="form-question-body">{{ form.band_measurement }}</div>
-            <div class="form-question-info"></div>
+            <img class="fitting-block-pic" src="http://placekitten.com/g/200/200">
+        </div>
     </div>
 
     <div class="fitting-step step-three">
         <h3 id="bust-measurement-wearing-label">Bust Measurement</h3>
-            <div class="form-question-body">{{ form.bust_measurement }}
-            <p>If you would like to measure all the way around your bust that's fine!<br>
-            Just click here: {{ form.bust_circumference }}</p>
-            </div>
-            <div class="form-question-info"></div>
+        <div class="form-question-info">Now in order to get your cup size you will need to do one more measurement. Pick which breast you think needs the most support. You will measure that side only by using one hand to hold the measuring tape in the middle of your back. You will then bring the tape to the middle of the front of your chest with your other hand. Make sure the tape remains parallel to the ground and is measuring the fullest part of your breast. Mark that measurement. This measurement is another tool we'll use to get the best support.</div>
+        <i>If you measured all the way around your bust that's fine!</i><br>
+        <p>Just click here: {{ form.bust_circumference }}</p>
+        <div class="fitting-block">
+            <div class="form-question-body">{{ form.bust_measurement }}</div>
+            <img class="fitting-block-pic" src="http://placekitten.com/300/300">
+        </div>
     </div>
     <button type="submit" class="save btn btn-default">Get Size</button>
 </form>
-
+</main>
 {% endblock %}
