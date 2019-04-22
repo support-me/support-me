@@ -1,7 +1,9 @@
 /* globals fetch */
 const $ = require('jquery')
+window.$ = window.jQuery = $
 const Cookies = require('js-cookie')
 const merge = require('deepmerge')
+require('jquery.steps')
 
 // https://sudo.isl.co/fetch-me-that-json-from-django/
 function request (url, options) {
@@ -19,13 +21,23 @@ function request (url, options) {
   return fetch(url, merge(defaultOptions, options))
 }
 
+// fetching fittings api and returning JSON data below
+request('/api/fittings')
+  .then(response => {
+    if (!response.ok) {
+      throw Error(response.statusText)
+    }
+    return response.json()
+  })
+
+// change form to slidinig form with buttons on top
+// http://www.jquery-steps.com/Examples#embed
+
 $(document).ready(() => {
   console.log('loaded')
-  request('/api/fittings')
-    .then(response => {
-      if (!response.ok) {
-        throw Error(response.statusText)
-      }
-      return response.json()
-    })
+  $('.fitting-form').steps({
+    headerTag: 'th',
+    bodyTag: 'td',
+    transitionEffect: 'fade'
+  })
 })
