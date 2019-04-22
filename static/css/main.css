@@ -15,12 +15,13 @@
     light gray: #e6e6e6
     medium gray: #b7b7b7
     dark gray: #878787
-
+    
     Do not put the following color pairs besides eachother or overlapping:
     -blue & green/purple/gray
     -green & red/yellow/gray
     
     */
+    border: 1px dotted grey;
 
 }
 body{
@@ -84,6 +85,29 @@ a{
 button{
     background-color: #8787e6;
 }
+
+
+/* FITTING FORM SECTION */
+.fit-intro {
+    padding: 1rem 0 1rem 0;
+}
+.bra-fit-setup {
+    padding: 1rem 0 1rem 0;
+    border: 1px solid black;
+}
+.fitting-form {
+    /* display: flex;
+    flex-direction: column;*/
+}
+.fitting-step {
+    padding: 2rem;
+}
+.fit-materials-list {
+    list-style-type: disc;
+}
+
+
+
 #company-title{
     background-color: #ffff86; 
     padding: 1rem 0rem 1rem 0rem; 
