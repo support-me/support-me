@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="fitting-form">
-<form method="POST">
+{% comment %} <script>$("#fitting-form").steps()</script> {% endcomment %}
+<form id="fitting-form" id="wizard" action="#" method="POST">
     {% csrf_token %}
-    <table> {{ form.as_table }} </table>
+    {{ form.non_field_errors }}
+    <div class="step-wrapper">
+        <h3 id="currently-wearing-label">Currently Wearing</h3>
+        
+            <div class="form-question-body">{{ form.currently_wearing }}</div>
+        <h3 id="band-measurement-wearing-label">Band Measurement</h3>
+            <div class="form-question-body">{{ form.band_measurement }}</div>
+        <h3 id="bust-measurement-wearing-label">Bust Measurement</h3>
+            <div class="form-question-body">{{ form.bust_measurement }}
+            <p>If you would like to measure all the way around your bust that's fine!<br>
+            Just click here: {{ form.bust_circumference }}</p>
+            </div>
+    </div>
     <button type="submit" class="save btn btn-default">Get Size </button>
 </form>
-</section>
+
 {% endblock %}

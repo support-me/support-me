@@ -3,8 +3,13 @@ const $ = require('jquery')
 window.$ = window.jQuery = $
 const Cookies = require('js-cookie')
 const merge = require('deepmerge')
-require('jquery.steps')
 
+function showDiv (div) {
+  div.show()
+}
+function hideDiv (div) {
+  div.hide()
+}
 // https://sudo.isl.co/fetch-me-that-json-from-django/
 function request (url, options) {
   if (!options) {
@@ -35,9 +40,4 @@ request('/api/fittings')
 
 $(document).ready(() => {
   console.log('loaded')
-  $('.fitting-form').steps({
-    headerTag: 'th',
-    bodyTag: 'td',
-    transitionEffect: 'fade'
-  })
 })
