@@ -10,6 +10,9 @@ class BraFittingForm(forms.ModelForm):
     class Meta:
         model = BraFitting
         fields = ('currently_wearing', 'band_measurement', 'bust_measurement', 'bust_circumference')
+        widgets = {
+            'currently_wearing': forms.RadioSelect,
+        }
 
 class SuggestionForm(forms.ModelForm):
     """
@@ -17,4 +20,8 @@ class SuggestionForm(forms.ModelForm):
     """
     class Meta:
         model = Suggestion
-        fields = ('breast_shape', 'breast_placement', 'bra_padding', 'bra_wire',)
+        fields = ('breast_shape', 'breast_placement', 'bra_padding', 'bra_wire')
+        widgets = {
+            'breast_shape': forms.RadioSelect,
+            'breast_placement': forms.RadioSelect,
+        }
