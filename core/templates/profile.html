@@ -11,7 +11,7 @@ Welcome {{ user }}, your measurement history is down below .
        <th>Your estimated bra size is:{{brafitting.bra_size}} </th>
        
        <th> {{brafitting.suggestions.all}} </th>
-       {% for suggestion in suggestions %}
+       {% for suggestions in suggestions %}
         {{brafitting.bra_suggestion}}
         {% endfor %}
        <p> {{brafitting.date_sized}}</p>
