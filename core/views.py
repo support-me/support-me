@@ -135,6 +135,5 @@ def profile(request):
     context = {
         'profile': profile,
         'brafitting': brafitting,
-        'suggestion': suggestion,
     }
     return render(request, 'profile.html', context=context)
