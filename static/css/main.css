@@ -94,11 +94,65 @@ button{
 .fit-intro {
     padding: 1rem 0 1rem 0;
 }
-.bra-fit-setup {
-    padding: 2rem;
-    margin-top: 2rem;
-    border: 1px solid #8787e6;
+
+/* HOVER IMAGE SECTION */
+.hvrbox,
+.hvrbox * {
+    box-sizing: border-box;
+}    
+.hvrbox {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
 }
+.hvrbox img {
+    max-width: 100%;
+}
+.hvrbox .hvrbox-layer-bottom {
+    display: block;
+}
+.hvrbox .hvrbox-layer-top {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 1rem;
+    transition: all 0.4s ease-in-out 0s;
+}
+.hvrbox:hover .hvrbox-layer-top, .hvrbox.active .hvrbox-layer-top {
+    opacity: 1;
+}
+.hvrbox .hvrbox-text {
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hvrbox.active {
+    display: block;
+}
+
+.bra-fit-setup {
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
 .fitting-form {
     /* display: flex;
     flex-direction: column;*/
@@ -115,9 +169,6 @@ button{
     text-align: center;
     border: 1px solid #8787e6;
 }
-/* #currently-wearing ul {
-    justify-content: left;
-} */
 .form-question-select ul {
     justify-content: left;
 }
@@ -129,7 +180,7 @@ button{
     list-style-type: disc;
 }
 .fit-submit-button {
-      
+    
 }
 
 
