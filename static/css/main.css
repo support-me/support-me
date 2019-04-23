@@ -47,9 +47,10 @@ ul {
     
 }
 .content{
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
     padding-top: 2rem;
+    height: 100vh;
     /* background-color: #e6e6e6; */
 }
 #header {
@@ -86,7 +87,41 @@ button{
     background-color: #8787e6;
 }
 
-
+#company-title{
+    background-color: #ffff86; 
+    padding: 1rem 0rem 1rem 0rem; 
+}
+.login-message-div, .logout-section {
+    padding: 1rem 3rem 1rem 3rem;
+}
+/* added this google section as placeholder- we can change the google font or put in image instead */
+.google {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+}
+.care-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.care-part{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+img {
+    /* background-color: #8787e6;
+    width: 300px; */
+}
+.history-box{
+    display: flex;
+}
+.hitory-info{
+    justify-content: center;
+}
 /* FITTING FORM SECTION */
 .bra-fitting-content {
     padding: 2rem 0 4rem 0;
@@ -94,6 +129,7 @@ button{
 .fit-intro {
     padding: 1rem 0 1rem 0;
 }
+
 
 /* HOVER IMAGE SECTION */
 .hvrbox,
@@ -108,7 +144,7 @@ button{
     height: auto;
 }
 .hvrbox img {
-    max-width: 100%;
+    width: 300px;
 }
 .hvrbox .hvrbox-layer-bottom {
     display: block;
@@ -150,9 +186,6 @@ button{
 }
 
 
-
-
-
 .fitting-form {
     /* display: flex;
     flex-direction: column;*/
@@ -183,40 +216,14 @@ button{
     
 }
 
-
-
-#company-title{
-    background-color: #ffff86; 
-    padding: 1rem 0rem 1rem 0rem; 
-}
-.login-message-div, .logout-section {
-    padding: 1rem 3rem 1rem 3rem;
-}
-/* added this google section as placeholder- we can change the google font or put in image instead */
-.google {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 3rem;
-}
-.care-section{
+/* ABOUT ME PAGE STYLE */
+.support-me-team-pics {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
 }
-.care-part{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items:center;
-}
-img{
-    background-color: #8787e6;
-    width: 300px;
-}
-.history-box{
-    display: flex;
-}
-.hitory-info{
-    justify-content: center;
+.support-me-team-pics img {
+    width: 150px;
+    height: 150px;
 }
