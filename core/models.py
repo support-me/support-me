@@ -2,13 +2,23 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 import math
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 # Create your models here.
 
 class Profile(models.Model):
     # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
     site_user = models.OneToOneField(to=User, on_delete=models.CASCADE)
     # add favorites field?
+
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(site_user=instance)
+
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
 
     def __str__(self):
         return self.site_user.username

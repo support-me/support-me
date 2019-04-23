@@ -19,8 +19,8 @@ Welcome {{ user }}, your measurement history is down below .
 {% endfor %}
 </div>
 <div class="history-info">
-
-<p>nothing to show</p>
+{% else %}
+<p> You have no measurements saved, click <a href="{% url 'brafitting' %}"> Here </a> to start.</p>
 {% endif %}
 </div>
 </div>
