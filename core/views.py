@@ -46,7 +46,6 @@ def suggestion_form(request, fitting_id):
 
     if request.method == 'POST':
         form = SuggestionForm(request.POST)
-        breakpoint()
         if form.is_valid():
             fitting_session = fitting
             suggestion = form.save(commit=False)
