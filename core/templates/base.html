@@ -22,8 +22,7 @@
         <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
         <li class="nav-item"><a href="{% url 'brafitting' %}">Fit</a></li>
         <li class="nav-item"><a href="{% url 'bra-care' %}">Bra Care</a></li>
-        <li class="nav-item"><a href="{% url 'resources' %}">Resources</a></li>
-        <li class="nav-item"><a href="{% url 'home' %}">About Us</a></li>
+
         {% if user.is_authenticated %}
         <li class="nav-item"><a href="{% url 'profile' %}">{{ user.username }}</a></li>
         <li class="nav-item"><a href="{% url 'account_logout' %}">Sign Out</a></li>
@@ -58,6 +57,10 @@
             <span class="f6 ml3 pr2">GitHub</span>
             |  | © SupportMe 2019
           </a>
+          <ul>
+           <li> <a class="nav-item" href="{% url 'resources' %}"> Resources</a> </li>
+           <li> <a class="nav-item" href="{% url 'home' %}" > About Us</a> </li>
+          </ul>
       </footer>
   </body>
   
