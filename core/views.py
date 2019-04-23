@@ -130,11 +130,9 @@ class ProfileView(APIView):
 def profile(request):
     profile = Profile.objects.get(site_user=request.user)
     brafitting = BraFitting.objects.filter(fitting_user=request.user)
-    suggestion = Suggestion.objects.filter(bra_suggestion=request.user)
 
     context = {
         'profile': profile,
         'brafitting': brafitting,
-        'suggestion': suggestion,
     }
     return render(request, 'profile.html', context)
