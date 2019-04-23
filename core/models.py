@@ -10,7 +10,6 @@ class Profile(models.Model):
     site_user = models.OneToOneField(to=User, on_delete=models.CASCADE)
     # add favorites field?
 
-
     def __str__(self):
         return self.site_user.username
     
@@ -178,6 +177,9 @@ class Suggestion(models.Model):
             self.bra_frame = 'Demi'
         self.bra_suggestion = f'{self.bra_frame} {bra_padding}'
         print(self.bra_suggestion)
+        return self.bra_suggestion
+
+    def __str__(self):
         return self.bra_suggestion
     
         

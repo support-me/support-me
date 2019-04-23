@@ -8,12 +8,12 @@ Welcome {{ user }}, your measurement history is down below .
 {% if brafitting %}
 <p>
     {% for brafitting in brafitting %}
-       <th>Your estimated bra size is:{{brafitting.bra_size}} </th>
-       
-       <th> {{brafitting.suggestions.all}} </th>
-       {% for suggestions in suggestions %}
-        {{brafitting.bra_suggestion}}
+       <th>Your estimated bra size is: {{brafitting.bra_size}} </th>
+       <th>
+        {% for suggestion in brafitting.suggestions.all %}
+        {{suggestion}}
         {% endfor %}
+        </th>
        <p> {{brafitting.date_sized}}</p>
 </p>
 {% endfor %}
