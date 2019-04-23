@@ -94,11 +94,6 @@ button{
 .fit-intro {
     padding: 1rem 0 1rem 0;
 }
-.bra-fit-setup {
-    padding: 2rem;
-    margin-top: 2rem;
-    border: 1px solid #8787e6;
-}
 
 /* HOVER IMAGE SECTION */
 .hvrbox,
@@ -129,7 +124,7 @@ button{
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
-    padding: 15px;
+    padding: 1rem;
     transition: all 0.4s ease-in-out 0s;
 }
 .hvrbox:hover .hvrbox-layer-top, .hvrbox.active .hvrbox-layer-top {
@@ -137,7 +132,7 @@ button{
 }
 .hvrbox .hvrbox-text {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -147,6 +142,13 @@ button{
 .hvrbox.active {
     display: block;
 }
+
+
+.bra-fit-setup {
+    border: 1px solid #8787e6;
+}
+
+
 
 
 
