@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block content %}
+<p> Profile </p>
+
+Welcome {{ user }}, your measurement history is down below .
+<div class="history-box"> 
+<div class="history-info" >
+{% if brafitting %}
+<p>
+    {% for brafitting in brafitting %}
+       <th>Your estimated bra size is: {{brafitting.bra_size}} </th>
+       <th>
+        {% for suggestion in brafitting.suggestions.all %}
+        {{suggestion}}
+        {% endfor %}
+        </th>
+       <p> {{brafitting.date_sized}}</p>
+</p>
+{% endfor %}
+</div>
+<div class="history-info">
+
+<p>nothing to show</p>
+{% endif %}
+</div>
+</div>
+{% endblock %}   
+
+
+
+
