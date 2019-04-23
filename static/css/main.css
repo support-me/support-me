@@ -222,6 +222,7 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
 }
 .support-me-team-pics img {
     width: 150px;
