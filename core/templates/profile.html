@@ -3,27 +3,27 @@
 <p> Profile </p>
 
 Welcome {{ user }}, your measurement history is down below .
-
-{% for brafitting in brafitting %}
-
-{% if brafitting.bra_size %}
-    <p>Your estimated bra size is: {{brafitting.bra_size}}</p>
-{% endif %}
-
-{% for suggestion in suggestion %}
-{% if suggestion.bra_suggestion %}
-    <p>I suggest a {{suggestion.bra_suggestion}} bra for you.</p>
-
-    
-{% else %}
-
-<p> You have no measurements saved, click <a href="{% url 'brafitting' %}"> Here
-</a> to start </p>
-{% endif %}
-
+<div class="history-box"> 
+<div class="history-info" >
+{% if brafitting %}
+<p>
+    {% for brafitting in brafitting %}
+       <th>Your estimated bra size is:{{brafitting.bra_size}} </th>
+       
+       <th> {{brafitting.suggestions.all}} </th>
+       {% for suggestion in suggestions %}
+        {{brafitting.bra_suggestion}}
+        {% endfor %}
+       <p> {{brafitting.date_sized}}</p>
+</p>
 {% endfor %}
-{% endfor %}
+</div>
+<div class="history-info">
 
+<p>nothing to show</p>
+{% endif %}
+</div>
+</div>
 {% endblock %}   
 
 

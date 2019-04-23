@@ -113,4 +113,9 @@ img{
     background-color: #8787e6;
     width: 300px;
 }
-
+.history-box{
+    display: flex;
+}
+.hitory-info{
+    justify-content: center;
+}
