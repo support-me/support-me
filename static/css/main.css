@@ -15,12 +15,13 @@
     light gray: #e6e6e6
     medium gray: #b7b7b7
     dark gray: #878787
-
+    
     Do not put the following color pairs besides eachother or overlapping:
     -blue & green/purple/gray
     -green & red/yellow/gray
     
     */
+    /* border: 1px dashed grey; */
 
 }
 body{
@@ -84,6 +85,55 @@ a{
 button{
     background-color: #8787e6;
 }
+
+
+/* FITTING FORM SECTION */
+.bra-fitting-content {
+    padding: 2rem 0 4rem 0;
+}
+.fit-intro {
+    padding: 1rem 0 1rem 0;
+}
+.bra-fit-setup {
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid #8787e6;
+}
+.fitting-form {
+    /* display: flex;
+    flex-direction: column;*/
+}
+.fitting-step {
+    padding: 2rem;
+}
+.fitting-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.form-question-input {
+    text-align: center;
+    border: 1px solid #8787e6;
+}
+/* #currently-wearing ul {
+    justify-content: left;
+} */
+.form-question-select ul {
+    justify-content: left;
+}
+.fitting-block-pic {
+    width: 200px;
+    height: 200px;
+}
+.fit-materials-list {
+    list-style-type: disc;
+}
+.fit-submit-button {
+      
+}
+
+
+
 #company-title{
     background-color: #ffff86; 
     padding: 1rem 0rem 1rem 0rem; 
