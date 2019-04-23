@@ -9,7 +9,6 @@ Welcome {{ user }}, your measurement history is down below .
 <p>
     {% for brafitting in brafitting %}
        <th>Your estimated bra size is: {{brafitting.bra_size}} </th>
-       
        <th>
         {% for suggestion in brafitting.suggestions.all %}
         {{suggestion}}
