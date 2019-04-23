@@ -132,7 +132,7 @@ button{
 }
 .hvrbox .hvrbox-text {
     text-align: center;
-    font-size: 1rem;
+    font-weight: bold;
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -143,9 +143,10 @@ button{
     display: block;
 }
 
-
 .bra-fit-setup {
-    border: 1px solid #8787e6;
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
