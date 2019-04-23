@@ -47,7 +47,7 @@ urlpatterns = [
     path('bra-care/', views.BraCare, name='bra-care'),
     path('brafitting/suggestion-form/<int:fitting_id>', views.suggestion_form, name = 'suggestion-form'),
     path('brafitting/suggestion-form/suggestion-form/<int:fitting_id>/<int:suggestion_id>', views.results, name='results'),
-
+    path('about/', views.about, name='about')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
