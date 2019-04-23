@@ -1,0 +1,230 @@
+* {
+    /* border: 1px dotted grey; */
+    /*big heading font: font-family: 'Acme', sans-serif; */
+    /* little heading font: font-family: 'Fresca', sans-serif;  */
+    /* plain text font: font-family: 'Quicksand', sans-serif; */
+    margin: 0 auto;
+    font-family: 'Quicksand', sans-serif;
+    /*colors
+    yellow: #e6e687
+    orange: #e6b787
+    blue: #87b7e6
+    purple: #8787e6
+    green: #87e687
+    red: #e68987
+    light gray: #e6e6e6
+    medium gray: #b7b7b7
+    dark gray: #878787
+    
+    Do not put the following color pairs besides eachother or overlapping:
+    -blue & green/purple/gray
+    -green & red/yellow/gray
+    
+    */
+    /* border: 1px dashed grey; */
+
+}
+
+body {
+    /* height: 100%; */
+    /* position: relative; */
+}
+
+h1 {
+    font-family: 'Acme', sans-serif;
+}
+
+h2 {
+    font-family: 'Acme', sans-serif;
+}
+
+h3 {
+    font-family: 'Acme', sans-serif;
+}
+
+h4 {
+    font-family: 'Fresca', sans-serif;
+}
+
+label {
+    font-family: 'Fresca', sans-serif;
+}
+
+ul {
+    list-style: none;
+
+}
+
+.content {
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+    min-height: 95vh;
+    /* background-color: #e6e6e6; */
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: #ffff86;
+    border-bottom: 2px solid #8787e6;
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+
+}
+
+#nav-bar {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #ffff86;
+    padding: 0rem 2rem .5rem 2rem;
+    position: sticky;
+    top: 0;
+
+    
+}
+
+.nav-item {
+    background-color: #ffff86;
+
+}
+
+a {
+    color: black;
+}
+
+.nav-item:hover {
+    color: #8787e6;
+    text-decoration: underline;
+}
+
+button {
+    background-color: #8787e6;
+}
+
+
+/* FITTING FORM SECTION */
+.bra-fitting-content {
+    padding: 2rem 0 4rem 0;
+}
+
+.fit-intro {
+    padding: 1rem 0 1rem 0;
+}
+
+.bra-fit-setup {
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid #8787e6;
+}
+
+.fitting-form {
+    /* display: flex;
+    flex-direction: column;*/
+}
+
+.fitting-step {
+    padding: 2rem;
+}
+
+.fitting-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-question-input {
+    text-align: center;
+    border: 1px solid #8787e6;
+}
+
+/* #currently-wearing ul {
+    justify-content: left;
+} */
+.form-question-select ul {
+    justify-content: left;
+}
+
+.fitting-block-pic {
+    width: 200px;
+    height: 200px;
+}
+
+.fit-materials-list {
+    list-style-type: disc;
+}
+
+.fit-submit-button {}
+
+
+
+#company-title {
+    background-color: #ffff86;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.login-message-div,
+.logout-section {
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+/* added this google section as placeholder- we can change the google font or put in image instead */
+.google {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+}
+
+.care-section {
+    display: flex;
+    flex-direction: column;
+    <a href="{% url 'brafitting' %}">justify-content: center;
+    align-content: center;
+}
+
+.care-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+img {
+    background-color: #8787e6;
+    width: 300px;
+}
+
+.history-box {
+    display: flex;
+}
+
+.hitory-info {
+    justify-content: center;
+}
+
+footer {
+
+    display: flex;
+    justify-content: center;
+    position: static;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    /* opacity: .8; */
+    background-size: cover;
+    overflow: hidden;
+    background-color: #ffff86;
+    text-align: center;
+    height: 3.5rem;
+}
