@@ -21,7 +21,7 @@
     -green & red/yellow/gray
     
     */
-    border: 1px dashed grey;
+    /* border: 1px dashed grey; */
 
 }
 body{
@@ -127,6 +127,9 @@ button{
 }
 .fit-materials-list {
     list-style-type: disc;
+}
+.fit-submit-button {
+      
 }
 
 
