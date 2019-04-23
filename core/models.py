@@ -179,6 +179,7 @@ class Suggestion(models.Model):
         self.bra_suggestion = f'{self.bra_frame} {bra_padding}'
         print(self.bra_suggestion)
         return self.bra_suggestion
+    
         
 class Resource(models.Model):
     title = models.CharField(max_length=100)
