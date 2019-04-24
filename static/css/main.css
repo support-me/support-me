@@ -26,6 +26,8 @@
 }
 body{
     height: 100%;
+    /* padding-bottom: 6rem; */
+
 }
 h1{
     font-family: 'Acme', sans-serif;
@@ -50,7 +52,7 @@ ul {
     padding-right: 4rem;
     padding-left: 4rem;
     padding-top: 2rem;
-    height: 100vh;
+    /* height: 100vh; */
     /* background-color: #e6e6e6; */
 }
 #header {
@@ -234,4 +236,19 @@ img {
 .support-me-team-pics img {
     width: 150px;
     height: 150px;
+}
+footer {
+    /* display: flex;
+    justify-content: center;  */
+    /* position: fixed; 
+    bottom: 0; */
+    border-top: 2px solid #8787e6;
+
+    width: 100%;
+    color: black;
+    text-align: center;
+    opacity: .8;
+    overflow: hidden;
+    text-align: center;
+    /* height: 3.5rem; */
 }
