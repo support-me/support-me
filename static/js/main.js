@@ -5,11 +5,12 @@ const Cookies = require('js-cookie')
 const merge = require('deepmerge')
 
 function showDiv (div) {
-  div.show()
+  $(div).show()
 }
 function hideDiv (div) {
-  div.hide()
+  $(div).hide()
 }
+
 // https://sudo.isl.co/fetch-me-that-json-from-django/
 function request (url, options) {
   if (!options) {
@@ -40,6 +41,18 @@ request('/api/fittings')
 
 $(document).ready(() => {
   console.log('loaded')
+  hideDiv('.step-two')
+  hideDiv('.step-three')
+  showDiv('.step-one')
+
+  $('.step-one-next-button').click(function () {
+    hideDiv('.step-one')
+    showDiv('.step-two')
+  })
+  $('.step-two-next-button').click(function () {
+    hideDiv('.step-two')
+    showDiv('.step-three')
+  })
 })
 
 swal('You did it! Now you know how to do your own bra fitting and get a bra size and style that supports you!')
