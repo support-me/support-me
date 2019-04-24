@@ -4,9 +4,8 @@ window.$ = window.jQuery = $
 const Cookies = require('js-cookie')
 const merge = require('deepmerge')
 // sticky navBar: https://codepen.io/renduh/pen/oBBGbK
-let navBar = $('#nav-bar')
-const stickyDiv = '.sticky'
-const headerDiv = $('#company-title').height()
+let navBar = $('.nav-bar')
+let headerDiv = $('.company-title').height()
 
 function showDiv (div) {
   div.show()
@@ -44,4 +43,12 @@ request('/api/fittings')
 
 $(document).ready(() => {
   console.log('loaded')
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > headerDiv) {
+      navBar.addClass('.sticky-nav')
+    } else {
+      navBar.removeClass('.sticky-nav')
+    }
+  })
 })

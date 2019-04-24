@@ -19,8 +19,8 @@
   <body>
     {% block body %}
     <div id="header">
-      <h1 id="company-title"><a href="{% url 'home' %}">Support Me</a></h1>
-      <div id="nav-bar">
+      <h1 class="company-title"><a href="{% url 'home' %}">Support Me</a></h1>
+      <div class="nav-bar">
         <span class="nav-item"><a href="{% url 'brafitting' %}">Fit</a></span>
         <span class="nav-item"><a href="{% url 'bra-care' %}">Bra Care</a></span>
         {% if user.is_authenticated %}
