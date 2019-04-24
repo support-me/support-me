@@ -213,15 +213,13 @@ img {
     padding: 1rem 3rem 1rem 3rem;
 }
 #band-measurement-wearing-title {
-    text-align: center;
 }
 .fitting-step-row {
     display: flex;
     flex-direction: column;
 }
 .fitting-form {
-    /* display: flex;
-    flex-direction: column;*/
+    text-align: center;
 }
 .fitting-step {
     padding: 2rem;
@@ -275,6 +273,11 @@ footer {
     opacity: .8;
     overflow: hidden;
 }
-ul{
-    list-style-image: url(https://ibb.co/tsZKsDc);
+.measurement-text{
+    font-style: bold;
+    font-size: 3rem;
+    text-align: center;
+}
+#id_band_measurement{
+    justify-content: center;
 }

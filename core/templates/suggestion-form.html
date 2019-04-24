@@ -3,6 +3,9 @@
 {% block content %}
 {% if bra_size %}
 <h1>Your estimated bra size: <strong>{{bra_size}}</strong></h1>
+<p>{{bra_size}}</p>
+<p>To get <i>band size</i>, we added 4" if band measurement is even, and 5" if measurement is odd.</p>
+<p>Cup size is determined by the band size subracted from the bust circumeference, with some additional calculations based on what you're currently wearing</p>
 {% else %}
 <p>that didnt work :(</p>
 {% endif %}
