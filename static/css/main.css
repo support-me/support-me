@@ -275,3 +275,6 @@ footer {
     opacity: .8;
     overflow: hidden;
 }
+ul{
+    list-style-image: url(https://ibb.co/tsZKsDc);
+}

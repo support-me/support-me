@@ -2,7 +2,7 @@
 
 {% block content %}
 {% if bra_size %}
-<p>{{bra_size}}</p>
+<h1>Your estimated bra size: <strong>{{bra_size}}</strong></h1>
 {% else %}
 <p>that didnt work :(</p>
 {% endif %}
@@ -12,11 +12,11 @@
         {{ form.non_field_errors }}
         <section>
             <h3 id="bra-suggestion-label">Bra Suggestion Categories</h3>
-            <div class="form-question-body">Your estimated bra size is: {{bra_size}}. But there is more to find the bra that will best fit you than <i>just</i> having a bra size. We also need to take into consideration a few things about bras that may impact how comfortable you are in them.
-            <ul>
-                <li>Breast shape and placement</li>
-                <li>Level of padding</li>
-                <li>Bra frame</li>
+            <div class="form-question-body">Your estimated bra size is: <strong>{{bra_size}}</strong>. But there is more to finding the bra that will best fit you than <i>just</i> having a bra size. We also need to take into consideration a few things about bras that may impact how comfortable you are in them:
+            <ul class="bra-suggestion-need-list">
+                <li >Breast shape and placement</li>
+                <li >Level of padding</li>
+                <li >Bra frame</li>
                 <li>Underwire or not?</li>
             </ul>
             </div>
@@ -27,7 +27,7 @@
         </section>
         <section>
             <h3 id="breast-placement-label">Breast placement</h3>
-            <div class="form-question-body">Let us go to the center and work our way outwords with the center gore. The center gore is the piece of the bra that connects the two cups together. A center gore that is wider will be more comfortable for people who breasts are placed further apart. A center gore that not only connects the cups but also connects along the bottom of the cups to the band will be comfortable for people who would like more support.</div>
+            <div class="form-question-body">Let us go to the center and work our way outwords with the center gore. The center gore is the piece of the bra that connects the two cups together. A center gore that is wider will be more comfortable for people whose breasts are placed further apart. A center gore that not only connects the cups but also connects along the bottom of the cups to the band will be comfortable for people who would like more support.</div>
             <div class="form-question-body"><label>Choose the placement that you most identify with: {{ form.breast_placement }}</label></div>
         </section>
         <section>
