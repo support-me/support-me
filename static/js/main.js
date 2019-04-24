@@ -5,10 +5,10 @@ const Cookies = require('js-cookie')
 const merge = require('deepmerge')
 
 function showDiv (div) {
-  $(div).show('slow')
+  $(div).show()
 }
 function hideDiv (div) {
-  $(div).hide('fast')
+  $(div).hide()
 }
 
 // https://sudo.isl.co/fetch-me-that-json-from-django/
