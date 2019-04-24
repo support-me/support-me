@@ -47,9 +47,10 @@
             <label for="{{ form.bust_measurement.id_for_label }}">Enter bust measurement (inches): </label>
             {{ form.bust_measurement }}
         </div>
+        <p><i>If you measured all the way around your bust that's fine---> </i><label for="{{ form.bust_circumference.id_for_label }}"> Check: {{ form.bust_circumference }}</label></p>
         </div>
     </section>
-
+    
     <button type="submit" class="fit-submit-button save btn btn-default">Get Size</button>
 </form>
 </main>
