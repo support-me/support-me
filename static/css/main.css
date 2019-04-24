@@ -4,7 +4,7 @@
     /* little heading font: font-family: 'Fresca', sans-serif;  */
     /* plain text font: font-family: 'Quicksand', sans-serif; */
     margin: 0 auto;
-    font-family: 'Quicksand', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
     /*colors
     yellow: #e6e687
     orange: #e6b787
@@ -25,11 +25,13 @@
 
 }
 body{
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.25rem;
     height: 100%;
     /* padding-bottom: 6rem; */
 
 }
-h1{
+/* h1{
     font-family: 'Acme', sans-serif;
 }
 h2{
@@ -43,7 +45,7 @@ h4{
 }
 label{
     font-family: 'Fresca', sans-serif;
-}
+} */
 ul {
     list-style: none;
     
@@ -52,42 +54,21 @@ ul {
     padding-right: 4rem;
     padding-left: 4rem;
     padding-top: 2rem;
+    min-height: calc(100vh - 70px);
     /* height: 100vh; */
-    /* background-color: #e6e6e6; */
 }
 #header {
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items:center;
+    text-align: left;
     border-bottom: 2px solid #8787e6;
+    border-bottom-right-radius: 60% 70%;
 }
-#nav-bar {
-    list-style: none;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    padding: 0rem 2rem .5rem 2rem;
-}
-.nav-item{
-
-}
-a{
-    color: black;
-}
-.nav-item:hover{
-    color: #8787e6;
-    text-decoration:  underline;
-}
-button{
-    background-color: #8787e6;
-}
-
 #company-title{
+    justify-content: flex-end;
+    font-family: 'Sofia', cursive;
     font-size: 4rem;
+    font-weight: 700;
     letter-spacing: .4rem;
     color: #8787e6;
     text-shadow: 
@@ -98,7 +79,30 @@ button{
     5px 4px 1px #ccc, 4px 5px 1px #eee,
     6px 5px 1px #ccc, 5px 6px 1px #eee,
     7px 6px 1px #ccc;
-    padding: 3rem 0rem 2rem 0rem; 
+    padding: 2rem 0 1rem 10rem; 
+}
+#company-title a:hover{
+    text-decoration: none;
+}
+#nav-bar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2rem 0 2rem 3rem;
+}
+.nav-item{
+    padding: 2rem;
+    font-size: 1.25rem;
+}
+a {
+    color: #8787e6;
+}
+.nav-item a:hover {
+    color: #8787e6;
+    text-decoration:  underline;
+}
+button{
+    background-color: #8787e6;
 }
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
@@ -151,9 +155,16 @@ img {
     overflow: hidden;
     max-width: 100%;
     height: auto;
+    padding: 1rem;
+    border: 1px dashed #8787e6;
 }
-.hvrbox img {
+.hvrbox-layer-bottom {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 5rem;
     width: 300px;
+    height: 300px;
 }
 .hvrbox .hvrbox-layer-bottom {
     display: block;
@@ -175,7 +186,7 @@ img {
 .hvrbox:hover .hvrbox-layer-top, .hvrbox.active .hvrbox-layer-top {
     opacity: 1;
 }
-.hvrbox .hvrbox-text {
+.hvrbox .hover-text {
     text-align: center;
     font-weight: bold;
     display: inline-block;
@@ -188,13 +199,26 @@ img {
     display: block;
 }
 
+/* INTRO EXTRA INFO */
+.intro-extra-info {
+    padding: 2rem 0 2rem 0;
+}
+
 .bra-fit-setup {
     padding: 2rem 0 2rem 0;
     display: flex;
     flex-wrap: wrap;
 }
-
-
+.fitting-step {
+    padding: 1rem 3rem 1rem 3rem;
+}
+#band-measurement-wearing-title {
+    text-align: center;
+}
+.fitting-step-row {
+    display: flex;
+    flex-direction: column;
+}
 .fitting-form {
     /* display: flex;
     flex-direction: column;*/
@@ -215,8 +239,9 @@ img {
     justify-content: left;
 }
 .fitting-block-pic {
-    width: 200px;
-    height: 200px;
+    padding: 1rem;
+    border: 2px dashed #8787e6;
+    margin-bottom: 2rem;
 }
 .fit-materials-list {
     list-style-type: disc;
@@ -243,12 +268,10 @@ footer {
     /* position: fixed; 
     bottom: 0; */
     border-top: 2px solid #8787e6;
-
+    height: 100%;
     width: 100%;
     color: black;
     text-align: center;
     opacity: .8;
     overflow: hidden;
-    text-align: center;
-    /* height: 3.5rem; */
 }
