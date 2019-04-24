@@ -26,6 +26,7 @@
 }
 body{
     font-family: 'Questrial', sans-serif;
+    font-size: 1.25rem;
     height: 100%;
     /* padding-bottom: 6rem; */
 
@@ -154,6 +155,8 @@ img {
     overflow: hidden;
     max-width: 100%;
     height: auto;
+    padding: 1rem;
+    border: 1px dashed #8787e6;
 }
 .hvrbox-layer-bottom {
     font-family: 'Cutive Mono', monospace;
@@ -194,6 +197,11 @@ img {
 }
 .hvrbox.active {
     display: block;
+}
+
+/* INTRO EXTRA INFO */
+.intro-extra-info {
+    padding: 2rem 0 2rem 0;
 }
 
 .bra-fit-setup {
