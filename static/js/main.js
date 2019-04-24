@@ -47,8 +47,10 @@ $(document).ready(() => {
 
   $('.step-one-next-button').click(function () {
     hideDiv('.step-one')
+    showDiv('.step-two')
   })
   $('.step-two-next-button').click(function () {
     hideDiv('.step-two')
+    showDiv('.step-three')
   })
 })
