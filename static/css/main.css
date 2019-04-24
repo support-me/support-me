@@ -273,3 +273,11 @@ footer {
     opacity: .8;
     overflow: hidden;
 }
+.measurement-text{
+    font-style: bold;
+    font-size: 3rem;
+    text-align: center;
+}
+#id_band_measurement{
+    justify-content: center;
+}
