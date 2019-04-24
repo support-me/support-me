@@ -30,11 +30,6 @@
             {{ form.band_measurement }}
             </div>
         </div>
-
-        <ul class="fit-materials-list">
-            <li>If your band measurement was an odd number we will add <strong>5</strong> inches to get your band size.</li>
-            <li>If your band measurement was and even number we will add <strong>4</strong> inches to get your band measurement.</li>
-        </ul>
     </section>
 
     <section class="fitting-step step-three">
@@ -50,7 +45,7 @@
         <p><i>If you measured all the way around your bust that's fine---> </i><label for="{{ form.bust_circumference.id_for_label }}"> Check: {{ form.bust_circumference }}</label></p>
         </div>
     </section>
-    
+
     <button type="submit" class="fit-submit-button save btn btn-default">Get Size</button>
 </form>
 </main>
