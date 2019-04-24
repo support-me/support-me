@@ -5,11 +5,12 @@ const Cookies = require('js-cookie')
 const merge = require('deepmerge')
 
 function showDiv (div) {
-  div.show()
+  $(div).show('slow')
 }
 function hideDiv (div) {
-  div.hide()
+  $(div).hide('fast')
 }
+
 // https://sudo.isl.co/fetch-me-that-json-from-django/
 function request (url, options) {
   if (!options) {
@@ -40,4 +41,14 @@ request('/api/fittings')
 
 $(document).ready(() => {
   console.log('loaded')
+  hideDiv('.step-two')
+  hideDiv('.step-three')
+  showDiv('.step-one')
+
+  $('.step-one-next-button').click(function () {
+    hideDiv('.step-one')
+  })
+  $('.step-two-next-button').click(function () {
+    hideDiv('.step-two')
+  })
 })

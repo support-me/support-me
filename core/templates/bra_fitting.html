@@ -16,6 +16,7 @@
             {{ form.currently_wearing }}
             </div>
         </div>
+        <button class="step-one-next-button save btn btn-default" type=submit>Next</button>
     </section>
 
     <section class="fitting-step step-two">
@@ -30,6 +31,7 @@
             {{ form.band_measurement }}
             </div>
         </div>
+        <button class="step-two-next-button save btn btn-default" type=submit>Next</button>
     </section>
 
     <section class="fitting-step step-three">
@@ -44,9 +46,8 @@
         </div>
         <p><i>If you measured all the way around your bust that's fine---> </i><label for="{{ form.bust_circumference.id_for_label }}"> Check: {{ form.bust_circumference }}</label></p>
         </div>
-    </section>
-
     <button type="submit" class="fit-submit-button save btn btn-default">Get Size</button>
+    </section>
 </form>
 </main>
 {% endblock %}
