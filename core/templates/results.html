@@ -1,17 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Results:</h1>
-<p>You did it! Now you know how to do your own bra fitting and get a bra size and style that supports you! </p>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+<div class="results-box"> 
+        <!-- <p>Bra fitting is an art that takes in some science. So if you try this size bra on and do not feel comfortable in it that is okay. You can try a different size or frame. Do what is best for you and makes you feel most comfortable and confident!</p> -->
+
+<!-- <h1 class="results-title">Results:</h1> -->
 {% if bra_size %}
-    <p>Your estimated bra size is: {{bra_size}}</p>
+   <h2>Your estimated bra size is:    <div class="bra-size-results" > <h4 style=" font-size: 1.6rem;  color:  #8787e6;    ">  {{bra_size}} </h4> </div> </h2> 
 {% endif %}
 {% if bra_suggestion %}
-    <p>I suggest a {{bra_suggestion}} bra for you.</p>
-{% endif %}
-<p>Bra fitting is an art that takes in some science. So if you try this size bra on and do not feel comfortable in it that is okay. You can try a different size or frame. Do what is best for you and makes you feel most comfortable and confident!</p>
+   <div class=" suggest-bra">  <p >I suggest a <b style="font-size: 1.6rem; color:  #8787e6;"> {{bra_suggestion}} </b>  bra for you.<br> Down below we recommend where to purchase a {{bra_suggestion}} bra .</p> </div>
+   <div class="bra-site-box" >
+   <a  class="bra-site-button" href="https://www.ae.com/aerie-bras/aerie/s-cat/4840012" target="blank" class="button"> Aerie</a>
+   <a  class="bra-site-button" href="https://www.target.com/c/bras-intimates-women-s-clothing/-/N-5xtcd"  target="blank" class="button"> Target</a>
+   <a  class="bra-site-button" href="https://www.belk.com/women/womens-clothing/bras-panties-lingerie/bras/"  target="blank" class="button"> Belk </a>
+
+</div>
+   {% endif %}
 {% if user.is_authenticated %}
-    <p>Go to your <a href="{% url 'profile' %}">Profile</a> to see your bra history.</p>
+    <p>Visit your <a href="{% url 'profile' %}">Profile</a> to view your bra history.</p>
+
+
 {% else %}
     <p>Here are some top <a href="{% url 'bra-care' %}">bra care</a> tips!</p>
+</div>
 {% endif %}
 {% endblock %}
