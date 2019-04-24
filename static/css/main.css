@@ -283,3 +283,38 @@ footer {
 #id_band_measurement{
     justify-content: center;
 }
+
+.results-box{
+    /* border: 3px dashed; */
+    padding: 3%;
+    text-align: center;
+
+}
+.results-title{
+
+}
+.bra-size-results{
+   
+}
+.suggest-bra{
+
+}
+.bra-site-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.bra-site-button{
+    background-color: white;
+    border: 1px dashed  #8787e6;
+    border-radius: 3rem;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
