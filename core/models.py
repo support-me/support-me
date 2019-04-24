@@ -52,11 +52,12 @@ class BraFitting(models.Model):
         super().save(*args, **kwargs)
 
     CURRENTLY_WEARING_CHOICES = (
-        ('None', 'None'),
+        ('None', 'No Bra'),
+        ('Unlined', 'Unlined Bra'),
         ('SportsBra', 'Sports Bra'),
         ('Bralette', 'Bralette'),
-        ('PushUp', 'Push-Up'),
-        ('LightlyLined', 'Lightly-Lined'),
+        ('PushUp', 'Push-Up Bra'),
+        ('LightlyLined', 'Lightly-Lined Bra'),
     )
     
     currently_wearing = models.CharField(
@@ -85,7 +86,7 @@ class BraFitting(models.Model):
         if not bust_circumference:
             self.bust_measurement = self.bust_measurement * 2
         # Account for what is currently being worn below    
-        if currently_wearing in ['None', 'Bralette', 'SportsBra']:
+        if currently_wearing in ['None', 'Unlined', 'Bralette', 'SportsBra']:
             self.bust_measurement = (self.bust_measurement + 1)
         elif currently_wearing == 'PushUp':
             self.bust_measurement = (self.bust_measurement - 1)

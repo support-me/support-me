@@ -7,11 +7,25 @@ const merge = require('deepmerge')
 let navBar = $('.nav-bar')
 let headerDiv = $('.company-title').height()
 
-function showDiv (div) {
-  div.show()
+function showDiv (div, type) {
+  $(div).show(type)
 }
-function hideDiv (div) {
-  div.hide()
+function hideDiv (div, type) {
+  $(div).hide(type)
+}
+function startFitting () {
+  hideDiv('.step-two')
+  hideDiv('.step-three')
+  showDiv('.step-one', 'fast')
+
+  $('.step-one-next-button').click(function () {
+    hideDiv('.step-one')
+    showDiv('.step-two', 'fast')
+  })
+  $('.step-two-next-button').click(function () {
+    hideDiv('.step-two')
+    showDiv('.step-three', 'fast')
+  })
 }
 // https://sudo.isl.co/fetch-me-that-json-from-django/
 function request (url, options) {
@@ -51,4 +65,6 @@ $(document).ready(() => {
       navBar.removeClass('.sticky-nav')
     }
   })
+
+  startFitting()
 })
