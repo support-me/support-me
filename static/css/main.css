@@ -21,7 +21,7 @@
     -green & red/yellow/gray
     
     */
-    /* border: 1px dashed grey; */
+    border: 1px dashed grey;
 
 }
 body{
@@ -79,16 +79,21 @@ ul {
     5px 4px 1px #ccc, 4px 5px 1px #eee,
     6px 5px 1px #ccc, 5px 6px 1px #eee,
     7px 6px 1px #ccc;
-    padding: 2rem 0 1rem 10rem; 
+    padding: 1rem 0 1rem 10rem; 
 }
 #company-title a:hover{
     text-decoration: none;
 }
 #nav-bar {
+    position: relative;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     padding: 2rem 0 2rem 3rem;
+}
+.sticky-nav {
+    position: fixed;
+    top: 0;
 }
 .nav-item{
     padding: 2rem;

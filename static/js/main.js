@@ -3,6 +3,10 @@ const $ = require('jquery')
 window.$ = window.jQuery = $
 const Cookies = require('js-cookie')
 const merge = require('deepmerge')
+// sticky navBar: https://codepen.io/renduh/pen/oBBGbK
+let navBar = $('#nav-bar')
+const stickyDiv = '.sticky'
+const headerDiv = $('#company-title').height()
 
 function showDiv (div) {
   div.show()
