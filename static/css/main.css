@@ -186,7 +186,7 @@ img {
 .hvrbox:hover .hvrbox-layer-top, .hvrbox.active .hvrbox-layer-top {
     opacity: 1;
 }
-.hvrbox .hvrbox-text {
+.hvrbox .hover-text {
     text-align: center;
     font-weight: bold;
     display: inline-block;
