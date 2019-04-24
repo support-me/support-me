@@ -4,7 +4,7 @@
     /* little heading font: font-family: 'Fresca', sans-serif;  */
     /* plain text font: font-family: 'Quicksand', sans-serif; */
     margin: 0 auto;
-    font-family: 'Quicksand', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
     /*colors
     yellow: #e6e687
     orange: #e6b787
@@ -27,7 +27,7 @@
 body{
     height: 100%;
 }
-h1{
+/* h1{
     font-family: 'Acme', sans-serif;
 }
 h2{
@@ -41,7 +41,7 @@ h4{
 }
 label{
     font-family: 'Fresca', sans-serif;
-}
+} */
 ul {
     list-style: none;
     
@@ -60,6 +60,22 @@ ul {
     align-content: center;
     align-items:center;
     border-bottom: 2px solid #8787e6;
+    border-bottom-left-radius: 80% 60%;
+}
+#company-title{
+    font-family: 'Monoton', cursive;
+    font-size: 4rem;
+    letter-spacing: .4rem;
+    color: #8787e6;
+    text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+    padding: 3rem 0rem 2rem 0rem; 
 }
 #nav-bar {
     list-style: none;
@@ -73,30 +89,15 @@ ul {
 .nav-item{
 
 }
-a{
-    color: black;
+a {
+    color: #8787e6;
 }
-.nav-item:hover{
+.nav-item:hover {
     color: #8787e6;
     text-decoration:  underline;
 }
 button{
     background-color: #8787e6;
-}
-
-#company-title{
-    font-size: 4rem;
-    letter-spacing: .4rem;
-    color: #8787e6;
-    text-shadow: 
-    1px 0px 1px #ccc, 0px 1px 1px #eee, 
-    2px 1px 1px #ccc, 1px 2px 1px #eee,
-    3px 2px 1px #ccc, 2px 3px 1px #eee,
-    4px 3px 1px #ccc, 3px 4px 1px #eee,
-    5px 4px 1px #ccc, 4px 5px 1px #eee,
-    6px 5px 1px #ccc, 5px 6px 1px #eee,
-    7px 6px 1px #ccc;
-    padding: 3rem 0rem 2rem 0rem; 
 }
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
