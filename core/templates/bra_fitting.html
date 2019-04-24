@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Bra Fitting</h1>
-
     <form class="fitting-form" method="POST">
     {% csrf_token %}
     {{ form.non_field_errors }}
-    <div class="fitting-step step-one">
-        <h3 id="currently-wearing-label">Currently Wearing</h3>
-        <div class="form-question-info"><p>So we will do everything to make this a safe and fun bra fitting experience for you. In order to do that, get as comfortable as possible. So go put on your most comfy t-shirt. If you have a bra you are more than welcome to wear one for the fitting. If you don't have a bra, no worries, that doesn't impact the fitting one bit!
-        </p>
+
+    <section class="fitting-step step-one">
+    <h3 id="currently-wearing-title">Currently Wearing</h3>
+    <div class="fitting-step-row">
+        <div class="fitting-block-video-section">
+            <img class="fitting-block-pic" src="https://i.ibb.co/7vbDvHS/ezgif-com-video-to-gif-1.gif" alt="ezgif-com-video-to-gif-1">
         </div>
-        <div class="fitting-block">
-            <div class="form-question-select">{{ form.currently_wearing }}</div>
-            <img class="fitting-block-pic" src="http://placekitten.com/200/200">
+        <div class="form-question-info"><p>Please get as comfortable as possible- maybe put on a favorit tshirt. If you have a bra you are more than welcome to wear one for the fitting.</p>
+        <label for="{{ form.currently_wearing.id_for_label }}">What bra do you have on?: </label>
+        {{ form.currently_wearing }}
         </div>
     </div>
+    </section>
 
     <section class="fitting-step step-two">
     <h3 id="band-measurement-wearing-title">Band Measurement</h3>
