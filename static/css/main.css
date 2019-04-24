@@ -25,6 +25,7 @@
 
 }
 body{
+    font-family: 'Questrial', sans-serif;
     height: 100%;
     /* padding-bottom: 6rem; */
 
@@ -53,20 +54,19 @@ ul {
     padding-left: 4rem;
     padding-top: 2rem;
     /* height: 100vh; */
-    /* background-color: #e6e6e6; */
 }
 #header {
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items:center;
+    text-align: left;
     border-bottom: 2px solid #8787e6;
-    border-bottom-left-radius: 80% 60%;
+    border-bottom-right-radius: 60% 70%;
 }
 #company-title{
-    font-family: 'Monoton', cursive;
-    font-size: 4rem;
+    justify-content: flex-end;
+    font-family: 'Sofia', cursive;
+    font-size: 6rem;
+    font-weight: 700;
     letter-spacing: .4rem;
     color: #8787e6;
     text-shadow: 
@@ -77,19 +77,17 @@ ul {
     5px 4px 1px #ccc, 4px 5px 1px #eee,
     6px 5px 1px #ccc, 5px 6px 1px #eee,
     7px 6px 1px #ccc;
-    padding: 3rem 0rem 2rem 0rem; 
+    padding: 2rem 0 1rem 10rem; 
 }
 #nav-bar {
-    list-style: none;
-    display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
     width: 100%;
-    padding: 0rem 2rem .5rem 2rem;
+    padding: 2rem 0 2rem 3rem;
 }
 .nav-item{
-
+    padding: 1rem;
+    font-size: 1.5rem;
 }
 a {
     color: #8787e6;
