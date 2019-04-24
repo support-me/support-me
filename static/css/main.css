@@ -54,6 +54,7 @@ ul {
     list-style: none;
 
 }
+<<<<<<< HEAD
 
 .content {
     padding-right: 3rem;
@@ -61,6 +62,13 @@ ul {
     padding-top: 2rem;
     padding-bottom: 2.5rem;
     min-height: 95vh;
+=======
+.content{
+    padding-right: 4rem;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    height: 100vh;
+>>>>>>> master
     /* background-color: #e6e6e6; */
 }
 
@@ -69,8 +77,12 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-content: center;
+<<<<<<< HEAD
     align-items: center;
     background-color: #ffff86;
+=======
+    align-items:center;
+>>>>>>> master
     border-bottom: 2px solid #8787e6;
     position: sticky;
     top: 0;
@@ -86,16 +98,19 @@ ul {
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    background-color: #ffff86;
     padding: 0rem 2rem .5rem 2rem;
     position: sticky;
     top: 0;
 
     
 }
+<<<<<<< HEAD
 
 .nav-item {
     background-color: #ffff86;
+=======
+.nav-item{
+>>>>>>> master
 
 }
 
@@ -112,7 +127,51 @@ button {
     background-color: #8787e6;
 }
 
-
+#company-title{
+    font-size: 4rem;
+    letter-spacing: .4rem;
+    color: #8787e6;
+    text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+    padding: 3rem 0rem 2rem 0rem; 
+}
+.login-message-div, .logout-section {
+    padding: 1rem 3rem 1rem 3rem;
+}
+/* added this google section as placeholder- we can change the google font or put in image instead */
+.google {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+}
+.care-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.care-part{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+img {
+    /* background-color: #8787e6;
+    width: 300px; */
+}
+.history-box{
+    display: flex;
+}
+.hitory-info{
+    justify-content: center;
+}
 /* FITTING FORM SECTION */
 .bra-fitting-content {
     padding: 2rem 0 4rem 0;
@@ -122,12 +181,68 @@ button {
     padding: 1rem 0 1rem 0;
 }
 
-.bra-fit-setup {
-    padding: 2rem;
-    margin-top: 2rem;
-    border: 1px solid #8787e6;
+<<<<<<< HEAD
+=======
+
+/* HOVER IMAGE SECTION */
+.hvrbox,
+.hvrbox * {
+    box-sizing: border-box;
+}    
+.hvrbox {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+.hvrbox img {
+    width: 300px;
+}
+.hvrbox .hvrbox-layer-bottom {
+    display: block;
+}
+.hvrbox .hvrbox-layer-top {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 1rem;
+    transition: all 0.4s ease-in-out 0s;
+}
+.hvrbox:hover .hvrbox-layer-top, .hvrbox.active .hvrbox-layer-top {
+    opacity: 1;
+}
+.hvrbox .hvrbox-text {
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hvrbox.active {
+    display: block;
 }
 
+>>>>>>> master
+.bra-fit-setup {
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .fitting-form {
     /* display: flex;
     flex-direction: column;*/
@@ -147,10 +262,13 @@ button {
     text-align: center;
     border: 1px solid #8787e6;
 }
+<<<<<<< HEAD
 
 /* #currently-wearing ul {
     justify-content: left;
 } */
+=======
+>>>>>>> master
 .form-question-select ul {
     justify-content: left;
 }
@@ -163,6 +281,7 @@ button {
 .fit-materials-list {
     list-style-type: disc;
 }
+<<<<<<< HEAD
 
 .fit-submit-button {}
 
@@ -210,6 +329,23 @@ img {
 
 .hitory-info {
     justify-content: center;
+=======
+.fit-submit-button {
+    
+}
+
+/* ABOUT ME PAGE STYLE */
+.support-me-team-pics {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.support-me-team-pics img {
+    width: 150px;
+    height: 150px;
+>>>>>>> master
 }
 
 footer {

@@ -22,7 +22,6 @@
         <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
         <li class="nav-item"><a href="{% url 'brafitting' %}">Fit</a></li>
         <li class="nav-item"><a href="{% url 'bra-care' %}">Bra Care</a></li>
-
         {% if user.is_authenticated %}
         <li class="nav-item"><a href="{% url 'profile' %}">{{ user.username }}</a></li>
         <li class="nav-item"><a href="{% url 'account_logout' %}">Sign Out</a></li>
@@ -42,7 +41,7 @@
         </ul>
       </div>
       {% endif %}
-
+      
         {% block content %}
         {% endblock %}
 

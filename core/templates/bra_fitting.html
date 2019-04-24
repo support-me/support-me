@@ -1,27 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Bra Fitting</h1>
-    <main class="bra-fitting-content">
-    <div class="fit-intro">
-        <p>Welcome! We are excited to be assisting you in your bra fitting today. Our goal is to teach you how to find a bra that gives you the support you want.</p>
-        <i>There is one out there and we will give you the information that you need in order to find it.</i>
-    
-    <br>
-
-    <div class="bra-fit-setup">
-        <p>First, what is a bra size? A bra size is usually shown as two numbers followed by a letter. The two numbers represent a band size and the letter represents a cup size. There are a few steps that we will take to get these values. Yes, calculations are involved. Yes, measurements are involved. These measurements are taken so you can find the bra size that will give you the most support. These measurements do not define how amazing you are or your value as a person (that value is uncalculateable because you are too awesome for numbers!).
-        </p>
-        <p>So I will do everything to make this a safe and fun bra fitting experience for you. In order to do that you need to be as comfortable as you can be. So go put on your most comfy t-shirt. If you have a bra you are more than welcome to wear one for the fitting. If you don't have a bra, no worries, that doesn't impact the fitting one bit!
-        </p>
-        <p>Next we need to get a few other materials to help with the fitting process...
-            <ul class="fit-materials-list">
-                <li>Measuring tape. I suggest a embroidery tape measure. If you dont have one grab a long peice of string or yarn, some scissors and a ruler.</li>
-                <li>Optional: A mirror. You may find it helpful to get your best measurements if you have a mirror as your guide. If that is uncomfortable for you, then dont use a mirror. You can do the measurements without one. 
-            </ul>
-        Now that you have all materials gathered that you want, let us take sec to prepare for the fitting.
-        </p>
-    </div>
-    </div>
+<h1>Bra Fitting</h1>
 
     <form class="fitting-form" method="POST">
     {% csrf_token %}

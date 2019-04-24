@@ -136,3 +136,7 @@ def profile(request):
         'brafitting': brafitting,
     }
     return render(request, 'profile.html', context=context)
+
+def about(request):
+    return render(request, 'about.html')
+    
