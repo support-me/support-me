@@ -209,8 +209,16 @@ img {
     display: flex;
     flex-wrap: wrap;
 }
-
-
+.fitting-step {
+    padding: 1rem 3rem 1rem 3rem;
+}
+#band-measurement-wearing-title {
+    text-align: center;
+}
+.fitting-step-row {
+    display: flex;
+    flex-direction: column;
+}
 .fitting-form {
     /* display: flex;
     flex-direction: column;*/
@@ -231,8 +239,9 @@ img {
     justify-content: left;
 }
 .fitting-block-pic {
-    width: 200px;
-    height: 200px;
+    padding: 1rem;
+    border: 2px dashed #8787e6;
+    margin-bottom: 2rem;
 }
 .fit-materials-list {
     list-style-type: disc;

@@ -16,20 +16,24 @@
         </div>
     </div>
 
-    <div class="fitting-step step-two">
-        <h3 id="band-measurement-wearing-label">Band Measurement</h3>
-        <div class="form-question-info">This is not your band <i>size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement.<br>
-        This number is a tool to find your best support not a definition of who you are!
-        </div>
-        <div class="fitting-block">
-            <div class="form-question-input">{{ form.band_measurement }}</div>
+    <section class="fitting-step step-two">
+    <h3 id="band-measurement-wearing-title">Band Measurement</h3>
+    <div class="fitting-step-row">
+        <div class="fitting-block-video-section">
             <img class="fitting-block-pic" src="https://i.ibb.co/7vbDvHS/ezgif-com-video-to-gif-1.gif" alt="ezgif-com-video-to-gif-1">
         </div>
+        <div class="form-question-info"><p>This is not your band <i>size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement.<br>
+        This number is a tool to find your best support not a definition of who you are!</p>
+        <label for="{{ form.band_measurement.id_for_label }}">Bust Measurement (Inches): </label>
+        {{ form.band_measurement }}
+        </div>
+    </div>
+
         <ul class="fit-materials-list">
             <li>If your band measurement was an odd number we will add <strong>5</strong> inches to get your band size.</li>
             <li>If your band measurement was and even number we will add <strong>4</strong> inches to get your band measurement.</li>
         </ul>
-    </div>
+    </section>
 
     <div class="fitting-step step-three">
         <h3 id="bust-measurement-wearing-label">Bust Measurement</h3>
