@@ -80,6 +80,9 @@ ul {
     7px 6px 1px #ccc;
     padding: 2rem 0 1rem 10rem; 
 }
+#company-title a:hover{
+    text-decoration: none;
+}
 #nav-bar {
     flex-direction: row;
     flex-wrap: wrap;
@@ -87,13 +90,13 @@ ul {
     padding: 2rem 0 2rem 3rem;
 }
 .nav-item{
-    padding: 1rem;
-    font-size: 1.5rem;
+    padding: 2rem;
+    font-size: 1.25rem;
 }
 a {
     color: #8787e6;
 }
-.nav-item:hover {
+.nav-item a:hover {
     color: #8787e6;
     text-decoration:  underline;
 }
@@ -152,8 +155,13 @@ img {
     max-width: 100%;
     height: auto;
 }
-.hvrbox img {
+.hvrbox-layer-bottom {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 5rem;
     width: 300px;
+    height: 300px;
 }
 .hvrbox .hvrbox-layer-bottom {
     display: block;
