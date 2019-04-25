@@ -54,7 +54,7 @@ ul {
     padding-right: 4rem;
     padding-left: 4rem;
     padding-top: 2rem;
-    min-height: calc(100vh - 70px);
+    /*min-height: calc(100vh - 70px);*/
     /* height: 100vh; */
 }
 #header {
@@ -273,7 +273,6 @@ footer {
     opacity: .8;
     overflow: hidden;
 }
-
 .measurement-text{
     font-style: bold;
     font-size: 3rem;
@@ -282,7 +281,6 @@ footer {
 #id_band_measurement{
     justify-content: center;
 }
-
 .results-box{
     /* border: 3px dashed; */
     padding: 3%;
@@ -334,4 +332,51 @@ ul.bra-suggestion-need-list{
 }
 .key-word{
     color: #8787e6;
+}
+
+/* nav menu drop down */
+.nav-menu{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+li{
+    display: block;
+    float:left;
+    transition-duration: 0.5s;
+    margin: .5rem;
+    padding-left:0;
+}
+li:hover,
+li:focus-within{
+    cursor:pointer;
+}
+li:focus-within a{
+    outline:none;
+}
+ul li ul{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    padding-left: 0;
+    display:none;
+}
+ul li:hover > ul,
+ul li ul:focus-within> ul,
+ul li ul:hover,
+ul li ul:focus{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    position: absolute;
+}
+ul li ul li{
+    clear: both;
+    width: 100%;
+    padding-left: 0;
+    margin-left:0;
 }
