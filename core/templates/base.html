@@ -23,7 +23,7 @@
       <h1 class="company-title"><a href="{% url 'home' %}">Support Me</a></h1>
     </div>
       <div class="nav-bar">
-        <span class="nav-item"><a href="{% url 'brafitting' %}">Fit</a></span>
+        <span class="nav-item"><a href="{% url 'home' %}">Fit</a></span>
         <span class="nav-item"><a href="{% url 'bra-care' %}">Bra Care</a></span>
         {% if user.is_authenticated %}
         <span class="nav-item"><a href="{% url 'profile' %}">{{ user.username }}</a></span>

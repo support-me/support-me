@@ -24,6 +24,7 @@
     border: 1px dashed grey;
 
 }
+
 body{
     font-family: 'Questrial', sans-serif;
     font-size: 1.25rem;
@@ -119,7 +120,7 @@ button{
 .history-box{
     display: flex;
 }
-.hitory-info{
+.history-info{
     justify-content: center;
 }
 
@@ -182,9 +183,14 @@ button{
 .intro-extra-info {
     padding: 2rem 0 2rem 0;
 }
+.get-fit-button a {
+    color: black;
+    font-size: 2rem;
+}
 
 /* FITTING FORM SECTION */
 .bra-fitting-content {
+    text-align: center;
     padding: 2rem 0 4rem 0;
 }
 .fit-intro {

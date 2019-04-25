@@ -10,41 +10,36 @@
         <h3 id="currently-wearing-title">Currently Wearing</h3>
         <div class="fitting-step-column">
             <div class="form-question-info"><p>Please get as comfortable as possible- maybe put on a favorit tshirt. If you have a bra you are more than welcome to wear one for the fitting.</p>
-
-            <div class="bra-type-drawings-div">
-                <div class="bra-drawing-set">
-                    <label for="unlined-bra-drawing">Unlined Bra</label>
-                    <img id="unlined-bra-drawing" src="http://placekitten.com/g/200/200" alt="unlined">
-                </div>
-                <div class="bra-drawing-set">
-                    <label for="sports-bra-drawing">Sports Bra</label>
-                    <img id="sports-bra-drawing" src="http://placekitten.com/g/200/200" alt="sports">
-                </div>
-                <div class="bra-drawing-set">
-                    <label for="bralette-bra-drawing">Bralette Bra</label>
-                    <img id="bralette-bra-drawing" src="http://placekitten.com/g/200/200" alt="bralette">
-                </div>
-                <div class="bra-drawing-set">
-                    <label for="push-up-bra-drawing">Push-Up Bra</label>
-                    <img id="pushup-bra-drawing" src="http://placekitten.com/g/200/200" alt="pushup">
-                </div>
-                <div class="bra-drawing-set">
-                    <label for="lightly-lined-bra-drawing">Lightly-Lined Bra</label>
-                    <img id="lightly-lined-bra-drawing" src="http://placekitten.com/g/200/200" alt="lightly-lined">
-                </div>
-            </div>
             <br><br>
-            {% comment %} <ul class="currently-wearing-field"> {% endcomment %}
-            {{ form.currently_wearing.data }}
-            {% comment %} {% for choice in form.currently_wearing.field.choices %}
-                <li><input type="radio" name="currently_wearing" value="{{ choice.0 }}"
-                {% ifequal form.currently_wearing.data choice.0 %}
-                    checked="checked"
-                {% endifequal %}/>
-                <label for="">{{ choice.1 }}</label>
+            <ul class="currently-wearing-field">
+            {% comment %} {{ form.currently_wearing.data }} {% endcomment %}
+            {% for choice in form.currently_wearing.field.choices %}
+                <li class="bra-drawing-set">
+                {% if 'None' in choice %}
+                    <img id="no-bra-drawing" src="http://placekitten.com/g/200/200" alt="no">
+                {% endif %}
+                {% if 'Unlined' in choice %}
+                    <img id="unlined-bra-drawing" src="http://placekitten.com/g/200/200" alt="unlined bra">
+                {% endif %}
+                {% if 'SportsBra' in choice %}
+                    <img id="sports-bra-drawing" src="http://placekitten.com/g/200/200" alt="sports bra">
+                {% endif %}
+                {% if 'Bralette' in choice %}
+                    <img id="bralette-bra-drawing" src="http://placekitten.com/g/200/200" alt="bralette">
+                {% endif %}
+                {% if 'PushUp' in choice %}
+                    <img id="push-up-bra-drawing" src="http://placekitten.com/g/200/200" alt="Push up bra">
+                {% endif %}
+                {% if 'LightlyLined' in choice %}
+                    <img id="lightly-lined-bra-drawing" src="http://placekitten.com/g/200/200" alt="lightly-lined bra">
+                {% endif %}
+                    <p>
+                        <input type="radio" name="currently_wearing" value="{{ choice.0 }}"{% ifequal form.currently_wearing.data choice.0 %} checked="checked" {% endifequal %}/>
+                        <label for="">{{ choice.1 }}</label>
+                    </p>
                 </li>
-            {% endfor %} {% endcomment %}
-            {% comment %} </ul> {% endcomment %}
+            {% endfor %}
+            </ul>
             <br><br>
             <label for="{{ form.currently_wearing.id_for_label }}">Select the bra you are currently wearing.</label>
             </div>
