@@ -68,3 +68,7 @@ $(document).ready(() => {
 
   startFitting()
 })
+
+swal('You did it! Now you know how to do your own bra fitting and get a bra size and style that supports you!')
+confirmButtonColor: "#DD6B55";
+
