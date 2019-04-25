@@ -304,12 +304,7 @@ footer {
     opacity: .8;
     overflow: hidden;
 }
-<<<<<<< HEAD
-
-.measurement-text {
-=======
 .measurement-text{
->>>>>>> master
     font-style: bold;
     font-size: 3rem;
     text-align: center;
@@ -318,12 +313,7 @@ footer {
 #id_band_measurement {
     justify-content: center;
 }
-<<<<<<< HEAD
-
-.results-box {
-=======
 .results-box{
->>>>>>> master
     /* border: 3px dashed; */
     padding: 3%;
     text-align: center;
@@ -377,7 +367,7 @@ ul.bra-suggestion-need-list {
 .key-word {
     color: #8787e6;
 }
-
+/* Profile page Styles  */
 .profile-box {
     /* border: 3px dashed black; */
     display: flex;
