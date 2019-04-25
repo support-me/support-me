@@ -25,81 +25,67 @@
 
 }
 
-body {
+body{
     font-family: 'Questrial', sans-serif;
-    font-size: 1.25rem;
-    height: 100%;
-    /* padding-bottom: 6rem; */
-
+    font-size: 1rem;
+    /* height: 100%; */
 }
-
-/* h1{
-    font-family: 'Acme', sans-serif;
-}
-h2{
-    font-family: 'Acme', sans-serif;
-}
-h3{
-    font-family: 'Acme', sans-serif;
-}
-h4{
-    font-family: 'Fresca', sans-serif;
-}
-label{
-    font-family: 'Fresca', sans-serif;
-} */
 ul {
-    list-style: none;
-
+    list-style: none;   
 }
-
-.content {
+.content{
+    margin: 0 auto 0;
     padding-right: 4rem;
     padding-left: 4rem;
-    padding-top: 2rem;
-    /*min-height: calc(100vh - 70px);*/
+    padding-top: 7.5rem;
     /* height: 100vh; */
 }
 
 #header {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    border-bottom: 2px solid #8787e6;
-    border-bottom-right-radius: 60% 70%;
 }
-
-#company-title {
-    justify-content: flex-end;
+.company-title{
     font-family: 'Sofia', cursive;
     font-size: 4rem;
     font-weight: 700;
     letter-spacing: .4rem;
     color: #8787e6;
-    text-shadow:
-        1px 0px 1px #ccc, 0px 1px 1px #eee,
-        2px 1px 1px #ccc, 1px 2px 1px #eee,
-        3px 2px 1px #ccc, 2px 3px 1px #eee,
-        4px 3px 1px #ccc, 3px 4px 1px #eee,
-        5px 4px 1px #ccc, 4px 5px 1px #eee,
-        6px 5px 1px #ccc, 5px 6px 1px #eee,
-        7px 6px 1px #ccc;
-    padding: 2rem 0 1rem 10rem;
+    text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+    padding: 1rem 0 1rem 10rem; 
+    /* border-bottom: 2px solid #8787e6;
+    border-bottom-right-radius: 60% 70%; */
 }
-
-#company-title a:hover {
+.company-title a:hover{
     text-decoration: none;
 }
-
-#nav-bar {
+.nav-bar {
+    position: relative;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    padding: 2rem 0 2rem 3rem;
-}
+    height: 6.5rem;
+    line-height: 5.5rem;
+    margin-bottom: -6.5rem;
+    z-index: 3;
+    background-color: white;
+    border-bottom-right-radius: 60% 70%;
+    border-bottom: 2px solid #8787e6;
 
-.nav-item {
-    padding: 2rem;
+    /* padding: 2rem 0 2rem 3rem; */
+    
+}
+.sticky-nav {
+    position: fixed;
+    top: 0;
+}
+.nav-item{
+    padding-right: 3rem;
     font-size: 1.25rem;
 }
 
@@ -141,6 +127,7 @@ button {
     align-content: center;
     align-items: center;
 }
+<<<<<<< HEAD
 
 img {
     /* background-color: #8787e6;
@@ -156,6 +143,14 @@ img {
     padding: 1rem 0 1rem 0;
 }
 
+=======
+.history-box{
+    display: flex;
+}
+.history-info{
+    justify-content: center;
+}
+>>>>>>> master
 
 /* HOVER IMAGE SECTION */
 .hvrbox,
@@ -220,11 +215,23 @@ img {
     display: block;
 }
 
-/* INTRO EXTRA INFO */
+/* INTRO -- EXTRA INFO */
 .intro-extra-info {
     padding: 2rem 0 2rem 0;
 }
+.get-fit-button a {
+    color: black;
+    font-size: 2rem;
+}
 
+/* FITTING FORM SECTION */
+.bra-fitting-content {
+    text-align: center;
+    padding: 2rem 0 4rem 0;
+}
+.fit-intro {
+    padding: 1rem 0 1rem 0;
+}
 .bra-fit-setup {
     padding: 2rem 0 2rem 0;
     display: flex;
@@ -232,14 +239,25 @@ img {
 }
 
 .fitting-step {
+<<<<<<< HEAD
     padding: 1rem 3rem 1rem 3rem;
 }
 
 #band-measurement-wearing-title {}
 
 .fitting-step-row {
+=======
+    /* text-align: center; */
+    padding: 1rem 5rem 1rem 5rem;
+    border: 1px solid black;
+}
+.fitting-step-column {
+    max-width: 890px;
+>>>>>>> master
     display: flex;
+    align-content: center;
     flex-direction: column;
+    padding: 1rem 5rem 1rem 5rem;
 }
 
 .fitting-form {
@@ -274,8 +292,32 @@ img {
 .fit-materials-list {
     list-style-type: disc;
 }
+<<<<<<< HEAD
 
 .fit-submit-button {}
+=======
+.fit-submit-button {   
+}
+.bra-type-drawings-div {
+    display: flex;
+    flex-wrap: wrap;
+}
+.bra-drawing-set {
+    display: flex;
+    flex-direction: column;
+}
+.bra-drawing-set img {
+    border: 2px dashed #8787e6;
+    padding: 1rem;
+    max-width: 175px;
+    max-height: 175px;
+}
+.currently-wearing-field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+>>>>>>> master
 
 /* ABOUT ME PAGE STYLE */
 .support-me-team-pics {
@@ -292,10 +334,8 @@ img {
 }
 
 footer {
-    /* display: flex;
-    justify-content: center;  */
-    /* position: fixed; 
-    bottom: 0; */
+    /* position: relative;  */
+    /* bottom: 0; */
     border-top: 2px solid #8787e6;
     height: 100%;
     width: 100%;
@@ -434,18 +474,21 @@ hr{
     align-content: flex-start;
     flex-wrap: wrap;
 }
-li{
+.nav-menu-drop {
+    background-color: white;
+}
+.nav-menu li{
     display: block;
     float:left;
     transition-duration: 0.5s;
     margin: .5rem;
     padding-left:0;
 }
-li:hover,
-li:focus-within{
+.nav-menu li:hover,
+.nav-menu li:focus-within{
     cursor:pointer;
 }
-li:focus-within a{
+.nav-menu li:focus-within a{
     outline:none;
 }
 ul li ul{
@@ -457,7 +500,7 @@ ul li ul{
     display:none;
 }
 ul li:hover > ul,
-ul li ul:focus-within> ul,
+ul li ul:focus-within > ul,
 ul li ul:hover,
 ul li ul:focus{
     visibility: visible;
@@ -468,6 +511,7 @@ ul li ul:focus{
 ul li ul li{
     clear: both;
     width: 100%;
-    padding-left: 0;
+    padding: 0;
     margin-left:0;
+    background-color: white;
 }
