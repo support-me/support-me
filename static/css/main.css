@@ -1,4 +1,4 @@
-*{
+* {
     /* border: 1px dotted grey; */
     /*big heading font: font-family: 'Acme', sans-serif; */
     /* little heading font: font-family: 'Fresca', sans-serif;  */
@@ -24,13 +24,15 @@
     /* border: 1px dashed grey; */
 
 }
-body{
+
+body {
     font-family: 'Questrial', sans-serif;
     font-size: 1.25rem;
     height: 100%;
     /* padding-bottom: 6rem; */
 
 }
+
 /* h1{
     font-family: 'Acme', sans-serif;
 }
@@ -48,97 +50,108 @@ label{
 } */
 ul {
     list-style: none;
-    
+
 }
-.content{
+
+.content {
     padding-right: 4rem;
     padding-left: 4rem;
     padding-top: 2rem;
     min-height: calc(100vh - 70px);
     /* height: 100vh; */
 }
+
 #header {
-    display:flex;
+    display: flex;
     flex-direction: column;
     text-align: left;
     border-bottom: 2px solid #8787e6;
     border-bottom-right-radius: 60% 70%;
 }
-#company-title{
+
+#company-title {
     justify-content: flex-end;
     font-family: 'Sofia', cursive;
     font-size: 4rem;
     font-weight: 700;
     letter-spacing: .4rem;
     color: #8787e6;
-    text-shadow: 
-    1px 0px 1px #ccc, 0px 1px 1px #eee, 
-    2px 1px 1px #ccc, 1px 2px 1px #eee,
-    3px 2px 1px #ccc, 2px 3px 1px #eee,
-    4px 3px 1px #ccc, 3px 4px 1px #eee,
-    5px 4px 1px #ccc, 4px 5px 1px #eee,
-    6px 5px 1px #ccc, 5px 6px 1px #eee,
-    7px 6px 1px #ccc;
-    padding: 2rem 0 1rem 10rem; 
+    text-shadow:
+        1px 0px 1px #ccc, 0px 1px 1px #eee,
+        2px 1px 1px #ccc, 1px 2px 1px #eee,
+        3px 2px 1px #ccc, 2px 3px 1px #eee,
+        4px 3px 1px #ccc, 3px 4px 1px #eee,
+        5px 4px 1px #ccc, 4px 5px 1px #eee,
+        6px 5px 1px #ccc, 5px 6px 1px #eee,
+        7px 6px 1px #ccc;
+    padding: 2rem 0 1rem 10rem;
 }
-#company-title a:hover{
+
+#company-title a:hover {
     text-decoration: none;
 }
+
 #nav-bar {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     padding: 2rem 0 2rem 3rem;
 }
-.nav-item{
+
+.nav-item {
     padding: 2rem;
     font-size: 1.25rem;
 }
+
 a {
     color: #8787e6;
 }
+
 .nav-item a:hover {
     color: #8787e6;
-    text-decoration:  underline;
+    text-decoration: underline;
 }
-button{
+
+button {
     background-color: #8787e6;
 }
-.login-message-div, .logout-section {
+
+.login-message-div,
+.logout-section {
     padding: 1rem 3rem 1rem 3rem;
 }
+
 /* added this google section as placeholder- we can change the google font or put in image instead */
 .google {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3rem;
 }
-.care-section{
+
+.care-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
 }
-.care-part{
-    display:flex;
+
+.care-part {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    align-items:center;
+    align-items: center;
 }
+
 img {
     /* background-color: #8787e6;
     width: 300px; */
 }
-.history-box{
-    display: flex;
-}
-.hitory-info{
-    justify-content: center;
-}
+
 /* FITTING FORM SECTION */
 .bra-fitting-content {
     padding: 2rem 0 4rem 0;
 }
+
 .fit-intro {
     padding: 1rem 0 1rem 0;
 }
@@ -148,7 +161,8 @@ img {
 .hvrbox,
 .hvrbox * {
     box-sizing: border-box;
-}    
+}
+
 .hvrbox {
     position: relative;
     display: inline-block;
@@ -158,6 +172,7 @@ img {
     padding: 1rem;
     border: 1px dashed #8787e6;
 }
+
 .hvrbox-layer-bottom {
     font-family: 'Cutive Mono', monospace;
     font-size: 3rem;
@@ -166,9 +181,11 @@ img {
     width: 300px;
     height: 300px;
 }
+
 .hvrbox .hvrbox-layer-bottom {
     display: block;
 }
+
 .hvrbox .hvrbox-layer-top {
     opacity: 0;
     position: absolute;
@@ -183,9 +200,12 @@ img {
     padding: 1rem;
     transition: all 0.4s ease-in-out 0s;
 }
-.hvrbox:hover .hvrbox-layer-top, .hvrbox.active .hvrbox-layer-top {
+
+.hvrbox:hover .hvrbox-layer-top,
+.hvrbox.active .hvrbox-layer-top {
     opacity: 1;
 }
+
 .hvrbox .hover-text {
     text-align: center;
     font-weight: bold;
@@ -195,6 +215,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .hvrbox.active {
     display: block;
 }
@@ -209,44 +230,52 @@ img {
     display: flex;
     flex-wrap: wrap;
 }
+
 .fitting-step {
     padding: 1rem 3rem 1rem 3rem;
 }
-#band-measurement-wearing-title {
-}
+
+#band-measurement-wearing-title {}
+
 .fitting-step-row {
     display: flex;
     flex-direction: column;
 }
+
 .fitting-form {
     text-align: center;
 }
+
 .fitting-step {
     padding: 2rem;
 }
+
 .fitting-block {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .form-question-input {
     text-align: center;
     border: 1px solid #8787e6;
 }
+
 .form-question-select ul {
     justify-content: left;
 }
+
 .fitting-block-pic {
     padding: 1rem;
     border: 2px dashed #8787e6;
     margin-bottom: 2rem;
 }
+
 .fit-materials-list {
     list-style-type: disc;
 }
-.fit-submit-button {
-    
-}
+
+.fit-submit-button {}
 
 /* ABOUT ME PAGE STYLE */
 .support-me-team-pics {
@@ -256,10 +285,12 @@ img {
     justify-content: center;
     text-align: center;
 }
+
 .support-me-team-pics img {
     width: 150px;
     height: 150px;
 }
+
 footer {
     /* display: flex;
     justify-content: center;  */
@@ -274,39 +305,39 @@ footer {
     overflow: hidden;
 }
 
-.measurement-text{
+.measurement-text {
     font-style: bold;
     font-size: 3rem;
     text-align: center;
 }
-#id_band_measurement{
+
+#id_band_measurement {
     justify-content: center;
 }
 
-.results-box{
+.results-box {
     /* border: 3px dashed; */
     padding: 3%;
     text-align: center;
 
 }
-.results-title{
 
-}
-.bra-size-results{
-   
-}
-.suggest-bra{
+.results-title {}
 
-}
-.bra-site-box{
+.bra-size-results {}
+
+.suggest-bra {}
+
+.bra-site-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
 }
-.bra-site-button{
+
+.bra-site-button {
     background-color: white;
-    border: 1px dashed  #8787e6;
+    border: 1px dashed #8787e6;
     border-radius: 3rem;
     color: black;
     padding: 15px 32px;
@@ -317,6 +348,7 @@ footer {
     margin: 4px 2px;
     cursor: pointer;
 }
+
 .swal-button {
     background-color: #8787e6;
     color: #fff;
@@ -329,9 +361,55 @@ footer {
     margin: 0;
     cursor: pointer;
 }
-ul.bra-suggestion-need-list{
+
+ul.bra-suggestion-need-list {
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
-.key-word{
+
+.key-word {
     color: #8787e6;
 }
+
+.profile-box {
+    /* border: 3px dashed black; */
+    display: flex;
+    padding-top: 3rem;
+    padding-left:.5rem;
+    padding-right: .5rem;
+    text-align: center;
+
+}
+
+.history-box {
+    flex-grow: 3;
+
+}
+
+.hitory-info {
+    flex-grow: 3;
+}
+.bra-delete-button{
+    background-color: white;
+    color: coral;
+    border: solid #8787e6;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 24px;
+    margin: 0;
+    cursor: pointer;
+}
+.profile-images{
+  float: right;
+  padding: 3rem;
+  
+}
+.profile-text{
+    border: 3px solid;
+    float: right;
+}
+.profile-welcome-div{
+    text-align: center;
+}
+
