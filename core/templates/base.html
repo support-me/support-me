@@ -21,16 +21,28 @@
     {% block body %}
     <div id="header">
       <h1 class="company-title"><a href="{% url 'home' %}">Support Me</a></h1>
-    </div>
       <div class="nav-bar">
-        <span class="nav-item"><a href="{% url 'home' %}">Fit</a></span>
-        <span class="nav-item"><a href="{% url 'bra-care' %}">Bra Care</a></span>
-        {% if user.is_authenticated %}
-        <span class="nav-item"><a href="{% url 'profile' %}">{{ user.username }}</a></span>
-        <span class="nav-item"><a href="{% url 'account_logout' %}">Sign Out</a></span>
-        {% else %}
-        <span class="nav-item"><a href="{% url 'account_login' %}" title="Google or Account Login">Login</a></span>
-        {% endif %}
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="{% url 'home' %}">Fit</a></li>
+          <li class="nav-item" aria-haspopup="true">
+            <a href="{% url 'resources' %}">Resources</a>
+            <ul class="nav-menu-drop" aria-label="submenu">
+              <li class="nav-menu-drop-item"><a href="{% url 'bra-care' %}">Bra Care</a></li>
+              <li class="nav-menu-drop-item"><a href="{% url 'about' %}">About/FAQ</a></li>
+            </ul>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item last-item"><a href="{% url 'profile' %}">{{ user.username }}</a>
+            <ul class="nav-menu-drop">
+              <li class="nav-menu-drop-item"><a href="{% url 'account_logout' %}">Sign Out</a></li>
+            </ul>
+          </li>
+          {% else %}
+          <li class="nav-item last-item"><a href="{% url 'account_login' %}" title="Google or Account Login">Login</a></li>
+          {% endif %}
+          <li><p> </p></li>
+        </ul>
+      </div>
     </div>
     <div class="content">
       {% if messages %}
