@@ -21,7 +21,7 @@
     -green & red/yellow/gray
     
     */
-    /* border: 1px dashed grey; */
+    border: 1px dashed grey;
 
 }
 body{
@@ -38,11 +38,6 @@ ul {
     margin: 0 auto 0;
 }
 #header {
-    display:flex;
-    flex-direction: column;
-    text-align: left;
-    border-bottom: 2px solid #8787e6;
-    border-bottom-right-radius: 60% 70%;
 }
 .company-title{
     justify-content: flex-end;
@@ -60,6 +55,8 @@ ul {
     6px 5px 1px #ccc, 5px 6px 1px #eee,
     7px 6px 1px #ccc;
     padding: 1rem 0 1rem 10rem; 
+    /* border-bottom: 2px solid #8787e6;
+    border-bottom-right-radius: 60% 70%; */
 }
 .company-title a:hover{
     text-decoration: none;
@@ -74,6 +71,9 @@ ul {
     margin-bottom: -7rem;
     z-index: 3;
     background-color: white;
+    border-bottom-right-radius: 60% 70%;
+    border-bottom: 2px solid #8787e6;
+
     /* padding: 2rem 0 2rem 3rem; */
     
 }
