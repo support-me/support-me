@@ -267,6 +267,7 @@ footer {
     opacity: .8;
     overflow: hidden;
 }
+
 .measurement-text{
     font-style: bold;
     font-size: 3rem;
@@ -321,4 +322,10 @@ footer {
     padding: 10px 24px;
     margin: 0;
     cursor: pointer;
+}
+ul.bra-suggestion-need-list{
+    list-style-type: url('/images/Bra-3-extra.jpg');
+}
+.key-word{
+    color: #8787e6;
 }
