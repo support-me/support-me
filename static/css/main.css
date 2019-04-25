@@ -21,31 +21,28 @@
     -green & red/yellow/gray
     
     */
-    border: 1px dashed grey;
+    /* border: 1px dashed grey; */
 
 }
 
 body{
     font-family: 'Questrial', sans-serif;
     font-size: 1.25rem;
-    height: 100%;
+    /* height: 100%; */
 }
 ul {
     list-style: none;   
 }
 .content{
-    height: 100%;
     margin: 0 auto 0;
     padding-right: 4rem;
     padding-left: 4rem;
-    padding-top: 2rem;
-    /*min-height: calc(100vh - 70px);*/
+    padding-top: 7.5rem;
     /* height: 100vh; */
 }
 #header {
 }
 .company-title{
-    justify-content: flex-end;
     font-family: 'Sofia', cursive;
     font-size: 4rem;
     font-weight: 700;
@@ -71,9 +68,9 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 6rem;
-    line-height: 6rem;
-    margin-bottom: -7rem;
+    height: 6.5rem;
+    line-height: 5.5rem;
+    margin-bottom: -6.5rem;
     z-index: 3;
     background-color: white;
     border-bottom-right-radius: 60% 70%;
@@ -87,7 +84,7 @@ ul {
     top: 0;
 }
 .nav-item{
-    padding: 2rem;
+    padding-right: 3rem;
     font-size: 1.25rem;
 }
 a {
@@ -272,10 +269,8 @@ button{
     height: 150px;
 }
 footer {
-    /* display: flex;
-    justify-content: center;  */
-    /* position: fixed; 
-    bottom: 0; */
+    /* position: relative;  */
+    /* bottom: 0; */
     border-top: 2px solid #8787e6;
     height: 100%;
     width: 100%;
@@ -354,6 +349,9 @@ ul.bra-suggestion-need-list{
     align-content: flex-start;
     flex-wrap: wrap;
 }
+.nav-menu-drop {
+    background-color: white;
+}
 li{
     display: block;
     float:left;
@@ -377,7 +375,7 @@ ul li ul{
     display:none;
 }
 ul li:hover > ul,
-ul li ul:focus-within> ul,
+ul li ul:focus-within > ul,
 ul li ul:hover,
 ul li ul:focus{
     visibility: visible;
@@ -388,6 +386,7 @@ ul li ul:focus{
 ul li ul li{
     clear: both;
     width: 100%;
-    padding-left: 0;
+    padding: 0;
     margin-left:0;
+    background-color: white;
 }
