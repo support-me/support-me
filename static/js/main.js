@@ -16,15 +16,15 @@ function hideDiv (div, type) {
 function startFitting () {
   hideDiv('.step-two')
   hideDiv('.step-three')
-  showDiv('.step-one', 'fast')
+  showDiv('.step-one', 'slow')
 
   $('.step-one-next-button').click(function () {
     hideDiv('.step-one')
-    showDiv('.step-two', 'fast')
+    showDiv('.step-two', 'slow')
   })
   $('.step-two-next-button').click(function () {
     hideDiv('.step-two')
-    showDiv('.step-three', 'fast')
+    showDiv('.step-three', 'slow')
   })
 }
 // https://sudo.isl.co/fetch-me-that-json-from-django/
