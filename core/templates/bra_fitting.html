@@ -1,29 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Bra Fitting</h1>
+{% load static %}
     <form class="fitting-form" method="POST">
+    <h1>Bra Fitting</h1>
     {% csrf_token %}
     {{ form.non_field_errors }}
 
     <section class="fitting-step step-one">
         <h3 id="currently-wearing-title">Currently Wearing</h3>
-        <div class="fitting-step-row">
-            <div class="fitting-block-video-section">
-                <img class="fitting-block-pic" src="https://i.ibb.co/7vbDvHS/ezgif-com-video-to-gif-1.gif" alt="ezgif-com-video-to-gif-1">
-            </div>
+        <div class="fitting-step-column">
             <div class="form-question-info"><p>Please get as comfortable as possible- maybe put on a favorit tshirt. If you have a bra you are more than welcome to wear one for the fitting.</p>
-            <label for="{{ form.currently_wearing.id_for_label }}">What bra do you have on?: </label>
-            {{ form.currently_wearing }}
+            <br><br>
+            <ul class="currently-wearing-field">
+            {% comment %} {{ form.currently_wearing.data }} {% endcomment %}
+            {% for choice in form.currently_wearing.field.choices %}
+                <li class="bra-drawing-set">
+                {% if 'None' in choice %}
+                    <img id="no-bra-drawing" src="http://placekitten.com/g/200/200" alt="no">
+                {% endif %}
+                {% if 'Unlined' in choice %}
+                    <img id="unlined-bra-drawing" src="http://placekitten.com/g/200/200" alt="unlined bra">
+                {% endif %}
+                {% if 'SportsBra' in choice %}
+                    <img id="sports-bra-drawing" src="http://placekitten.com/g/200/200" alt="sports bra">
+                {% endif %}
+                {% if 'Bralette' in choice %}
+                    <img id="bralette-bra-drawing" src="http://placekitten.com/g/200/200" alt="bralette">
+                {% endif %}
+                {% if 'PushUp' in choice %}
+                    <img id="push-up-bra-drawing" src="http://placekitten.com/g/200/200" alt="Push up bra">
+                {% endif %}
+                {% if 'LightlyLined' in choice %}
+                    <img id="lightly-lined-bra-drawing" src="http://placekitten.com/g/200/200" alt="lightly-lined bra">
+                {% endif %}
+                    <p>
+                        <input type="radio" name="currently_wearing" value="{{ choice.0 }}"{% ifequal form.currently_wearing.data choice.0 %} checked="checked" {% endifequal %}/>
+                        <label for="">{{ choice.1 }}</label>
+                    </p>
+                </li>
+            {% endfor %}
+            </ul>
+            <br><br>
+            <label for="{{ form.currently_wearing.id_for_label }}">Select the bra you are currently wearing.</label>
             </div>
         </div>
-        <button class="step-one-next-button save btn btn-default" type=submit>Next</button>
+        <button class="step-one-next-button save btn btn-default" type=button>Next</button>
     </section>
 
     <section class="fitting-step step-two">
         <h3 id="band-measurement-wearing-title">Band Measurement</h3>
-        <div class="fitting-step-row">
+        <div class="fitting-step-column">
             <div class="fitting-block-video-section">
-                <img class="fitting-block-pic" src="https://i.ibb.co/7vbDvHS/ezgif-com-video-to-gif-1.gif" alt="ezgif-com-video-to-gif-1">
+                <img class="fitting-block-pic" src="{% static 'images/band-measurement.gif' %}" alt="band measurement under bust">
             </div>
             <div class="form-question-info"><p>This is not your band <i>size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement.<br>
             This number is a tool to find your best support not a definition of who you are!</p>
@@ -31,14 +59,14 @@
             {{ form.band_measurement }}
             </div>
         </div>
-        <button class="step-two-next-button save btn btn-default" type="submit">Next</button>
+        <button class="step-two-next-button save btn btn-default" type=button>Next</button>
     </section>
 
     <section class="fitting-step step-three">
         <h3 id="bust-measurement-wearing-title">Bust Measurement</h3>
-        <div class="fitting-step-row">
+        <div class="fitting-step-column">
             <div class="fitting-block-video-section">
-                <img class="fitting-block-pic" src="https://i.ibb.co/ZdzHtb5/ezgif-com-video-to-gif-2.gif" alt="measuring bust half way, and all the way around">
+                <img class="fitting-block-pic" src="{% static 'images/bust-measurement.gif' %}" alt="measuring bust half way, and all the way around">
             </div>
             <div class="form-question-info"><p>Pick which breast you think needs the most support. You will measure that side only by using one hand to hold the measuring tape in the middle of your back. You will then bring the tape to the middle of the front of your chest with your other hand.</p>
             <label for="{{ form.bust_measurement.id_for_label }}">Enter bust measurement (inches): </label>
