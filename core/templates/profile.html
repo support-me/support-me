@@ -22,7 +22,7 @@
         </div>  
         {% endfor %}
         </th>
-       <p> <small style="color:coral;"> - Date measured :  {{brafitting.date_sized}}     </small>  <br>  <button class=" bra-delete-button"> Delete </button>
+       <p> <small style="color:coral;"> - Date measured :  {{brafitting.date_sized}}     </small>  <br>  <button class=" bra-delete-button"> <a href="{% url 'delete' %}"> Delete </a> </button>
        </p>
        <hr>
  <br> 

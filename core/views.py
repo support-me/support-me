@@ -11,6 +11,7 @@ from core.serializers import UserSerializer, GroupSerializer, ProfileSerializer,
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 # Create your views here.
@@ -130,7 +131,7 @@ class ProfileView(APIView):
 def profile(request):
     profile = Profile.objects.get(site_user=request.user)
     brafitting = BraFitting.objects.filter(fitting_user=request.user)
-    suggestion = Suggestion.objects.all()
+    # suggestion = Suggestion.objects.all()
 
     context = {
         'profile': profile,
@@ -142,4 +143,21 @@ def profile(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def delete_bra_fitting(request, id=None):
+    # deleting bra session
+    fitting_session = get_object_or_404(BraFitting, id=id)
     
+    delete_fitting = fitting_session.user.username
+
+    if request.method == "POST" and request.user.is_authenticated and request.user.username == delete_fitting:
+        delete_fitting.delete()
+        messages.success(request, " Fitting has been deleted!")
+        return HttpResponseRedirect('profile.html')
+
+    context={
+        'fitting_session': fitting_session,
+        'delete_fitting': delete_fitting,
+    }
+    return render(request, 'delete_fitting.html', context)
+

@@ -410,6 +410,19 @@ ul.bra-suggestion-need-list {
 .profile-welcome-div{
     text-align: center;
 }
+hr{
+    border: 1px solid #8787e6;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
+}
+
+
+
+
+
+
+
+
+
 
 /* nav menu drop down */
 .nav-menu{
