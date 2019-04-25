@@ -34,7 +34,6 @@ class BraFitting(models.Model):
     band_size = models.IntegerField(blank=True)
     bust_measurement = models.DecimalField(help_text='Enter measurement in inches for bust', max_digits=5, decimal_places=2)
     cup_size = models.CharField(max_length=10, blank=True)
-    bust_circumference = models.BooleanField(help_text='You may measure your bust all the way around. That is ok! Just click here', blank=True, default=False)
     date_sized = models.DateField(verbose_name='Date of Bra Fitting', auto_now_add=True, null=True, blank=True)
     # http://www.learningaboutelectronics.com/Articles/How-to-create-a-drop-down-list-in-a-Django-form.php
 
@@ -59,13 +58,21 @@ class BraFitting(models.Model):
         ('PushUp', 'Push-Up Bra'),
         ('LightlyLined', 'Lightly-Lined Bra'),
     )
-    
     currently_wearing = models.CharField(
         max_length=20,
         choices=CURRENTLY_WEARING_CHOICES,
         default='None',
     )
 
+    BUST_CIRCUMFERENCE_CHOICES = (
+        ('Half', 'Half Way Around'),
+        ('AllWay', 'All The Way Around'),
+    )
+    bust_circumference = models.CharField(
+        max_length=25,
+        choices=BUST_CIRCUMFERENCE_CHOICES,
+        default='Half',
+    )
 
     def calculate_band_size(self, band_measurement):
         """
@@ -100,6 +107,7 @@ class BraFitting(models.Model):
         Calculates cup_size based on bust_measurement and band_size.
         """
         CUP_OPTIONS = {
+            -6:'AA',
             -5:'AA',
             -4:'AA',
             -3:'AA',
@@ -119,6 +127,8 @@ class BraFitting(models.Model):
             11:'K',
             12:'L',
             13:'M',
+            14:'N',
+            15:'O',
         }
         # https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
         cup_size_number = self.bust_measurement - int(band_size)
@@ -148,16 +158,21 @@ class Suggestion(models.Model):
     SHAPE_CHOICES = (
         ('Teardrop', 'Teardrop'),
         ('Round', 'Round'),
-        ('None', 'None'),
+        ('None', 'Other'),
     )
     breast_shape = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
 
     PLACEMENT_CHOICES = (
         ('Near', 'Near'),
-        ('Far', 'Far')
+        ('Far', 'Far'),
     )
-    breast_placement = models.CharField(max_length=30, choices=PLACEMENT_CHOICES, default='Close')
-    bra_wire = models.BooleanField(verbose_name='Underwire', blank=True, default=True)
+    breast_placement = models.CharField(max_length=30, choices=PLACEMENT_CHOICES, default='Near')
+
+    WIRE_CHOICES = (
+        ('Underwire', 'Underwire'),
+        ('Wireless', 'Wireless')
+    )
+    bra_wire = models.CharField(max_length=20, choices=WIRE_CHOICES, default='Underwire')
 
     BRA_PADDING_CHOICES = (
         ('PushUp', 'Push-Up'),
@@ -198,7 +213,6 @@ class Resource(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     url = models.URLField(blank=False)
-
 
     def __str__(self):
         return self.title
