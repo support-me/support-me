@@ -15,10 +15,35 @@
                     <label for="unlined-bra-drawing">Unlined Bra</label>
                     <img id="unlined-bra-drawing" src="http://placekitten.com/g/200/200" alt="unlined">
                 </div>
+                <div class="bra-drawing-set">
+                    <label for="sports-bra-drawing">Sports Bra</label>
+                    <img id="sports-bra-drawing" src="http://placekitten.com/g/200/200" alt="sports">
+                </div>
+                <div class="bra-drawing-set">
+                    <label for="bralette-bra-drawing">Bralette Bra</label>
+                    <img id="bralette-bra-drawing" src="http://placekitten.com/g/200/200" alt="bralette">
+                </div>
+                <div class="bra-drawing-set">
+                    <label for="push-up-bra-drawing">Push-Up Bra</label>
+                    <img id="pushup-bra-drawing" src="http://placekitten.com/g/200/200" alt="pushup">
+                </div>
+                <div class="bra-drawing-set">
+                    <label for="lightly-lined-bra-drawing">Lightly-Lined Bra</label>
+                    <img id="lightly-lined-bra-drawing" src="http://placekitten.com/g/200/200" alt="lightly-lined">
+                </div>
             </div>
 
             <label for="{{ form.currently_wearing.id_for_label }}">Select the bra you are currently wearing.</label>
-            <p class="currently-wearing-field">{{ form.currently_wearing }}</p>
+            <ul class="currently-wearing-field">
+            {% for choice in form.currently_wearing.field.choices %}
+                <li><input type="radio" name="currently_wearing" value="{{ choice.0 }}"
+                {% ifequal form.currently_wearing.data choice.0 %}
+                    checked="checked"
+                {% endifequal %}/>
+                <label for="">{{ choice.1 }}</label>
+                </li>
+                {% endfor %}
+            </ul>
             </div>
         </div>
         <button class="step-one-next-button save btn btn-default" type=button>Next</button>

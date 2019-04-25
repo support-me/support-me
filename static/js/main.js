@@ -5,7 +5,7 @@ const Cookies = require('js-cookie')
 const merge = require('deepmerge')
 // sticky navBar: https://codepen.io/renduh/pen/oBBGbK
 let navBar = $('.nav-bar')
-let headerDiv = $('.company-title').height()
+const headerDiv = $('.company-title').height()
 
 function showDiv (div, type) {
   $(div).show(type)
@@ -70,5 +70,4 @@ $(document).ready(() => {
 })
 
 swal('You did it! Now you know how to do your own bra fitting and get a bra size and style that supports you!')
-confirmButtonColor: "#DD6B55";
-
+confirmButtonColor: '#DD6B55'
