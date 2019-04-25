@@ -33,17 +33,18 @@
                 </div>
             </div>
 
-            <label for="{{ form.currently_wearing.id_for_label }}">Select the bra you are currently wearing.</label>
-            <ul class="currently-wearing-field">
-            {% for choice in form.currently_wearing.field.choices %}
+            {% comment %} <ul class="currently-wearing-field"> {% endcomment %}
+            {{ form.currently_wearing.field.choices }}
+            {% comment %} {% for choice in form.currently_wearing.field.choices %}
                 <li><input type="radio" name="currently_wearing" value="{{ choice.0 }}"
                 {% ifequal form.currently_wearing.data choice.0 %}
                     checked="checked"
                 {% endifequal %}/>
                 <label for="">{{ choice.1 }}</label>
                 </li>
-                {% endfor %}
-            </ul>
+            {% endfor %} {% endcomment %}
+            {% comment %} </ul> {% endcomment %}
+            <label for="{{ form.currently_wearing.id_for_label }}">Select the bra you are currently wearing.</label>
             </div>
         </div>
         <button class="step-one-next-button save btn btn-default" type=button>Next</button>
