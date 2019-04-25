@@ -33,8 +33,9 @@ ul {
     list-style: none;   
 }
 .content{
-    padding: 2rem 4rem 4rem 4rem;
-    /* height: 100%; */
+    padding: 6rem 4rem 4rem 4rem;
+    height: 100%;
+    margin: 0 auto 0;
 }
 #header {
     display:flex;
@@ -65,10 +66,16 @@ ul {
 }
 .nav-bar {
     position: relative;
-    /* flex-direction: row;
-    flex-wrap: wrap; */
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-    padding: 2rem 0 2rem 3rem;
+    height: 6rem;
+    line-height: 6rem;
+    margin-bottom: -7rem;
+    z-index: 3;
+    background-color: white;
+    /* padding: 2rem 0 2rem 3rem; */
+    
 }
 .sticky-nav {
     position: fixed;
