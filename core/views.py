@@ -145,9 +145,9 @@ def about(request):
 
 def delete_bra_fitting(request, id=None):
     # deleting bra session
-    fitting_session = get_object_or_404(BraFitting, id=id)
+    fitting_history = get_object_or_404(braFitting, id=id)
     
-    delete_fitting = fitting_session.user.username
+    delete_fitting = fitting_history.user.username
 
     if request.method == "POST" and request.user.is_authenticated and request.user.username == delete_fitting:
         delete_fitting.delete()
@@ -155,7 +155,7 @@ def delete_bra_fitting(request, id=None):
         return HttpResponseRedirect('profile.html')
 
     context={
-        'fitting_session': fitting_session,
+        'fitting_history': fitting_history,
         'delete_fitting': delete_fitting,
     }
     return render(request, 'delete_fitting.html', context)
