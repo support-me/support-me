@@ -23,7 +23,13 @@
       <h1 id="company-title"><a href="{% url 'home' %}">Support Me</a></h1>
       <div id="nav-bar">
         <span class="nav-item"><a href="{% url 'brafitting' %}">Fit</a></span>
-        <span class="nav-item"><a href="{% url 'bra-care' %}">Bra Care</a></span>
+        <span class="nav-item">Resources
+          <ul>
+            <li><a href="{% url 'resources' %}">Resources</a></li>
+            <li><a href="{% url 'bra-care' %}">Bra Care</a></li>
+            <li><a href="{% url 'about'  %}"></a>About/FAQ</li>
+          </ul>
+        </span>
         {% if user.is_authenticated %}
         <span class="nav-item"><a href="{% url 'profile' %}">{{ user.username }}</a></span>
         <span class="nav-item"><a href="{% url 'account_logout' %}">Sign Out</a></span>
