@@ -2,10 +2,9 @@
 
 {% block content %}
 {% if bra_size %}
-<h1>Your estimated bra size: <strong>{{bra_size}}</strong></h1>
-<p>{{bra_size}}</p>
+<h3>Your estimated bra size: <strong>{{bra_size}}</strong></h3>
 <p>To get <i class="key-word">band size</i>, we added 4" if <i class="key-word">band measurement</i> is even, and 5" if measurement is odd.</p>
-<p><i class="key-word">Cup size</i> is determined by the <i class="key-word">band size</i> subracted from the bust circumeference, with some additional calculations based on what you're currently wearing</p>
+<p>The <i class="key-word">cup size</i> is determined by the <i class="key-word">band size</i> subracted from the bust circumeference, with some additional calculations based on what you're currently wearing</p>
 {% else %}
 <p>that didnt work :(</p>
 {% endif %}
@@ -30,7 +29,7 @@
         </section>
         <section>
             <h3 id="breast-placement-label">Breast placement</h3>
-            <div class="form-question-body">This is taken into account in order to determine what width the center gore should be for optimum comfort.</div>
+            <div class="form-question-body">This is taken into account in order to determine what width the center gore should be for optimum comfort and support.</div>
             <div class="form-question-body"><label>Choose the placement that you most identify with: {{ form.breast_placement }}</label></div>
         </section>
         <section>
@@ -49,6 +48,7 @@
             <div class="form-question-body">Yes, level of padding is a preference when it comes to comfort. Although pushup and lightly-lined bras will give a bit more support. </div>
             <div><label>What is the main type of padding that you are interested in?{{ form.bra_padding }}</label></div>
         </section>
+
         <button type="submit" class="submit-button">See Recs!</button>
     </form>
 
