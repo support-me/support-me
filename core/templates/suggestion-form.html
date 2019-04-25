@@ -5,7 +5,7 @@
 <h1>Your estimated bra size: <strong>{{bra_size}}</strong></h1>
 <p>{{bra_size}}</p>
 <p>To get <i class="key-word">band size</i>, we added 4" if <i class="key-word">band measurement</i> is even, and 5" if measurement is odd.</p>
-<p>Cup size is determined by the <i class="key-word">band size</i> subracted from the bust circumeference, with some additional calculations based on what you're currently wearing</p>
+<p><i class="key-word">Cup size</i> is determined by the <i class="key-word">band size</i> subracted from the bust circumeference, with some additional calculations based on what you're currently wearing</p>
 {% else %}
 <p>that didnt work :(</p>
 {% endif %}
@@ -15,7 +15,7 @@
         {{ form.non_field_errors }}
         <section>
             <h3 id="bra-suggestion-label">Bra Suggestion Categories</h3>
-            <div class="form-question-body">Your estimated bra size is: <strong>{{bra_size}}</strong>. But there is more to finding the bra that will best fit you than <i>just</i> having a bra size. We also need to take into consideration a few things about bras that may impact how comfortable you are in them:
+            <div class="form-question-body">Your estimated bra size is: <strong>{{bra_size}}</strong>. There is more to finding the bra that fits you best than <i>just</i> having a bra size! We also need to consider a few things about bras that impact how comfortable they are:
             <ul class="bra-suggestion-need-list">
                 <li class="bra-as-li">Breast shape and placement</li>
                 <li class="bra-as-li">Level of padding</li>
@@ -26,11 +26,11 @@
         </section>
         <section>
             <h3 id="bra-anatomy-label">Bra Anatomy</h3>
-            <div class="form-question-body">First we need to understand the anatomy of the bra a little bit. In the drawing, you will notice a few parts of the bra are defined. As we go through the next steps we will talk more about theses specific parts of the bra and how they can impact your comfort.</div>
+            <div class="form-question-body">First we need to understand the anatomy of a bra. In the drawing, you will notice a few parts of the bra are defined. The next steps will explain theses specific parts of the bra and how they can impact comfort.</div>
         </section>
         <section>
             <h3 id="breast-placement-label">Breast placement</h3>
-            <div class="form-question-body">Let us go to the center and work our way outwords with the center gore. The center gore is the piece of the bra that connects the two cups together. A center gore that is wider will be more comfortable for people whose breasts are placed further apart. A center gore that not only connects the cups but also connects along the bottom of the cups to the band will be comfortable for people who would like more support.</div>
+            <div class="form-question-body">A center gore that is wider will be more comfortable for people whose breasts are placed further apart. A center gore that not only connects the cups but also connects along the bottom of the cups to the band will be comfortable for people who would like more support.</div>
             <div class="form-question-body"><label>Choose the placement that you most identify with: {{ form.breast_placement }}</label></div>
         </section>
         <section>
