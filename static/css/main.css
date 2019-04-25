@@ -339,14 +339,16 @@ ul.bra-suggestion-need-list{
     display:flex;
     flex-direction: row;
     justify-content: flex-start;
-    position: fixed;
-    padding-left:0;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
 }
 li{
     display: block;
     float:left;
-    position:relative;
     transition-duration: 0.5s;
+    margin: .5rem;
+    padding-left:0;
 }
 li:hover,
 li:focus-within{
@@ -375,4 +377,6 @@ ul li ul:focus{
 ul li ul li{
     clear: both;
     width: 100%;
+    padding-left: 0;
+    margin-left:0;
 }
