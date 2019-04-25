@@ -352,18 +352,18 @@ ul.bra-suggestion-need-list{
 .nav-menu-drop {
     background-color: white;
 }
-li{
+.nav-menu li{
     display: block;
     float:left;
     transition-duration: 0.5s;
     margin: .5rem;
     padding-left:0;
 }
-li:hover,
-li:focus-within{
+.nav-menu li:hover,
+.nav-menu li:focus-within{
     cursor:pointer;
 }
-li:focus-within a{
+.nav-menu li:focus-within a{
     outline:none;
 }
 ul li ul{
