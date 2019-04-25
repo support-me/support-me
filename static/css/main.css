@@ -338,6 +338,9 @@ ul.bra-suggestion-need-list{
 .nav-menu{
     display:flex;
     flex-direction: row;
+    justify-content: flex-start;
+    position: fixed;
+    padding-left:0;
 }
 li{
     display: block;
@@ -367,6 +370,7 @@ ul li ul:focus{
     visibility: visible;
     opacity: 1;
     display: block;
+    position: absolute;
 }
 ul li ul li{
     clear: both;
