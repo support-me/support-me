@@ -16,11 +16,13 @@
    <a  class="bra-site-button" href="https://www.ae.com/aerie-bras/aerie/s-cat/4840012" target="blank" class="button"> Aerie</a>
    <a  class="bra-site-button" href="https://www.target.com/c/bras-intimates-women-s-clothing/-/N-5xtcd"  target="blank" class="button"> Target</a>
    <a  class="bra-site-button" href="https://www.belk.com/women/womens-clothing/bras-panties-lingerie/bras/"  target="blank" class="button"> Belk </a>
+   <a  class="bra-site-button" href="https://madalynne.com/product-category/custom-lingerie/"  target="blank" class="button"> Custom </a>
 
 </div>
    {% endif %}
 {% if user.is_authenticated %}
     <p>Visit your <a href="{% url 'profile' %}">Profile</a> to view your bra history.</p>
+    <p> Also check out our <a href="{% url 'resources' %}"> Resources</a> page!</p>
 
 
 {% else %}
