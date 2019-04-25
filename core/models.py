@@ -90,7 +90,7 @@ class BraFitting(models.Model):
     def calculate_circumference(self, currently_wearing, bust_circumference, bust_measurement):
         if self.bust_measurement:
             self.bust_measurement = round(float(bust_measurement))
-        if not bust_circumference:
+        if bust_circumference == 'Half':
             self.bust_measurement = self.bust_measurement * 2
         # Account for what is currently being worn below    
         if currently_wearing in ['None', 'Unlined', 'Bralette', 'SportsBra']:
@@ -202,7 +202,6 @@ class Suggestion(models.Model):
         else:
             self.bra_frame = 'Demi'
         self.bra_suggestion = f'{self.bra_frame} {bra_padding}'
-        print(self.bra_suggestion)
         return self.bra_suggestion
 
     def __str__(self):
