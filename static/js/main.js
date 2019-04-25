@@ -3,14 +3,30 @@ const $ = require('jquery')
 window.$ = window.jQuery = $
 const Cookies = require('js-cookie')
 const merge = require('deepmerge')
+// sticky navBar: https://codepen.io/renduh/pen/oBBGbK
+let navBar = $('.nav-bar')
+const headerDiv = $('.company-title').height()
 
-function showDiv (div) {
-  $(div).show()
+function showDiv (div, type) {
+  $(div).show(type)
 }
-function hideDiv (div) {
-  $(div).hide()
+function hideDiv (div, type) {
+  $(div).hide(type)
 }
+function startFitting () {
+  hideDiv('.step-two')
+  hideDiv('.step-three')
+  showDiv('.step-one', 'slow')
 
+  $('.step-one-next-button').click(function () {
+    hideDiv('.step-one')
+    showDiv('.step-two', 'slow')
+  })
+  $('.step-two-next-button').click(function () {
+    hideDiv('.step-two')
+    showDiv('.step-three', 'slow')
+  })
+}
 // https://sudo.isl.co/fetch-me-that-json-from-django/
 function request (url, options) {
   if (!options) {
@@ -41,20 +57,17 @@ request('/api/fittings')
 
 $(document).ready(() => {
   console.log('loaded')
-  hideDiv('.step-two')
-  hideDiv('.step-three')
-  showDiv('.step-one')
 
-  $('.step-one-next-button').click(function () {
-    hideDiv('.step-one')
-    showDiv('.step-two')
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > headerDiv) {
+      navBar.addClass('sticky-nav')
+    } else {
+      navBar.removeClass('sticky-nav')
+    }
   })
-  $('.step-two-next-button').click(function () {
-    hideDiv('.step-two')
-    showDiv('.step-three')
-  })
+
+  startFitting()
 })
 
 swal('You did it! Now you know how to do your own bra fitting and get a bra size and style that supports you!')
-confirmButtonColor: "#DD6B55";
-
+confirmButtonColor: '#DD6B55'

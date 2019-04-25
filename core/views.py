@@ -36,7 +36,6 @@ def braFitting(request):
 
     else: 
         form = BraFittingForm()
-    
     return render(request, 'bra_fitting.html', {
         'form': form,})
     
