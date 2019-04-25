@@ -60,9 +60,9 @@ $(document).ready(() => {
 
   $(window).scroll(function () {
     if ($(this).scrollTop() > headerDiv) {
-      navBar.addClass('.sticky-nav')
+      navBar.addClass('sticky-nav')
     } else {
-      navBar.removeClass('.sticky-nav')
+      navBar.removeClass('sticky-nav')
     }
   })
 

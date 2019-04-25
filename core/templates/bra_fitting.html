@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 <h1>Bra Fitting</h1>
     <form class="fitting-form" method="POST">
     {% csrf_token %}
@@ -32,9 +33,9 @@
                     <img id="lightly-lined-bra-drawing" src="http://placekitten.com/g/200/200" alt="lightly-lined">
                 </div>
             </div>
-
+            <br><br>
             {% comment %} <ul class="currently-wearing-field"> {% endcomment %}
-            {{ form.currently_wearing.field.choices }}
+            {{ form.currently_wearing.data }}
             {% comment %} {% for choice in form.currently_wearing.field.choices %}
                 <li><input type="radio" name="currently_wearing" value="{{ choice.0 }}"
                 {% ifequal form.currently_wearing.data choice.0 %}
@@ -44,6 +45,7 @@
                 </li>
             {% endfor %} {% endcomment %}
             {% comment %} </ul> {% endcomment %}
+            <br><br>
             <label for="{{ form.currently_wearing.id_for_label }}">Select the bra you are currently wearing.</label>
             </div>
         </div>
@@ -54,7 +56,7 @@
         <h3 id="band-measurement-wearing-title">Band Measurement</h3>
         <div class="fitting-step-column">
             <div class="fitting-block-video-section">
-                <img class="fitting-block-pic" src="https://i.ibb.co/7vbDvHS/ezgif-com-video-to-gif-1.gif" alt="ezgif-com-video-to-gif-1">
+                <img class="fitting-block-pic" src="{% static 'media/band-measurmen.gif' %}" alt="band measurement under bust">
             </div>
             <div class="form-question-info"><p>This is not your band <i>size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement.<br>
             This number is a tool to find your best support not a definition of who you are!</p>
