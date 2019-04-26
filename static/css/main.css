@@ -3,7 +3,8 @@
     /*big heading font: font-family: 'Acme', sans-serif; */
     /* little heading font: font-family: 'Fresca', sans-serif;  */
     /* plain text font: font-family: 'Quicksand', sans-serif; */
-    margin: 0 auto;
+    margin: auto;
+    padding: auto;
     /* font-family: 'Quicksand', sans-serif; */
     /*colors
     yellow: #e6e687
@@ -19,7 +20,9 @@
     Do not put the following color pairs besides eachother or overlapping:
     -blue & green/purple/gray
     -green & red/yellow/gray
-    
+
+    stick nav codepen: https://codepen.io/renduh/pen/oBBGbK
+
     */
     /* border: 1px dashed grey; */
 
@@ -34,14 +37,14 @@ ul {
     list-style: none;   
 }
 .content{
-    margin: 0 auto 0;
+    margin: 0;
     padding-right: 4rem;
     padding-left: 4rem;
-    padding-top: 7.5rem;
+    padding-top: 6.5rem;
     /* height: 100vh; */
 }
 #header {
-    height: 200px;
+    height: 250px;
 }
 .company-title{
     font-family: 'Sofia', cursive;
@@ -58,6 +61,8 @@ ul {
     6px 5px 1px #ccc, 5px 6px 1px #eee,
     7px 6px 1px #ccc;
     padding: 1rem 0 1rem 10rem; 
+    background: url('/static/images/rehan-mallick-734287-unsplash.jpg') no-repeat;
+    background-size: cover;
     /* border-bottom: 2px solid #8787e6;
     border-bottom-right-radius: 60% 70%; */
 }
