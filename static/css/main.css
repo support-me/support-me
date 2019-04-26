@@ -386,6 +386,10 @@ ul li ul li{
     margin-left:0;
     background-color: white;
 }
+.care-image{
+    width: 30%;
+    border-radius: 20%;
+}
 
 footer {
     margin-top: 3rem;
