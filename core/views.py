@@ -143,9 +143,10 @@ def profile(request):
 def about(request):
     return render(request, 'about.html')
 
-def delete_bra_fitting(request, id=None):
+def delete_bra_fitting(request, id=fitting_id):
     # deleting bra session
-    fitting_history = get_object_or_404(braFitting, id=id)
+    
+    fitting_history = get_object_or_404(fitting_id, id=fitting_id)
     
     delete_fitting = fitting_history.user.username
 
