@@ -4,11 +4,12 @@ from django.contrib.auth.models import User
 import math
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.contrib.auth.models import AnonymousUser
 # Create your models here.
 
 class Profile(models.Model):
     # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
-    site_user = models.OneToOneField(to=User, on_delete=models.CASCADE)
+    site_user = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True, blank=True)
     # add favorites field?
 
     @receiver(post_save, sender=User)
@@ -28,7 +29,7 @@ class BraFitting(models.Model):
     """
     Model for main feature of our site. Getting user input to find bra size.
     """
-    fitting_user = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='fittings', blank=True)
+    fitting_user = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='fittings', blank=True, null=True)
     bra_size = models.CharField(max_length=10, blank=True, null=True)
     band_measurement = models.DecimalField(help_text='Enter in inches measurment under bust', max_digits=5, decimal_places=2)
     band_size = models.IntegerField(blank=True)
