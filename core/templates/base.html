@@ -21,6 +21,7 @@
     {% block body %}
     <div id="header">
       <h1 class="company-title"><a href="{% url 'home' %}">Support Me</a></h1>
+    </div>
       <div class="nav-bar">
         <ul class="nav-menu">
           <li class="nav-item"><a href="{% url 'home' %}">Fit</a></li>
@@ -42,7 +43,7 @@
           {% endif %}
         </ul>
       </div>
-    </div>
+    
     <div class="content">
       {% if messages %}
       <div class="login-message-div">

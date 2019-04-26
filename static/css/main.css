@@ -41,6 +41,7 @@ ul {
     /* height: 100vh; */
 }
 #header {
+    height: 200px;
 }
 .company-title{
     font-family: 'Sofia', cursive;
@@ -68,13 +69,13 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 6.5rem;
-    line-height: 5.5rem;
-    margin-bottom: -6.5rem;
+    height: 100px;
+    line-height: 100px;
+    margin-bottom: -100px;
     z-index: 3;
     background-color: white;
     border-bottom-right-radius: 60% 70%;
-    border-bottom: 2px solid #8787e6;
+    border-bottom: 3px solid #8787e6;
 
     /* padding: 2rem 0 2rem 3rem; */
     
@@ -347,22 +348,22 @@ ul.bra-suggestion-need-list{
 }
 
 /* nav menu drop down */
-.nav-menu{
+/* .nav-menu{
     display:flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
-}
+} */
 .nav-menu-drop {
     background-color: white;
+    border: 1px solid #8787e6;
 }
 .nav-menu li{
     display: block;
     float:left;
     transition-duration: 0.5s;
-    margin: .5rem;
     padding-left:0;
 }
 .nav-menu li:hover,

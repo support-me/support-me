@@ -5,7 +5,7 @@ const Cookies = require('js-cookie')
 const merge = require('deepmerge')
 // sticky navBar: https://codepen.io/renduh/pen/oBBGbK
 let navBar = $('.nav-bar')
-const headerDiv = $('.company-title').height()
+const headerDiv = $('#header').height()
 
 function showDiv (div, type) {
   $(div).show(type)
