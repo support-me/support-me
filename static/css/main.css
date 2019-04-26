@@ -417,17 +417,14 @@ footer {
     padding-right: .5rem;
     text-align: center;
     justify-content: center;
-
 }
 
 .history-box {
     flex-grow: 3;
-
+    justify-content: center;
+    display: block;
 }
 
-.hitory-info {
-    flex-grow: 3;
-}
 .bra-delete-button{
     background-color: white;
     color: coral;
