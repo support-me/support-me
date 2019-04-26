@@ -13,6 +13,7 @@ function showDiv (div, type) {
 function hideDiv (div, type) {
   $(div).hide(type)
 }
+
 function startFitting () {
   hideDiv('.step-two')
   hideDiv('.step-three')
@@ -27,6 +28,31 @@ function startFitting () {
     showDiv('.step-three', 'slow')
   })
 }
+
+function startSuggestionForm () {
+  hideDiv('.sugg-step-one')
+  hideDiv('.sugg-step-two')
+  hideDiv('.sugg-step-three')
+  hideDiv('.sugg-step-four')
+
+  $('.sugg-step-start-next-button').click(function () {
+    hideDiv('.sugg-step-start')
+    showDiv('.sugg-step-one', 'slow')
+  })
+  $('.sugg-step-one-next-button').click(function () {
+    hideDiv('.sugg-step-one')
+    showDiv('.sugg-step-two', 'slow')
+  })
+  $('.sugg-step-two-next-button').click(function () {
+    hideDiv('.sugg-step-two')
+    showDiv('.sugg-step-three', 'slow')
+  })
+  $('.sugg-step-three-next-button').click(function () {
+    hideDiv('.sugg-step-three')
+    showDiv('.sugg-step-four', 'slow')
+  })
+}
+
 // https://sudo.isl.co/fetch-me-that-json-from-django/
 function request (url, options) {
   if (!options) {
@@ -67,6 +93,7 @@ $(document).ready(() => {
   })
 
   startFitting()
+  startSuggestionForm()
 })
 
 swal('You did it! Now you know how to do your own bra fitting and get a bra size and style that supports you!')
