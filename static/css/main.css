@@ -37,20 +37,20 @@ ul {
     list-style: none;   
 }
 .content{
-    margin: 0;
+    margin: auto;
     padding-right: 4rem;
     padding-left: 4rem;
-    padding-top: 6.5rem;
-    /* height: 100vh; */
+    padding-top: 10rem;
+    max-width: 1400px;
 }
 #header {
-    height: 250px;
+    height: 100px;
 }
 .company-title{
     font-family: 'Sofia', cursive;
     font-size: 4rem;
     font-weight: 700;
-    letter-spacing: .4rem;
+    /* letter-spacing: .4rem; */
     color: #8787e6;
     text-shadow: 
     1px 0px 1px #ccc, 0px 1px 1px #eee, 
@@ -61,7 +61,7 @@ ul {
     6px 5px 1px #ccc, 5px 6px 1px #eee,
     7px 6px 1px #ccc;
     padding: 1rem 0 1rem 10rem; 
-    background: url('/static/images/rehan-mallick-734287-unsplash.jpg') no-repeat;
+    /* background: url('/static/images/rehan-mallick-734287-unsplash.jpg') no-repeat; */
     background-size: cover;
     /* border-bottom: 2px solid #8787e6;
     border-bottom-right-radius: 60% 70%; */
@@ -196,9 +196,8 @@ button{
 }
 
 /* FITTING FORM SECTION */
-.bra-fitting-content {
+.bra-fitting-index-content {
     text-align: center;
-    padding: 2rem 0 4rem 0;
 }
 .fit-intro {
     padding: 1rem 0 1rem 0;
@@ -208,19 +207,19 @@ button{
     display: flex;
     flex-wrap: wrap;
 }
-.fitting-step {
+.fitting-step, .suggestion-step {
     /* text-align: center; */
-    padding: 1rem 5rem 1rem 5rem;
+    padding: 1rem 4rem 1rem 4rem;
     border: 1px solid black;
 }
-.fitting-step-column {
+.fitting-step-column, .suggestion-step-column {
     max-width: 890px;
     display: flex;
     align-content: center;
     flex-direction: column;
     padding: 1rem 5rem 1rem 5rem;
 }
-.fitting-form {
+.fitting-form, .suggestion-form {
     text-align: center;
 }
 .fitting-step {
@@ -268,6 +267,9 @@ button{
     flex-wrap: wrap;
 }
 
+/* Suggestion Form Styling */
+
+
 /* ABOUT ME PAGE STYLE */
 .support-me-team-pics {
     display: flex;
@@ -280,17 +282,7 @@ button{
     width: 150px;
     height: 150px;
 }
-footer {
-    /* position: relative;  */
-    /* bottom: 0; */
-    border-top: 2px solid #8787e6;
-    height: 100%;
-    width: 100%;
-    color: black;
-    text-align: center;
-    opacity: .8;
-    overflow: hidden;
-}
+
 .measurement-text{
     font-style: bold;
     font-size: 3rem;
@@ -352,15 +344,7 @@ ul.bra-suggestion-need-list{
     color: #8787e6;
 }
 
-/* nav menu drop down */
-/* .nav-menu{
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    flex-wrap: wrap;
-} */
+/* DROP DOWN MENU STUFF */
 .nav-menu-drop {
     background-color: white;
     border: 1px solid #8787e6;
@@ -401,4 +385,16 @@ ul li ul li{
     padding: 0;
     margin-left:0;
     background-color: white;
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 1rem 0 2rem 0;
+    border-top: 2px solid #8787e6;
+    height: 100%;
+    width: 100%;
+    color: black;
+    text-align: center;
+    opacity: .8;
+    overflow: hidden;
 }
