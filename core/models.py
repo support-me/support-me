@@ -9,7 +9,7 @@ from django.contrib.auth.models import AnonymousUser
 
 class Profile(models.Model):
     # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
-    site_user = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True, blank=True)
+    site_user = models.OneToOneField(to=User, on_delete=models.CASCADE, null=True, blank=True)
     # add favorites field?
 
     @receiver(post_save, sender=User)
