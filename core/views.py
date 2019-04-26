@@ -11,6 +11,7 @@ from core.serializers import UserSerializer, GroupSerializer, ProfileSerializer,
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import AnonymousUser
 
 
 # Create your views here.
@@ -20,8 +21,13 @@ def home(request):
 def braFitting(request):
     if request.method == 'POST':
         form = BraFittingForm(request.POST)
+        # Anonymous sign in:
+        # https://android.wekeepcoding.com/article/12025175/Django+1.9%3A+'AnonymousUser'+object+is+not+iterable
         if form.is_valid():
-            fitting_user = request.user
+            if request.user.is_active:
+                fitting_user = request.user
+            else:
+                fitting_user = None
             fitting = form.save(commit=False)
             data = form.data
             fitting.save(
@@ -36,7 +42,6 @@ def braFitting(request):
 
     else: 
         form = BraFittingForm()
-    
     return render(request, 'bra_fitting.html', {
         'form': form,})
     
