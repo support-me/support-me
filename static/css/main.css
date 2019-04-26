@@ -24,7 +24,7 @@
     stick nav codepen: https://codepen.io/renduh/pen/oBBGbK
 
     */
-    /* border: 1px dashed grey; */
+    border: 1px dashed grey;
 
 }
 
@@ -110,19 +110,6 @@ button{
 .google {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3rem;
-}
-.care-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-.care-part{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items:center;
 }
 .history-box{
     display: flex;
@@ -386,9 +373,28 @@ ul li ul li{
     margin-left:0;
     background-color: white;
 }
-.care-image{
-    width: 30%;
-    border-radius: 20%;
+
+/* BRA CARE PAGE */
+.care-image {
+    max-width: 300px;
+}
+.care-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+}
+.care-option-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.care-part{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
 }
 
 footer {
