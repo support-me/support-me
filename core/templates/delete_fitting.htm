@@ -4,10 +4,6 @@
 
 {% if request.user.is_authenticated and request.user.username == delete_fitting %}
 
-
-
-
-
 <form method="POST" action="">
 {% csrf_token %}
 Are you sure you want to delete this fitting? 
@@ -17,7 +13,7 @@ Are you sure you want to delete this fitting?
 {% endif %}
 
 {%if request.user.username !=  delete_fitting %}
-<h1>You cannot delete this fitting/h1>
+<h1>You cannot delete this fitting</h1>
 {% endif %}
 
 
