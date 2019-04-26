@@ -24,7 +24,7 @@
     stick nav codepen: https://codepen.io/renduh/pen/oBBGbK
 
     */
-    border: 1px dashed grey;
+    /* border: 1px dashed grey; */
 
 }
 
@@ -100,11 +100,22 @@ a {
     color: #8787e6;
     text-decoration:  underline;
 }
-button{
-    background-color: #8787e6;
-}
+
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
+}
+.content button {
+    background-color: white;
+    border: 1px solid  #8787e6;
+    border-radius: 2rem;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 /* added this google section as placeholder- we can change the google font or put in image instead */
 .google {
@@ -178,8 +189,7 @@ button{
     padding: 2rem 0 2rem 0;
 }
 .get-fit-button a {
-    color: black;
-    font-size: 2rem;
+    
 }
 
 /* FITTING FORM SECTION */
@@ -299,19 +309,7 @@ button{
     justify-content: center;
 
 }
-.bra-site-button{
-    background-color: white;
-    border: 1px dashed  #8787e6;
-    border-radius: 3rem;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+
 .swal-button {
     background-color: #8787e6;
     color: #fff;
