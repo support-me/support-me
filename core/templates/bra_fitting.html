@@ -13,25 +13,26 @@
             <br><br>
             <ul class="currently-wearing-field">
             {% comment %} {{ form.currently_wearing.data }} {% endcomment %}
+            {% load static %}
             {% for choice in form.currently_wearing.field.choices %}
                 <li class="bra-drawing-set">
                 {% if 'None' in choice %}
-                    <img id="no-bra-drawing" src="http://placekitten.com/g/200/200" alt="no">
+                    <img id="no-bra-drawing" src="{% static 'images/empty.png' %}" alt="no">
                 {% endif %}
                 {% if 'Unlined' in choice %}
-                    <img id="unlined-bra-drawing" src="http://placekitten.com/g/200/200" alt="unlined bra">
+                    <img id="unlined-bra-drawing" src="{% static 'images/unlined_bra.png' %}" alt="unlined bra">
                 {% endif %}
                 {% if 'SportsBra' in choice %}
-                    <img id="sports-bra-drawing" src="http://placekitten.com/g/200/200" alt="sports bra">
+                    <img id="sports-bra-drawing" src="{% static 'images/sports_bra_copy.png' %}" alt="sports bra">
                 {% endif %}
                 {% if 'Bralette' in choice %}
-                    <img id="bralette-bra-drawing" src="http://placekitten.com/g/200/200" alt="bralette">
+                    <img id="bralette-bra-drawing" src="{% static 'images/bralette.png' %}" alt="bralette">
                 {% endif %}
                 {% if 'PushUp' in choice %}
-                    <img id="push-up-bra-drawing" src="http://placekitten.com/g/200/200" alt="Push up bra">
+                    <img id="push-up-bra-drawing" src="{% static 'images/pushup_bra.png' %}" alt="Push up bra">
                 {% endif %}
                 {% if 'LightlyLined' in choice %}
-                    <img id="lightly-lined-bra-drawing" src="http://placekitten.com/g/200/200" alt="lightly-lined bra">
+                    <img id="lightly-lined-bra-drawing" src="{% static 'images/lightly_lined_bra.png' %}" alt="lightly-lined bra">
                 {% endif %}
                     <p>
                         <input type="radio" name="currently_wearing" value="{{ choice.0 }}"{% ifequal form.currently_wearing.data choice.0 %} checked="checked" {% endifequal %}/>
