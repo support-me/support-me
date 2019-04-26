@@ -2,54 +2,61 @@
 
 {% block content %}
 {% if bra_size %}
-<h3>Your estimated bra size: <strong>{{bra_size}}</strong></h3>
-<p>To get <i class="key-word">band size</i>, we added 4" if <i class="key-word">band measurement</i> is even, and 5" if measurement is odd.</p>
-<p>The <i class="key-word">cup size</i> is determined by the <i class="key-word">band size</i> subracted from the bust circumeference, with some additional calculations based on what you're currently wearing</p>
-{% else %}
-<p>that didnt work :(</p>
-{% endif %}
-    <h2 class="form-title">What do you look for in your support?</h2>
-    <form method="POST" class="suggestion-form">
-        {% csrf_token %}
-        {{ form.non_field_errors }}
-        <section>
-            <h3 id="bra-suggestion-label">Bra Suggestion Categories</h3>
-            <div class="form-question-body">Your estimated bra size is: <strong>{{bra_size}}</strong>. There is more to finding the bra that fits you best than <i>just</i> having a bra size! We also need to consider a few things about bras that impact how comfortable they are:
-            <ul class="bra-suggestion-need-list">
-                <li class="bra-as-li">Breast shape and placement</li>
-                <li class="bra-as-li">Level of padding</li>
-                <li class="bra-as-li">Bra frame</li>
-                <li class="bra-as-li">Underwire or not?</li>
-            </ul>
-            </div>
-        </section>
-        <section>
-            <h3 id="bra-anatomy-label">Bra Anatomy</h3>
-            <div class="form-question-body">First we need to understand the anatomy of a bra. In the drawing, you will notice a few parts of the bra are defined. The next steps will explain theses specific parts of the bra and how they can impact comfort.</div>
-        </section>
-        <section>
-            <h3 id="breast-placement-label">Breast placement</h3>
-            <div class="form-question-body">This is taken into account in order to determine what width the center gore should be for optimum comfort and support.</div>
-            <div class="form-question-body"><label>Choose the placement that you most identify with: {{ form.breast_placement }}</label></div>
-        </section>
-        <section>
-            <h3 id="bra-wire-label">Wire Preference</h3>
-            <div class="form-question-body">Bra frame are either supported with or without underwire.  Comfort here comes down to personal preferences and also the level of support that you want/need, with wire having more support and underwire usually having less. </div>
-            <div><label>Check the box if want a bra with underwire: {{ form.bra_wire }}</label></div>
-        </section>
-        <section>
-            <h3 id="breast-shape-label">Breast shape</h3>
-            <div class="form-question-body"> Frames of bras(shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? We did!
-            </div>
-            <div class="form-question-body"><label>Which breast shape do you most associate with:{{ form.breast_shape }}</label></div>
-        </section>
-        <section>
-            <h3 id="bra-padding-label">Padding Preference</h3>
-            <div class="form-question-body">Yes, level of padding is a preference when it comes to comfort. Although pushup and lightly-lined bras will give a bit more support. </div>
-            <div><label>What is the main type of padding that you are interested in?{{ form.bra_padding }}</label></div>
-        </section>
+<form method="POST" class="suggestion-form">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <h1 class="form-title">Support Profile</h1>
 
+    <section class="suggestion-step sugg-step-start">
+        <h3>Your estimated bra size: <strong>{{bra_size}}</strong></h3>
+        <div class="suggestion-step-column">
+            <p>To get <i class="key-word">band size</i>, we added 4" if <i class="key-word">band measurement</i> is even, and 5" if measurement is odd.</p>
+            <p>The <i class="key-word">cup size</i> is determined by the <i class="key-word">band size</i> subracted from the bust circumeference, with some additional calculations based on what you're currently wearing. There is more to finding the bra that fits you best than <i>just</i> having a bra size! We also need to consider a few things about bras that impact how what kind you may like.
+            </p>
+            {% else %}
+            <p>Try the <a href="{% url 'brafitting' %}">form</a> again! Something wet wonky...</p>
+            {% endif %}
+        </div>
+        <button class="sugg-step-start-next-button" type=button>Continue</button>
+    </section>
+        
+    <section class="suggestion-step sugg-step-one">
+        <h3 id="breast-placement-label">Breast placement</h3>
+            <div class="suggestion-step-column">
+                <p>This is taken into account in order to determine what width the center gore should be for optimum comfort and support.</p>
+                <label for="{{ form.breast_placement.id_for_label }}">Choose the placement that you most identify with:</label>
+                {{ form.breast_placement }}
+            </div>
+        <button class="sugg-step-one-next-button" type=button>Next</button>
+    </section>
+    <section class="suggestion-step sugg-step-two">
+        <h3 id="bra-wire-label">Wire Preference</h3>
+        <div class="suggestion-step-column">
+            <p>Bra frame are either supported with or without underwire.  Comfort here comes down to personal preferences and also the level of support that you want/need, with wire having more support and underwire usually having less.</p>
+            <label for="{{ form.bra_wire.id_for_label }}">How do you feel about wires:</label>
+            {{ form.bra_wire }}
+        </div>
+        <button class="sugg-step-two-next-button" type=button>Next</button>
+    </section>
+    <section class="suggestion-step sugg-step-three">
+        <h3 id="breast-shape-label">Breast shape</h3>
+        <div class="suggestion-step-column">
+            <p>Frames of bras(shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
+            </p>
+            <label for="{{ form.breast_shape.id_for_label }}">What breast shape do you most identify with:</label>
+            {{ form.breast_shape }}
+        </div>
+        <button class="sugg-step-three-next-button" type=button>Next</button>
+    </section>
+    <section class="suggestion-step sugg-step-four">
+        <h3 id="bra-padding-label">Padding Preference</h3>
+        <div class="suggestion-step-column">
+            <p>Yes, level of padding is a preference when it comes to comfort. Although pushup and lightly-lined bras will give a bit more support.</p>
+            <label for="{{ form.bra_padding.id_for_label }}">What is the main type of padding that you are interested in:</label>
+            {{ form.bra_padding }}
+        </div>
         <button type="submit" class="submit-button">See Recs!</button>
-    </form>
+    </section>
 
+    </form>
 {% endblock %}
