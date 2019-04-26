@@ -1,5 +1,6 @@
 {% extends "base.html"%}
 {% block content %}
+{% load static %}
 <h1>Bra Care</h1>
 <p>Bras are an important peice of clothing that you may or not may be wearing everyday. Here are some tips to keep your bras in the best shape.</p>
 <div class="care-section">
@@ -10,7 +11,7 @@
             <div class="description">
                 <h3 class="care-option">Handwash</h3>
                 <p class="care-option-description">If you can handwash your bra, then go for it! Make sure to use <strong>light detergent</strong>when possible.</p>
-                <img class="care-image" id="handwash-image" src="https://files.slack.com/files-pri/TA8C04VUN-FJ1KC0SG7/image_from_ios.jpg" alt="">
+                <img class="care-image" id="handwash-image" src="#" alt="">
             </div>
             <div class="question-answer">
                 <h4 class="care-question">Why handwash?</h4>
@@ -20,8 +21,8 @@
         <div class="care-machine-wash">
             <h3 class="care-option">In the washing machine in a bra bag or pillow case.</h3>
             <p class="care-option-description">Let's be real: not everyone has the time to handwash their bras. That is okay! Putting your bra in a bra bag or pillow case means there will be less wear and tear on the bra from other peices of clothing. Hooks, lace and straps can easily get caught on other peices of clothing so putting a bra in a bra bag or pillow case takes away the possibility of damges.</p>
-            <img class="care-image" id="bra-bag-image" src="https://files.slack.com/files-pri/TA8C04VUN-FJ1KC0SG7/image_from_ios.jpg" alt="">
-            <img class="care-image" id="pillow-case-image" src="https://files.slack.com/files-pri/TA8C04VUN-FJ1KC0SG7/image_from_ios.jpg" alt="">
+            <img class="care-image" id="bra-bag-image" src="#" alt="">
+            <img class="care-image" id="pillow-case-image" src="#" alt="">
         </div>
     </div>
     <div id="care-drying" class="care-part">
@@ -43,12 +44,12 @@
         <div class="care-hangout">
             <h3 class="care-option">Let it hangout!</h3>
             <p class="care-option-description">Give your bra some time hang out. We all need hangout time after support others all day! Connect the hooks to the loosest set of eyes on the band so the bra is relaxed as it hangs out.</p>
-            <img class="care-image" id="hangout" src="https://files.slack.com/files-pri/TA8C04VUN-FJ1KC0SG7/image_from_ios.jpg" alt="">
+            <img class="care-image" id="hangout" src="{% static '/images/hanging_bra.jpg' %}" alt="">
         </div>
         <div class="care-sleep">
             <h3 class="care-option">Let it sleep!</h3>
             <p class="care-option-description">Make a space for your bra in one drawer. Lay it flat so that other clothing items are not impacting it. </p>
-            <img class="care-image" id="lay-flat" src="" alt="">
+            <img class="care-image" id="lay-flat" src="{% static 'images/laying_bra.jpg' %}" alt=""/>
         </div>
     </div>
 </div>

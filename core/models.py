@@ -213,6 +213,7 @@ class Resource(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     url = models.URLField(blank=False)
+    category_type = models.CharField(max_length=100, default='All')
 
     def __str__(self):
         return self.title
