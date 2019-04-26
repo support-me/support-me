@@ -1,10 +1,9 @@
-*{
+}* {
     /* border: 1px dotted grey; */
     /*big heading font: font-family: 'Acme', sans-serif; */
     /* little heading font: font-family: 'Fresca', sans-serif;  */
     /* plain text font: font-family: 'Quicksand', sans-serif; */
-    margin: auto;
-    padding: auto;
+    margin: 0 auto;
     /* font-family: 'Quicksand', sans-serif; */
     /*colors
     yellow: #e6e687
@@ -20,9 +19,7 @@
     Do not put the following color pairs besides eachother or overlapping:
     -blue & green/purple/gray
     -green & red/yellow/gray
-
-    stick nav codepen: https://codepen.io/renduh/pen/oBBGbK
-
+    
     */
     /* border: 1px dashed grey; */
 
@@ -37,20 +34,20 @@ ul {
     list-style: none;   
 }
 .content{
-    margin: auto;
+    margin: 0 auto 0;
     padding-right: 4rem;
     padding-left: 4rem;
-    padding-top: 10rem;
-    max-width: 1400px;
+    padding-top: 7.5rem;
+    /* height: 100vh; */
 }
+
 #header {
-    height: 100px;
 }
 .company-title{
     font-family: 'Sofia', cursive;
     font-size: 4rem;
     font-weight: 700;
-    /* letter-spacing: .4rem; */
+    letter-spacing: .4rem;
     color: #8787e6;
     text-shadow: 
     1px 0px 1px #ccc, 0px 1px 1px #eee, 
@@ -61,8 +58,6 @@ ul {
     6px 5px 1px #ccc, 5px 6px 1px #eee,
     7px 6px 1px #ccc;
     padding: 1rem 0 1rem 10rem; 
-    /* background: url('/static/images/rehan-mallick-734287-unsplash.jpg') no-repeat; */
-    background-size: cover;
     /* border-bottom: 2px solid #8787e6;
     border-bottom-right-radius: 60% 70%; */
 }
@@ -74,13 +69,13 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 100px;
-    line-height: 100px;
-    margin-bottom: -100px;
+    height: 6.5rem;
+    line-height: 5.5rem;
+    margin-bottom: -6.5rem;
     z-index: 3;
     background-color: white;
     border-bottom-right-radius: 60% 70%;
-    border-bottom: 3px solid #8787e6;
+    border-bottom: 2px solid #8787e6;
 
     /* padding: 2rem 0 2rem 3rem; */
     
@@ -93,49 +88,67 @@ ul {
     padding-right: 3rem;
     font-size: 1.25rem;
 }
+
 a {
     color: #8787e6;
 }
+
 .nav-item a:hover {
     color: #8787e6;
-    text-decoration:  underline;
+    text-decoration: underline;
 }
-button{
+
+button {
     background-color: #8787e6;
 }
-.login-message-div, .logout-section {
+
+.login-message-div,
+.logout-section {
     padding: 1rem 3rem 1rem 3rem;
 }
+
 /* added this google section as placeholder- we can change the google font or put in image instead */
 .google {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3rem;
 }
-.care-section{
+
+.care-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
 }
-.care-part{
-    display:flex;
+
+.care-part {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    align-items:center;
+    align-items: center;
 }
-.history-box{
-    display: flex;
+
+img {
+    /* background-color: #8787e6;
+    width: 300px; */
 }
-.history-info{
-    justify-content: center;
+
+/* FITTING FORM SECTION */
+.bra-fitting-content {
+    padding: 2rem 0 4rem 0;
 }
+
+.fit-intro {
+    padding: 1rem 0 1rem 0;
+}
+
 
 /* HOVER IMAGE SECTION */
 .hvrbox,
 .hvrbox * {
     box-sizing: border-box;
-}    
+}
+
 .hvrbox {
     position: relative;
     display: inline-block;
@@ -145,6 +158,7 @@ button{
     padding: 1rem;
     border: 1px dashed #8787e6;
 }
+
 .hvrbox-layer-bottom {
     font-family: 'Cutive Mono', monospace;
     font-size: 3rem;
@@ -153,9 +167,11 @@ button{
     width: 300px;
     height: 300px;
 }
+
 .hvrbox .hvrbox-layer-bottom {
     display: block;
 }
+
 .hvrbox .hvrbox-layer-top {
     opacity: 0;
     position: absolute;
@@ -170,9 +186,12 @@ button{
     padding: 1rem;
     transition: all 0.4s ease-in-out 0s;
 }
-.hvrbox:hover .hvrbox-layer-top, .hvrbox.active .hvrbox-layer-top {
+
+.hvrbox:hover .hvrbox-layer-top,
+.hvrbox.active .hvrbox-layer-top {
     opacity: 1;
 }
+
 .hvrbox .hover-text {
     text-align: center;
     font-weight: bold;
@@ -182,6 +201,7 @@ button{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .hvrbox.active {
     display: block;
 }
@@ -196,8 +216,9 @@ button{
 }
 
 /* FITTING FORM SECTION */
-.bra-fitting-index-content {
+.bra-fitting-content {
     text-align: center;
+    padding: 2rem 0 4rem 0;
 }
 .fit-intro {
     padding: 1rem 0 1rem 0;
@@ -207,41 +228,49 @@ button{
     display: flex;
     flex-wrap: wrap;
 }
-.fitting-step, .suggestion-step {
+
+.fitting-step {
     /* text-align: center; */
-    padding: 1rem 4rem 1rem 4rem;
+    padding: 1rem 5rem 1rem 5rem;
     border: 1px solid black;
 }
-.fitting-step-column, .suggestion-step-column {
+.fitting-step-column {
     max-width: 890px;
     display: flex;
     align-content: center;
     flex-direction: column;
     padding: 1rem 5rem 1rem 5rem;
 }
-.fitting-form, .suggestion-form {
+
+.fitting-form {
     text-align: center;
 }
+
 .fitting-step {
     padding: 2rem;
 }
+
 .fitting-block {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .form-question-input {
     text-align: center;
     border: 1px solid #8787e6;
 }
+
 .form-question-select ul {
     justify-content: left;
 }
+
 .fitting-block-pic {
     padding: 1rem;
     border: 2px dashed #8787e6;
     margin-bottom: 2rem;
 }
+
 .fit-materials-list {
     list-style-type: disc;
 }
@@ -267,9 +296,6 @@ button{
     flex-wrap: wrap;
 }
 
-/* Suggestion Form Styling */
-
-
 /* ABOUT ME PAGE STYLE */
 .support-me-team-pics {
     display: flex;
@@ -278,17 +304,30 @@ button{
     justify-content: center;
     text-align: center;
 }
+
 .support-me-team-pics img {
     width: 150px;
     height: 150px;
 }
 
+footer {
+    /* position: relative;  */
+    /* bottom: 0; */
+    border-top: 2px solid #8787e6;
+    height: 100%;
+    width: 100%;
+    color: black;
+    text-align: center;
+    opacity: .8;
+    overflow: hidden;
+}
 .measurement-text{
     font-style: bold;
     font-size: 3rem;
     text-align: center;
 }
-#id_band_measurement{
+
+#id_band_measurement {
     justify-content: center;
 }
 .results-box{
@@ -297,24 +336,23 @@ button{
     text-align: center;
 
 }
-.results-title{
 
-}
-.bra-size-results{
-   
-}
-.suggest-bra{
+.results-title {}
 
-}
-.bra-site-box{
+.bra-size-results {}
+
+.suggest-bra {}
+
+.bra-site-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
 }
-.bra-site-button{
+
+.bra-site-button {
     background-color: white;
-    border: 1px dashed  #8787e6;
+    border: 1px dashed #8787e6;
     border-radius: 3rem;
     color: black;
     padding: 15px 32px;
@@ -325,6 +363,7 @@ button{
     margin: 4px 2px;
     cursor: pointer;
 }
+
 .swal-button {
     background-color: #8787e6;
     color: #fff;
@@ -337,22 +376,94 @@ button{
     margin: 0;
     cursor: pointer;
 }
-ul.bra-suggestion-need-list{
+
+ul.bra-suggestion-need-list {
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
-.key-word{
+
+.key-word {
     color: #8787e6;
 }
+/* Profile page Styles  */
+.profile-box {
+    /* border: 3px dashed black; */
+    display: flex;
+    padding-top: 3rem;
+    padding-left:.5rem;
+    padding-right: .5rem;
+    text-align: center;
+    justify-content: center;
 
-/* DROP DOWN MENU STUFF */
+}
+
+.history-box {
+    flex-grow: 3;
+
+}
+
+.hitory-info {
+    flex-grow: 3;
+}
+.bra-delete-button{
+    background-color: white;
+    color: coral;
+    border: solid #8787e6;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 24px;
+    margin: 0;
+    cursor: pointer;
+}
+.profile-images{
+  float: right;
+  padding: 3rem;
+  
+}
+.profile-text{
+    border: 3px solid;
+    float: right;
+}
+.profile-welcome-div{
+    text-align: center;
+}
+.history-line{
+    border: 1px solid #8787e6;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
+}
+.history-bottom-border{
+    border-bottom: 1px solid #8787e6;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* nav menu drop down */
+.nav-menu{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
 .nav-menu-drop {
     background-color: white;
-    border: 1px solid #8787e6;
 }
 .nav-menu li{
     display: block;
     float:left;
     transition-duration: 0.5s;
+    margin: .5rem;
     padding-left:0;
 }
 .nav-menu li:hover,
@@ -385,20 +496,4 @@ ul li ul li{
     padding: 0;
     margin-left:0;
     background-color: white;
-}
-.care-image{
-    width: 30%;
-    border-radius: 20%;
-}
-
-footer {
-    margin-top: 3rem;
-    padding: 1rem 0 2rem 0;
-    border-top: 2px solid #8787e6;
-    height: 100%;
-    width: 100%;
-    color: black;
-    text-align: center;
-    opacity: .8;
-    overflow: hidden;
 }
