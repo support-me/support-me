@@ -2,9 +2,10 @@
 {% block content %}
 {% for resource in resources.all %}
 <div class="resource-con"> 
-<h1> {{resource.title}} </h1>
-<h4>{{resource.description}}</h4>
-<a href="{{resource.url}} " target="blank"> Learn more Here  </a>
+<h1> {{ resource.title }} </h1>
+<p>{{ resource.category_type }}</p>
+<p>{{ resource.description }}</p>
+<a href="{{resource.url}} " target="blank"> Learn more here.  </a>
 </div>
 {% endfor %}
 
