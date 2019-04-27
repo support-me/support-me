@@ -33,15 +33,13 @@
                 <li class="emoji-drawing-set">
                 {% if 'Near' in choice %}
                     <img id="emoji-near-drawing" src="{% static 'images/emoji-near-placement.png' %}" alt="near placement of breasts">
+                {% endif %}
+                {% if 'Far' in choice %}
+                    <img id="emoji-far-drawing" src="{% static 'images/emoji-far-placement.png' %}" alt="far placement of breasts">
+                {% endif %}
                     <p>
                     <input type="radio" name="breast_placement" value="{{ choice.0 }}"{% ifequal form.breast_placement.data choice.0 %} checked="checked" {% endifequal %}/>
-                    <label for="">{{ choice.0 }}</label>
-                {% elif 'Far' in choice %}
-                    <img id="emoji-far-drawing" src="{% static 'images/emoji-far-placement.png' %}" alt="far placement of breasts">
-                    <p>
-                    <input type="radio" name="breast_placement" value="{{ choice.1 }}"{% ifequal form.breast_placement.data choice.1 %} checked="checked" {% endifequal %}/>
                     <label for="">{{ choice.1 }}</label>
-                {% endif %}
                     </p>
                 </li>
             {% endfor %}
