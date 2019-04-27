@@ -277,10 +277,12 @@ body a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .emoji-drawing-set {
     display: flex;
     flex-direction: column;
+    width: 250px
 }
 .emoji-drawing-set img {
     border: 2px dashed #8787e6;
