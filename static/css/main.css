@@ -5,7 +5,6 @@
     /* plain text font: font-family: 'Quicksand', sans-serif; */
     margin: auto;
     padding: auto;
-    /* font-family: 'Quicksand', sans-serif; */
     /*colors
     yellow: #e6e687
     orange: #e6b787
@@ -116,6 +115,7 @@ a {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
 }
 /* added this google section as placeholder- we can change the google font or put in image instead */
 .google {
@@ -427,19 +427,9 @@ footer {
     flex-grow: 3;
     justify-content: center;
     display: block;
+    border-bottom: 2px solid #8787e6;
+    margin-bottom: 2rem;
 }
-
-.bra-delete-button{
-    background-color: white;
-    color: coral;
-    border: solid #8787e6;
-    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 24px;
-    margin: 0;
-    cursor: pointer;
 }
 .profile-images{
   float: right;
