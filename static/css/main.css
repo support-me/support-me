@@ -15,7 +15,10 @@
     light gray: #e6e6e6
     medium gray: #b7b7b7
     dark gray: #878787
-    
+
+    NEW GREEN: #3CBAA3
+    NEW BLUE: #313c5b
+
     Do not put the following color pairs besides eachother or overlapping:
     -blue & green/purple/gray
     -green & red/yellow/gray
@@ -95,19 +98,19 @@ ul {
 a {
     color: #8787e6;
 }
-.nav-item a:hover {
-    color: #8787e6;
-    text-decoration:  underline;
+body a:hover {
+    color: #3CBAA3;
+    text-decoration:  none;
 }
 
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
 }
 .content button {
+    color: #8787e6;
     background-color: white;
     border: 1px solid  #8787e6;
     border-radius: 2rem;
-    color: black;
     padding: 1rem;
     text-align: center;
     text-decoration: none;
@@ -116,6 +119,10 @@ a {
     margin: 4px 2px;
     cursor: pointer;
     box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
+}
+.content button:hover {
+    color: #3CBAA3;
+    size: 104%;
 }
 /* added this google section as placeholder- we can change the google font or put in image instead */
 .google {
@@ -189,7 +196,8 @@ a {
     padding: 2rem 0 2rem 0;
 }
 .get-fit-button a {
-    
+    font-size: 2rem; 
+    text-decoration: none;
 }
 
 /* FITTING FORM SECTION */
@@ -430,7 +438,6 @@ footer {
     border-bottom: 2px solid #8787e6;
     margin-bottom: 2rem;
 }
-}
 .profile-images{
   float: right;
   padding: 3rem;
@@ -442,8 +449,4 @@ footer {
 }
 .profile-welcome-div{
     text-align: center;
-}
-hr{
-    border: 1px solid #8787e6;
-    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
 }
