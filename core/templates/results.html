@@ -17,16 +17,16 @@
    <p>We think you may like a <b style="font-size: 1.25rem;"> {{bra_suggestion}}.</b><br>Here are just <i>some</i> places online one can purchase a bra.</p>
    </div>
    <div class="bra-site-box" >
-        <button><a class="bra-site-button" href="https://www.ae.com/aerie-bras/aerie/s-cat/4840012" target="blank" class="button">Aerie</a></button>
         <button><a class="bra-site-button" href="https://www.target.com/c/bras-intimates-women-s-clothing/-/N-5xtcd"  target="blank" class="button">Target</a></button>
+        <button><a class="bra-site-button" href="https://www.ae.com/aerie-bras/aerie/s-cat/4840012" target="blank" class="button">Aerie</a></button>
         <button><a class="bra-site-button" href="https://www.belk.com/women/womens-clothing/bras-panties-lingerie/bras/"  target="blank" class="button">Belk</a></button>
-        <button><a class="bra-site-button" href="https://madalynne.com/product-category/custom-lingerie/" target="blank" class="button">Custom</a></button>
+        <button><a class="bra-site-button" href="https://cacique.lanebryant.com/bras/P-11444" target="blank" class="button">Lane Bryant</a></button>
 </div>
    {% endif %}
 {% if user.is_authenticated %}
     <br>
     <p>Visit your <a href="{% url 'profile' %}">Profile</a> to view your bra history. And remember to resize yourself every 6 months to 1 year!</p>
-    <p> Also check out our <a href="{% url 'resources' %}"> Resources</a> page!</p>
+    <p>Want to make your <i>own</i> bra?? Here's a <a href="https://www.creativebug.com/search/results?query=bra" target="blank" class="button">Bra Sewing Tutorial</a>.Or order one <a href="https://madalynne.com/product-category/custom-lingerie/" target="blank" class="button">Custom </a>made.</p>
 
 
 {% else %}
