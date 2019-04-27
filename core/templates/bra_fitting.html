@@ -12,8 +12,6 @@
             <div class="form-question-info"><p>Please get as comfortable as possible- maybe put on a favorite tshirt. If you have a bra you are more than welcome to wear one for the fitting.</p>
             <br><br>
             <ul class="currently-wearing-field">
-            {% comment %} {{ form.currently_wearing.data }} {% endcomment %}
-            {% load static %}
             {% for choice in form.currently_wearing.field.choices %}
                 <li class="bra-drawing-set">
                 {% if 'None' in choice %}

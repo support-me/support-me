@@ -273,7 +273,17 @@ body a:hover {
 }
 
 /* Suggestion Form Styling */
-
+.breast-placement-field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.emoji-drawing-set img {
+    border: 2px dashed #8787e6;
+    padding: 1rem;
+    max-width: 175px;
+    max-height: 175px;
+}
 
 /* ABOUT ME PAGE STYLE */
 .support-me-team-pics {
@@ -334,7 +344,7 @@ ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
 .key-word{
-    color: #8787e6;
+    font-weight: bold;
 }
 
 

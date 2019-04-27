@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load static %}
 {% if bra_size %}
 <form method="POST" class="suggestion-form">
     {% csrf_token %}
@@ -10,8 +11,10 @@
     <section class="suggestion-step sugg-step-start">
         <h3>Your estimated bra size: <strong>{{bra_size}}</strong></h3>
         <div class="suggestion-step-column">
-            <p>To get <i class="key-word">band size</i>, we added 4" if <i class="key-word">band measurement</i> is even, and 5" if measurement is odd.</p>
-            <p>The <i class="key-word">cup size</i> is determined by the <i class="key-word">band size</i> subtracted from the bust circumference, with some additional calculations based on what you're currently wearing. There is more to finding the bra that fits you best than <i>just</i> having a bra size! We also need to consider a few things about bras that impact how what kind you may like.
+            <p>To get <strong class="key-word">band size</strong>, we added 4" if <strong class="key-word">band measurement</strong> is even, and 5" if measurement is odd.</p>
+            <p>The <strong class="key-word">cup size</strong> is determined by the <strong class="key-word">band size</strong> subtracted from the bust circumference, with some additional calculations based on what you're currently wearing. There is more to finding the bra that fits you best than <i>just</i> having a bra size! 
+            <br><br>
+            We also need to consider a few things about bras that impact what kind you may like.
             </p>
             {% else %}
             <p>Try the <a href="{% url 'brafitting' %}">form</a> again! Something wet wonky...</p>
@@ -24,9 +27,31 @@
         <h3 id="breast-placement-label">Breast placement</h3>
             <div class="suggestion-step-column">
                 <p>This is taken into account in order to determine what width the center gore should be for optimum comfort and support.</p>
-                <label for="{{ form.breast_placement.id_for_label }}">Choose the placement that you most identify with:</label>
-                {{ form.breast_placement }}
+                
+                <ul class="breast-placement-field">
+                {% for choice in form.breast_placement.field.choices %}
+                <li class="emoji-drawing-set">
+                {% if 'Near' in choice %}
+                    <img id="emoji-near-drawing" src="{% static 'images/emoji-near-placement.png' %}" alt="near placement of breasts">
+                    <p>
+                    <input type="radio" name="breast_placement" value="{{ choice.0 }}"{% ifequal form.breast_placement.data choice.0 %} checked="checked" {% endifequal %}/>
+                    <label for="">{{ choice.0 }}</label>
+                {% elif 'Far' in choice %}
+                    <img id="emoji-far-drawing" src="{% static 'images/emoji-far-placement.png' %}" alt="far placement of breasts">
+                    <p>
+                    <input type="radio" name="breast_placement" value="{{ choice.1 }}"{% ifequal form.breast_placement.data choice.1 %} checked="checked" {% endifequal %}/>
+                    <label for="">{{ choice.1 }}</label>
+                {% endif %}
+                    </p>
+                </li>
+            {% endfor %}
+            </ul>
+            <br><br>
+            <label for="{{ form.breast_placement.id_for_label }}">Choose the placement that you most identify with:</label>
             </div>
+
+
+                
         <button class="sugg-step-one-next-button" type=button>Next</button>
     </section>
     <section class="suggestion-step sugg-step-two">
