@@ -176,8 +176,8 @@ class Suggestion(models.Model):
     bra_wire = models.CharField(max_length=20, choices=WIRE_CHOICES, default='Underwire')
 
     BRA_PADDING_CHOICES = (
-        ('PushUp', 'Push-Up'),
         ('Lightly-Lined', 'Lightly-Lined'),
+        ('PushUp', 'Push-Up'),
         ('Unlined', 'Unlined'),
         ('Removable', 'Removable'),
     )
@@ -191,19 +191,28 @@ class Suggestion(models.Model):
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
 
 
-    def save(self, fitting_session, breast_shape, bra_padding, *args, **kwargs):
+    def save(self, fitting_session, breast_shape, bra_padding, bra_frame, bra_wire, *args, **kwargs):
+        self.breast_shape = breast_shape
+        self.bra_frame = bra_frame
+        self.bra_padding = bra_padding
+        self.bra_wire = bra_wire
         self.fitting_session = fitting_session
-        self.bra_suggestion = self.get_suggestion(breast_shape, bra_padding)
+        self.bra_suggestion = self.get_suggestion(bra_frame, bra_padding, bra_wire)
         super().save(*args, **kwargs)
     
+    def get_suggestion(self, bra_frame, bra_padding, bra_wire):
+        if bra_wire == 'Wireless':
+            self.bra_suggestion = f'{bra_frame} wireless frame with {bra_padding} cups'
+        else:
+            self.bra_suggestion = f'{bra_frame} frame with {bra_padding} cups'
+        return self.bra_suggestion
 
-    def get_suggestion(self, breast_shape, bra_padding):
+    def get_bra_frame(self, breast_shape):
         if breast_shape in ['None', 'Round']:
             self.bra_frame = 'Full'
         else:
             self.bra_frame = 'Demi'
-        self.bra_suggestion = f'{self.bra_frame} {bra_padding}'
-        return self.bra_suggestion
+        return self.bra_frame
 
     def __str__(self):
         return self.bra_suggestion
