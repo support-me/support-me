@@ -214,7 +214,7 @@ body a:hover {
 }
 .fitting-step, .suggestion-step {
     /* text-align: center; */
-    padding: 1rem 4rem 1rem 4rem;
+    /* padding: 1rem 4rem 1rem 4rem; */
     border: 1px solid black;
 }
 .fitting-step-column, .suggestion-step-column {
@@ -222,7 +222,7 @@ body a:hover {
     display: flex;
     align-content: center;
     flex-direction: column;
-    padding: 1rem 5rem 1rem 5rem;
+    /* padding: 1rem 5rem 1rem 5rem; */
 }
 .fitting-form, .suggestion-form {
     text-align: center;
