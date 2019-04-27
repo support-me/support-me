@@ -5,7 +5,6 @@
     /* plain text font: font-family: 'Quicksand', sans-serif; */
     margin: auto;
     padding: auto;
-    /* font-family: 'Quicksand', sans-serif; */
     /*colors
     yellow: #e6e687
     orange: #e6b787
@@ -16,7 +15,10 @@
     light gray: #e6e6e6
     medium gray: #b7b7b7
     dark gray: #878787
-    
+
+    NEW GREEN: #3CBAA3
+    NEW BLUE: #313c5b
+
     Do not put the following color pairs besides eachother or overlapping:
     -blue & green/purple/gray
     -green & red/yellow/gray
@@ -96,33 +98,36 @@ ul {
 a {
     color: #8787e6;
 }
-.nav-item a:hover {
-    color: #8787e6;
-    text-decoration:  underline;
+body a:hover {
+    color: #3CBAA3;
+    text-decoration:  none;
 }
-button{
-    background-color: #8787e6;
-}
+
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
+}
+.content button {
+    color: #8787e6;
+    background-color: white;
+    border: 1px solid  #8787e6;
+    border-radius: 2rem;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
+}
+.content button:hover {
+    color: #3CBAA3;
+    size: 104%;
 }
 /* added this google section as placeholder- we can change the google font or put in image instead */
 .google {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3rem;
-}
-.care-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-.care-part{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items:center;
 }
 .history-box{
     display: flex;
@@ -191,8 +196,8 @@ button{
     padding: 2rem 0 2rem 0;
 }
 .get-fit-button a {
-    color: black;
-    font-size: 2rem;
+    font-size: 1.5rem; 
+    text-decoration: none;
 }
 
 /* FITTING FORM SECTION */
@@ -312,19 +317,7 @@ button{
     justify-content: center;
 
 }
-.bra-site-button{
-    background-color: white;
-    border: 1px dashed  #8787e6;
-    border-radius: 3rem;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+
 .swal-button {
     background-color: #8787e6;
     color: #fff;
@@ -391,9 +384,28 @@ ul li ul li{
     margin-left:0;
     background-color: white;
 }
-.care-image{
-    width: 30%;
-    border-radius: 20%;
+
+/* BRA CARE PAGE */
+.care-image {
+    max-width: 300px;
+}
+.care-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+}
+.care-option-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.care-part{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
 }
 
 footer {
@@ -423,19 +435,8 @@ footer {
     flex-grow: 3;
     justify-content: center;
     display: block;
-}
-
-.bra-delete-button{
-    background-color: white;
-    color: coral;
-    border: solid #8787e6;
-    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 24px;
-    margin: 0;
-    cursor: pointer;
+    border-bottom: 2px solid #8787e6;
+    margin-bottom: 2rem;
 }
 .profile-images{
   float: right;
@@ -448,8 +449,4 @@ footer {
 }
 .profile-welcome-div{
     text-align: center;
-}
-hr{
-    border: 1px solid #8787e6;
-    box-shadow: 3px 3px 3px 2px rgba(0, 0, 255, .2);
 }
