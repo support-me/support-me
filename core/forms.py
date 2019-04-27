@@ -28,3 +28,11 @@ class SuggestionForm(forms.ModelForm):
             'bra_padding': forms.RadioSelect,
             'bra_wire': forms.RadioSelect,
         }
+
+class DeleteFittingForm(forms.ModelForm):
+    """ 
+    Form lets the user delete 
+    """
+    class Meta:
+        model = Suggestion
+        fields = ('fitting_session',)

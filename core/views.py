@@ -11,8 +11,10 @@ from core.serializers import UserSerializer, GroupSerializer, ProfileSerializer,
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.contrib.auth.models import AnonymousUser
-
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
 
 # Create your views here.
 def home(request):
@@ -135,14 +137,44 @@ class ProfileView(APIView):
 def profile(request):
     profile = Profile.objects.get(site_user=request.user)
     brafitting = BraFitting.objects.filter(fitting_user=request.user)
-    suggestion = Suggestion.objects.all()
 
     context = {
         'profile': profile,
         'brafitting': brafitting,
     }
     return render(request, 'profile.html', context=context)
+     
+     
 
 def about(request):
     return render(request, 'about.html')
+
+
+
+
+def delete_bra_fitting(request, id=None):
+    """
+    Delete users bra history 
+    """
+    fitting_session = Suggestion.fitting_session
+    fitting_history_item = get_object_or_404(Suggestion, id=id)
     
+    delete_user_fitting = fitting_history.user.username
+
+    if request.method == "POST" and request.user.is_authenticated and request.user.username == delete_fitting:
+        form = DeleteFittingForm(request.POST)
+        fitting_history_item.delete()
+        # breakpoint()
+        messages.success(request, " Fitting has been deleted!")
+        return HttpResponseRedirect('profile.html')
+
+    context={
+        'brafitting': BraFitting,
+        'fitting_history_item': fitting_history_item,
+        'delete_fitting': delete_fitting,
+    }
+    return render(request, 'profile.html', context)
+
+# class BrafittingDelete(DeleteView):
+#     model = BraFitting
+#     success_url = reverse_lazy('delete_fitting.html')
