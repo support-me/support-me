@@ -26,7 +26,7 @@
     stick nav codepen: https://codepen.io/renduh/pen/oBBGbK
 
     */
-    /* border: 1px dashed grey; */
+    border: 1px dashed grey;
 
 }
 
@@ -277,6 +277,10 @@ body a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.emoji-drawing-set {
+    display: flex;
+    flex-direction: column;
 }
 .emoji-drawing-set img {
     border: 2px dashed #8787e6;
