@@ -41,16 +41,17 @@
     <div id="care-storage" class="care-part">
         <h2 class="care-category">Storage</h2>
         <p>There are two best ways to store your bra. One fo the biggest things is to<strong> not fold it</strong> this causes cups and frames deform over time.</p>
-        <div class="care-hangout">
-            <h3 class="care-option">Let it hangout!</h3>
-            <p class="care-option-description">Give your bra some time hang out. We all need hangout time after support others all day! Connect the hooks to the loosest set of eyes on the band so the bra is relaxed as it hangs out.</p>
-            <img class="care-image" id="hangout" src="{% static '/images/hanging_bra.jpg' %}" alt="">
-        </div>
-        <div class="care-sleep">
-            <h3 class="care-option">Let it sleep!</h3>
-            <p class="care-option-description">Make a space for your bra in one drawer. Lay it flat so that other clothing items are not impacting it. </p>
-            <img class="care-image" id="lay-flat" src="{% static 'images/laying_bra.jpg' %}" alt=""/>
-        </div>
+        <h3>Let it hangout! &nbsp <i>or &nbsp</i> Let it sleep!</h3>
+        <section class="care-option-section">
+            <div class="care-option">
+                <img class="care-image" id="hangout" src="{% static '/images/hanging_bra.jpg' %}" alt="">
+                <p class="care-option-description">Give your bra some time hang out. We all need hangout time after support others all day! Connect the hooks to the loosest set of eyes on the band so the bra is relaxed as it hangs out.</p>
+            </div>
+            <div class="care-option">
+                <img class="care-image" id="lay-flat" src="{% static 'images/laying_bra.jpg' %}" alt=""/>
+                <p class="care-option-description">Make a space for your bra in one drawer. Lay it flat so that other clothing items are not impacting it. </p>
+            </div>
+        </section>
     </div>
 </div>
 {% endblock %}
