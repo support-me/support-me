@@ -73,7 +73,7 @@
                 {% endfor %}
             </ul>
             <label for="{{ form.bra_wire.id_for_label }}">How do you feel about wires:</label>
-            {{ form.bra_wire }}
+
         </div>
         <button class="sugg-step-two-next-button" type=button>Next</button>
     </section>
@@ -82,8 +82,26 @@
         <div class="suggestion-step-column">
             <p>Frames of bras(shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
             </p>
+            <ul class="breast-shape-field">
+                {% for choice in form.breast_shape.field.choices %}
+                <li class="emoji-drawing-set">
+                {% if 'Teardrop' in choice %}
+                    <img id="emoji-teardrop-drawing" src="{% static 'images/tear_drop_copy.png' %}" alt="emoji with eye shape that looks like a teardrop to mimic a breast shape to looks like a teardrop">
+                {% endif %}
+                {% if 'Round' in choice %}
+                    <img id="emoji-round-drawing" src="{% static 'images/round_copy.png' %}" alt="emoji with eye shape that looks round to mimic a breast shape that is round">
+                {% endif %}
+                {% if 'Other' in choice %}
+                    <img id="emoji-other-drawing" src="{% static 'images/other_copy.png' %}" alt="emoji with its eyes closed toallow someone to choose another breast shape">
+                {% endif %}
+                    <p>
+                    <input type="radio" name="bra_wire" value="{{ choice.0 }}"{% ifequal form.bra_wire.data choice.0 %} checked="checked" {% endifequal %}/>
+                    <label for="">{{ choice.1 }}</label>
+                    </p>
+                </li>
+                {% endfor %}
+            </ul>
             <label for="{{ form.breast_shape.id_for_label }}">What breast shape do you most identify with:</label>
-            {{ form.breast_shape }}
         </div>
         <button class="sugg-step-three-next-button" type=button>Next</button>
     </section>
