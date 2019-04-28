@@ -490,9 +490,68 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgba(19, 167, 136, 75%);
+    background-color: rgba(126, 204, 187, 0.75);
     border-radius: 1rem;
     width: 100%;
     margin: 0;
     padding: .5rem;
+}
+#id_band_measurement{
+    border: 2px solid rgb(19, 167, 136);
+    border-radius: 1rem;
+    padding:.25rem;
+    caret-color: rgb(19, 167, 136);
+}
+#id_bust_measurement{    
+    border: 2px solid rgb(19, 167, 136);
+    border-radius: 1rem;
+    padding:.25rem;
+    caret-color: rgb(19, 167, 136);
+}
+#id_login{
+    border: 2px solid rgb(19, 167, 136);
+    border-radius: 1rem;
+    padding:.25rem;
+    caret-color: rgb(19, 167, 136);
+}
+#id_password{
+    border: 2px solid rgb(19, 167, 136);
+    border-radius: 1rem;
+    padding:.25rem;
+    caret-color: rgb(19, 167, 136);
+}
+#id_username{
+    border: 2px solid rgb(19, 167, 136);
+    border-radius: 1rem;
+    padding:.25rem;
+    caret-color: rgb(19, 167, 136);
+}
+#id_email{
+    border: 2px solid rgb(19, 167, 136);
+    border-radius: 1rem;
+    padding:.25rem;
+    caret-color: rgb(19, 167, 136);
+}
+#id_password1{
+    border: 2px solid rgb(19, 167, 136);
+    border-radius: 1rem;
+    padding:.25rem;
+    caret-color: rgb(19, 167, 136);
+}
+#id_password2{
+    border: 2px solid rgb(19, 167, 136);
+    border-radius: 1rem;
+    padding:.25rem;
+    caret-color: rgb(19, 167, 136);
+}
+input[type='radio']:checked{
+    box-shadow: 0 0 0 2px rgb(19, 167, 136);
+}
+input[type='radio']{
+    display: inline-block;
+    width:13px;
+    height:13px;
+    padding:3px;
+    background-clip:content-box;
+    border-radius: 1rem;
 }

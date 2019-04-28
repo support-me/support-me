@@ -33,7 +33,7 @@
                     <img id="lightly-lined-bra-drawing" src="{% static 'images/lightly_lined_bra-bold.png' %}" alt="lightly-lined bra">
                 {% endif %}
                     <p>
-                        <input type="radio" name="currently_wearing" value="{{ choice.0 }}"{% ifequal form.currently_wearing.data choice.0 %} checked="checked" {% endifequal %}/>
+                        <input type="radio" class="input-radio" name="currently_wearing" value="{{ choice.0 }}"{% ifequal form.currently_wearing.data choice.0 %} checked="checked" {% endifequal %}/>
                         <label for="">{{ choice.1 }}</label>
                     </p>
                 </li>
