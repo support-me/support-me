@@ -138,58 +138,23 @@ body a:hover {
 }
 
 /* HOVER IMAGE SECTION */
-.hvrbox,
-.hvrbox * {
-    box-sizing: border-box;
-}    
+.bra-fit-setup {
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .hvrbox {
-    position: relative;
-    display: inline-block;
+    flex-direction: column;
+    max-width: 300px;
+}    
+.hvrbox img {
     overflow: hidden;
-    max-width: 100%;
+    max-width: 300px;
     height: auto;
     padding: 1rem;
-    border: 1px dashed #8787e6;
-}
-.hvrbox-layer-bottom {
-    font-family: 'Cutive Mono', monospace;
-    font-size: 3rem;
-    text-align: center;
-    line-height: 5rem;
-    width: 300px;
-    height: 300px;
-}
-.hvrbox .hvrbox-layer-bottom {
-    display: block;
-}
-.hvrbox .hvrbox-layer-top {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 1rem;
-    transition: all 0.4s ease-in-out 0s;
-}
-.hvrbox:hover .hvrbox-layer-top, .hvrbox.active .hvrbox-layer-top {
-    opacity: 1;
-}
-.hvrbox .hover-text {
-    text-align: center;
-    font-weight: bold;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.hvrbox.active {
-    display: block;
+    border-radius: 2rem;
+    border: 3px solid #3CBAA3;
 }
 
 /* INTRO -- EXTRA INFO */
@@ -207,11 +172,6 @@ body a:hover {
 }
 .fit-intro {
     padding: 1rem 0 1rem 0;
-}
-.bra-fit-setup {
-    padding: 2rem 0 2rem 0;
-    display: flex;
-    flex-wrap: wrap;
 }
 .fitting-step, .suggestion-step {
     /* text-align: center; */
