@@ -259,6 +259,7 @@ body a:hover {
 .bra-drawing-set {
     display: flex;
     flex-direction: column;
+
 }
 .bra-drawing-set img {
     border: 2px dashed #8787e6;
@@ -270,8 +271,17 @@ body a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
+    padding: 2% 15% 0% 9%;
 
+}
+/* @media (min-width: 481px) and (max-width: 767px){
+.currently-wearing-field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: inherit;
+}
+} */
 /* Suggestion Form Styling */
 
 
@@ -387,7 +397,9 @@ ul li ul li{
 
 /* BRA CARE PAGE */
 .care-image {
-    max-width: 300px;
+    max-width: 250px;
+    flex-wrap: wrap;
+    margin: block;
 }
 .care-section{
     display: flex;
@@ -396,16 +408,17 @@ ul li ul li{
     align-content: space-around;
 }
 .care-option-section{
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: center;
+    
 }
 .care-part{
-    display:flex;
+    /* display:flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    align-items:center;
+    align-items:center; */
 }
 
 footer {
@@ -449,4 +462,9 @@ footer {
 }
 .profile-welcome-div{
     text-align: center;
+}
+.bra-care-div{
+    margin: auto;
+    padding-top: 3rem;
+    max-width: 1300px;
 }
