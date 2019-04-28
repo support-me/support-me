@@ -526,4 +526,14 @@ footer {
     padding:.25rem;
     caret-color: rgb(19, 167, 136);
 }
-
+input[type='radio']:checked{
+    box-shadow: 0 0 0 3px rgb(19, 167, 136);
+}
+input[type='radio']{
+    display: inline-block;
+    width:13px;
+    height:13px;
+    padding:3px;
+    background-clip:content-box;
+    border-radius: 1rem;
+}
