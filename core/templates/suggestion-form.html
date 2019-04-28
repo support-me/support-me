@@ -56,6 +56,22 @@
         <h3 id="bra-wire-label">Wire Preference</h3>
         <div class="suggestion-step-column">
             <p>Bra frame are either supported with or without underwire.  Comfort here comes down to personal preferences and also the level of support that you want/need, with wire having more support and underwire usually having less.</p>
+            <ul class="wire-frame-field">
+                {% for choice in form.bra_wire.field.choices %}
+                <li class="emoji-drawing-set">
+                {% if 'Underwire' in choice %}
+                    <img id="emoji-underwire-drawing" src="{% static 'images/pushup_bra-bold.png' %}" alt="bra that has an underwire">
+                {% endif %}
+                {% if 'Wireless' in choice %}
+                    <img id="emoji-wireless-drawing" src="{% static 'images/bralette-bold.png' %}" alt="bra without underwire">
+                {% endif %}
+                    <p>
+                    <input type="radio" name="bra_wire" value="{{ choice.0 }}"{% ifequal form.bra_wire.data choice.0 %} checked="checked" {% endifequal %}/>
+                    <label for="">{{ choice.1 }}</label>
+                    </p>
+                </li>
+                {% endfor %}
+            </ul>
             <label for="{{ form.bra_wire.id_for_label }}">How do you feel about wires:</label>
             {{ form.bra_wire }}
         </div>
