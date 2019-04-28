@@ -138,23 +138,26 @@ body a:hover {
 }
 
 /* HOVER IMAGE SECTION */
+.bra-fit-landing {
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 3px solid #3CBAA3;
+}
 .bra-fit-setup {
-    padding: 2rem 0 2rem 0;
+    /* padding: 2rem; */
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 .hvrbox {
     flex-direction: column;
     max-width: 300px;
 }    
 .hvrbox img {
-    overflow: hidden;
-    max-width: 300px;
-    height: auto;
+    border: 2px dashed #8787e6;
     padding: 1rem;
-    border-radius: 2rem;
-    border: 3px solid #3CBAA3;
+    max-width: 300px;
+    max-height: 300px;
     margin-bottom: 1rem;
 }
 
@@ -177,7 +180,7 @@ body a:hover {
 .fitting-step, .suggestion-step {
     /* text-align: center; */
     /* padding: 1rem 4rem 1rem 4rem; */
-    border: 1px solid black;
+    border: 3px solid #3CBAA3;
 }
 .fitting-step-column, .suggestion-step-column {
     max-width: 890px;
@@ -221,7 +224,6 @@ body a:hover {
 .bra-drawing-set {
     display: flex;
     flex-direction: column;
-
 }
 .bra-drawing-set img {
     border: 2px dashed #8787e6;
