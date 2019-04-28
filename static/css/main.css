@@ -215,7 +215,7 @@ body a:hover {
 }
 .fitting-step, .suggestion-step {
     /* text-align: center; */
-    padding: 1rem 4rem 1rem 4rem;
+    /* padding: 1rem 4rem 1rem 4rem; */
     border: 1px solid black;
 }
 .fitting-step-column, .suggestion-step-column {
@@ -223,7 +223,7 @@ body a:hover {
     display: flex;
     align-content: center;
     flex-direction: column;
-    padding: 1rem 5rem 1rem 5rem;
+    /* padding: 1rem 5rem 1rem 5rem; */
 }
 .fitting-form, .suggestion-form {
     text-align: center;
@@ -260,6 +260,7 @@ body a:hover {
 .bra-drawing-set {
     display: flex;
     flex-direction: column;
+
 }
 .bra-drawing-set img {
     border: 2px dashed #8787e6;
@@ -271,8 +272,17 @@ body a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
+    padding: 2% 15% 0% 9%;
 
+}
+/* @media (min-width: 481px) and (max-width: 767px){
+.currently-wearing-field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: inherit;
+}
+} */
 /* Suggestion Form Styling */
 .breast-placement-field {
     display: flex;
@@ -404,7 +414,9 @@ ul li ul li{
 
 /* BRA CARE PAGE */
 .care-image {
-    max-width: 300px;
+    max-width: 250px;
+    flex-wrap: wrap;
+    margin: block;
 }
 .care-section{
     display: flex;
@@ -413,16 +425,17 @@ ul li ul li{
     align-content: space-around;
 }
 .care-option-section{
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: center;
+    
 }
 .care-part{
-    display:flex;
+    /* display:flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    align-items:center;
+    align-items:center; */
 }
 
 footer {
@@ -466,6 +479,11 @@ footer {
 }
 .profile-welcome-div{
     text-align: center;
+}
+.bra-care-div{
+    margin: auto;
+    padding-top: 3rem;
+    max-width: 1300px;
 }
 .login-message {
     display: flex;
