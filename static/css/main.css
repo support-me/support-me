@@ -105,6 +105,7 @@ body a:hover {
 
 .login-message-div, .logout-section {
     padding: 1rem 3rem 1rem 3rem;
+
 }
 .content button {
     color: #8787e6;
@@ -465,4 +466,15 @@ footer {
 }
 .profile-welcome-div{
     text-align: center;
+}
+.login-message {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(19, 167, 136, 75%);
+    border-radius: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: .5rem;
 }
