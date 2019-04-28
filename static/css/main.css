@@ -545,7 +545,7 @@ footer {
     caret-color: rgb(19, 167, 136);
 }
 input[type='radio']:checked{
-    box-shadow: 0 0 0 3px rgb(19, 167, 136);
+    box-shadow: 0 0 0 2px rgb(19, 167, 136);
 }
 input[type='radio']{
     display: inline-block;
