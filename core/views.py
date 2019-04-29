@@ -60,6 +60,7 @@ def suggestion_form(request, fitting_id):
             data = form.cleaned_data
             suggestion.save(
                 fitting_session=fitting_session,
+                breast_placement=data['breast_placement'],
                 breast_shape=data['breast_shape'],
                 bra_padding=data['bra_padding'],
                 bra_wire=data['bra_wire'],
