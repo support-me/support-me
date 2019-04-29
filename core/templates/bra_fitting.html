@@ -70,8 +70,25 @@
             <div class="form-question-info"><p>Pick which breast you think needs the most support. You will measure that side only by using one hand to hold the measuring tape in the middle of your back. You will then bring the tape to the middle of the front of your chest with your other hand.</p>
             <label for="{{ form.bust_measurement.id_for_label }}">Enter bust measurement (inches): </label>
             {{ form.bust_measurement }}
-        </div>
-        <p><i>If you measured all the way around your bust that's fine!</i><label for="{{ form.bust_circumference.id_for_label }}">{{ form.bust_circumference }}</label></p>
+            </div>
+            <p><i>If you measured all the way around your bust that's fine!</i>
+                <ul class="bust-circumference-field currently-wearing-field">
+                    {% for choice in form.bust_circumference.field.choices %}
+                    <li class="emoji-drawing-set">
+                    {% if 'Half' in choice %}
+                        <img id="emoji-half-circumference-drawing" src="{% static 'images/half_way_lower.png' %}" alt="emoji that has a measuring tape that goes from one side of face to the middle of the face">
+                    {% endif %}
+                    {% if 'AllWay' in choice %}
+                        <img id="emoji-all-circumference-drawing" src="{% static 'images/all_the_way_lower.png' %}" alt="emoji that has a measuring tape that goes from one side of face to the other side of the face">
+                    {% endif %}
+                        <p>
+                        <input type="radio" name="bust_circumference" value="{{ choice.0 }}"{% ifequal form.bust_circumference.data choice.0 %} checked="checked" {% endifequal %}/>
+                        <label for="">{{ choice.1 }}</label>
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <!-- <label for="{{ form.bust_circumference.id_for_label }}">{{ form.bust_circumference }}</label></p> -->
         </div>
     <button type="submit" class="fit-submit-button">Get Size</button>
     </section>
