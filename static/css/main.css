@@ -233,6 +233,12 @@ body a:hover {
     max-width: 175px;
     max-height: 175px;
 }
+.care-image{
+    border: 2px dashed #8787e6;
+    padding: 1rem;
+    max-width: 175px;
+    max-height: 175px;
+}
 .currently-wearing-field {
     display: flex;
     flex-direction: row;
