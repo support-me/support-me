@@ -296,10 +296,18 @@ body a:hover {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    padding-left: inherit;
+    padding-right: inherit;
+    padding-bottom: inherit;
+
 }
 .support-me-team-pics img {
     width: 150px;
     height: 150px;
+    border: 2px dashed #8787e6;
+    padding: 3%;
+    
+    
 }
 
 .measurement-text{
@@ -331,7 +339,7 @@ body a:hover {
     justify-content: center;
 }
 
-.swal-button {
+/* .swal-button {
     background-color: #8787e6;
     color: #fff;
     border: none;
@@ -342,7 +350,9 @@ body a:hover {
     padding: 10px 24px;
     margin: 0;
     cursor: pointer;
-}
+    height:500px;
+
+} */
 ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
@@ -595,4 +605,11 @@ input[type='radio']{
         padding: 0;
         align-content: center;
     }
+}
+.question{
+    font-weight: 800;
+}
+.support-me-pic{
+    width: 25%;
+    height: 25%;
 }
