@@ -517,11 +517,21 @@ input[type='radio']{
 }
 
 @media only screen and (max-width: 480px) {
+
+    .content {
+        padding: 5rem 1.5rem 1.5rem 1.5rem;
+    }
     .hvrbox img {
         border: 2px dashed #8787e6;
         padding: 1rem;
         max-width: 200px;
         max-height: 200px;
         margin-bottom: 1rem;
+    }
+    .bra-fit-setup {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        align-content: center;
     }
 }
