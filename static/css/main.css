@@ -423,6 +423,7 @@ ul li ul li{
     flex-direction: column;
     justify-content: center;
     align-content: space-around;
+    align-content: left;
 }
 .care-option-section{
     /* display: flex; */
@@ -465,7 +466,8 @@ footer {
     flex-grow: 3;
     justify-content: center;
     display: block;
-    border-bottom: 2px solid #8787e6;
+    border-bottom: 3px solid rgb(19, 167, 136);
+
     margin-bottom: 2rem;
 }
 .profile-images{
@@ -482,8 +484,8 @@ footer {
 }
 .bra-care-div{
     margin: auto;
-    padding-top: 3rem;
     max-width: 1300px;
+    padding-top: inherit;
 }
 .login-message {
     display: flex;
@@ -554,4 +556,34 @@ input[type='radio']{
     padding:3px;
     background-clip:content-box;
     border-radius: 1rem;
+}
+/* .line-div{
+    border-bottom: 2px solid rgb(19, 167, 136);
+    box-shadow: 3px 3px 3px 2px rgb(19, 167, 136);
+    width: 50% ;
+    justify-content: left;
+
+
+} */
+.care-tips{
+    padding-right: 3%;
+    padding-bottom:3%;
+    padding-top: 3%;
+    border-bottom: 2px solid rgb(19, 167, 136);
+    margin: block;
+}
+.care-category{
+    text-align: center;
+    color: #8787e6;
+    padding-bottom: 5%;
+}
+.faq-fitting-title{
+    text-align: center;
+}
+#removable-pads-label{
+    text-align: center;
+}
+.faq-div{
+    border-bottom: 2px solid rgb(19, 167, 136);
+
 }
