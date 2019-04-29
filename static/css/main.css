@@ -31,8 +31,9 @@
 }
 
 body{
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Cabin Condensed', sans-serif;
     font-size: 1rem;
+    font-weight:300;
     /* height: 100%; */
 }
 ul {
@@ -347,8 +348,9 @@ ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
 .key-word{
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 1.10rem;
+    font-style:italic;
 }
 
 
