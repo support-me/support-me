@@ -2,45 +2,31 @@
 {% block content %}
 {% load static %}
 <main class="bra-fitting-index-content">
-<h1>Welcome to Support Me!</h1>
-<p>Support Me is to SUPPORT YOU on your search for the best fitting bra. No matter who you are or what your story is, you are welcome here!</p>
-<p>About 60% of people who wear bras are wearing the wrong size. This can lead to physical discomfort.</p>
+<h1>Welcome to Support Me</h1>
 
-    <div class="fit-intro">
-        <p>Welcome! We are excited to be assisting you in your bra fitting today. Our goal is to teach you how to find a bra that gives you the support you want.</p>
-        <i>There is one out there and we will give you the information that you need in order to find it.</i>
-    <br>
-    </div>
-<section class="bra-fit-setup">
-    <div class="hvrbox">
-        <img src="{% static 'images/shirt.png' %}" alt="Get comforatble in favorite tshirt" class="hvrbox-layer-bottom">
-            <div class="hvrbox-layer-top">
+<section class="bra-fit-landing">
+<h3>Get ready for your fitting in two steps.</h3>
+
+<p>We are here to <i>support you</i> on your search for the best fitting bra. No matter who you are or what your story is, you are welcome here!</p>
+<p class="key-word">About 60% of people who wear bras are wearing the wrong size. This can lead to physical discomfort.</p>
+<br>
+    <div class="bra-fit-setup">
+        <div class="hvrbox">
+            <img src="{% static 'images/shirt.png' %}" alt="Get comforatble in favorite tshirt">
                 <p class="hover-text">Put on your most comfy t-shirt. If you have a bra you are more than welcome to wear one for the fitting.
                 </p>
-            </div>
-    </div>
-    <div class="hvrbox">
-        {% comment %} <img src="http://placekitten.com/g/300/300" alt="What is a bra size" class="hvrbox-layer-bottom"> {% endcomment %}
-        <div class="hvrbox-layer-bottom" alt="What is a bra size">
-        <p>38 DD ...<br>..  36 G<br>40 B ....<br>. .. 34 AA </p>
         </div>
-            <div class="hvrbox-layer-top">
-                <p class="hover-text">What is a bra size even?
-                </p>
-            </div>
-    </div>
-    <div class="hvrbox">
-        <img src="{% static 'images/materials.png' %}" alt="Gather some materials" class="hvrbox-layer-bottom">
-            <div class="hvrbox-layer-top">
+        <div class="hvrbox">
+            <img src="{% static 'images/materials.png' %}" alt="Gather some materials">
                 <p class="hover-text">Next we need to get a few other materials to help with the fitting process: Measuring tape <i>or</i> a string and ruler.
                 </p>
-            </div>
+        </div>
     </div>
-
     <div class="intro-extra-info">
         <p>A bra size is usually shown as two numbers followed by a letter. The two numbers represent a band size and the letter represents a cup size. There are a few steps that we will take to get these values. Yes, calculations are involved. Yes, measurements are involved. These measurements are taken so you can find the bra size that will give you the most support. 
         <br><br>
         These measurements do not define how amazing you are or your value as a person (that value is uncalculateable because you are too awesome for numbers!).</p>
         <button class="get-fit-button" type="button"><a href="{% url 'brafitting' %}">Get Your Fit</a></button>
+    </div>
 </section>
 {% endblock %}
