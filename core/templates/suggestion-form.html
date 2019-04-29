@@ -33,7 +33,7 @@
                 <br>
                 <p>Breast placement is taken into account to determine the best width of the center gore (space between bra cups) for optimum comfort and support.</p>
                 <br>
-                <label class="question" for="{{ form.breast_placement.id_for_label }}">Choose the placement that you most identify with:</label>
+                <label class="question" for="{{ form.breast_placement.id_for_label }}">Which placement do you most identify with?</label>
                 <br>
                 <ul class="breast-placement-field currently-wearing-field">
                 {% for choice in form.breast_placement.field.choices %}
@@ -60,7 +60,7 @@
         <div class="suggestion-step-column">
             <p>Bra frames are either supported with or without underwire. Comfort here comes down to personal preference and also the level of support that you want/need, where bras with underwire usually have a bit more support than wireless bras.</p>
             <br>
-            <label class="question" for="{{ form.bra_wire.id_for_label }}">What is your wire preference?</label>
+            <label class="question" for="{{ form.bra_wire.id_for_label }}">Which type of support do you prefer?</label>
             <br>
             <ul class="wire-frame-field currently-wearing-field">
                 {% for choice in form.bra_wire.field.choices %}
@@ -90,7 +90,7 @@
             <p>Frames of bras (shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
             </p>
             <br>
-            <label class="question" for="{{ form.breast_shape.id_for_label }}">What breast shape do you most identify with?</label>
+            <label class="question" for="{{ form.breast_shape.id_for_label }}">Which breast shape do you most identify with?</label>
             <br>
             <ul class="breast-shape-field currently-wearing-field">
                 {% for choice in form.breast_shape.field.choices %}
