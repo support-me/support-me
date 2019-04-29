@@ -139,12 +139,14 @@ body a:hover {
 
 /* INDEX PAGE SECTION */
 .bra-fit-landing {
+    display: flex;
+    /* align-content: center; */
+    flex-direction: column;
     padding: 2rem;
     border-radius: 2rem;
     border: 3px solid #3CBAA3;
 }
 .bra-fit-setup {
-    /* padding: 2rem; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
@@ -180,6 +182,7 @@ body a:hover {
 .fitting-step, .suggestion-step {
     /* text-align: center; */
     /* padding: 1rem 4rem 1rem 4rem; */
+    border-radius: 2rem;
     border: 3px solid #3CBAA3;
 }
 .fitting-step-column, .suggestion-step-column {
@@ -235,7 +238,7 @@ body a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 2% 15% 0% 9%;
+    padding: 2% 15% 0 9%;
 
 }
 /* @media (min-width: 481px) and (max-width: 767px){
@@ -305,7 +308,6 @@ body a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
 .swal-button {
