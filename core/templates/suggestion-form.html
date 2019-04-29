@@ -28,7 +28,7 @@
             <div class="suggestion-step-column">
                 <p>This is taken into account in order to determine what width the center gore should be for optimum comfort and support.</p>
                 
-                <ul class="breast-placement-field">
+                <ul class="breast-placement-field currently-wearing-field">
                 {% for choice in form.breast_placement.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Near' in choice %}
@@ -56,7 +56,7 @@
         <h3 id="bra-wire-label">Wire Preference</h3>
         <div class="suggestion-step-column">
             <p>Bra frame are either supported with or without underwire.  Comfort here comes down to personal preferences and also the level of support that you want/need, with wire having more support and underwire usually having less.</p>
-            <ul class="wire-frame-field">
+            <ul class="wire-frame-field currently-wearing-field">
                 {% for choice in form.bra_wire.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Underwire' in choice %}
@@ -82,7 +82,7 @@
         <div class="suggestion-step-column">
             <p>Frames of bras(shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
             </p>
-            <ul class="breast-shape-field">
+            <ul class="breast-shape-field currently-wearing-field">
                 {% for choice in form.breast_shape.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Teardrop' in choice %}
@@ -109,7 +109,7 @@
         <h3 id="bra-padding-label">Padding Preference</h3>
         <div class="suggestion-step-column">
             <p>Yes, level of padding is a preference when it comes to comfort. Although pushup and lightly-lined bras will give a bit more support.</p>
-            <ul class="bra-padding-field">
+            <ul class="bra-padding-field currently-wearing-field">
                 {% for choice in form.bra_padding.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Lightly-Lined' in choice %}
