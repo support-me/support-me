@@ -347,11 +347,7 @@ body a:hover {
 ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
-.key-word{
-    font-weight: bold;
-    font-size: 1.10rem;
-    font-style:italic;
-}
+
 
 
 
@@ -579,6 +575,12 @@ input[type='radio']{
 .question{
     font-weight: bolder;
     font-size: 1.15rem;
+}
+.key-word{
+    font-family:'Titillium Web', sans-serif;
+    font-weight: 300;
+    font-size: 1.10rem;
+    font-style:italic;
 }
 @media only screen and (max-width: 480px) {
 
