@@ -220,6 +220,7 @@ class Suggestion(models.Model):
         else:
             self.bra_frame = 'Demi'
         return self.bra_frame
+        
     def __str__(self):
         return self.bra_suggestion
     
