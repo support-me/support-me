@@ -82,7 +82,7 @@
                         <img id="emoji-all-circumference-drawing" src="{% static 'images/all_the_way_lower.png' %}" alt="emoji that has a measuring tape that goes from one side of face to the other side of the face">
                     {% endif %}
                         <p>
-                        <input type="radio" name="bra_wire" value="{{ choice.0 }}"{% ifequal form.bust_circumference.data choice.0 %} checked="checked" {% endifequal %}/>
+                        <input type="radio" name="bust_circumference" value="{{ choice.0 }}"{% ifequal form.bust_circumference.data choice.0 %} checked="checked" {% endifequal %}/>
                         <label for="">{{ choice.1 }}</label>
                         </p>
                     </li>
