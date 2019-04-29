@@ -561,7 +561,7 @@ input[type='radio']{
     }
     .company-title{
         font-family: 'Sofia', cursive;
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 700;
         /* letter-spacing: .4rem; */
         color: #8787e6;
@@ -573,14 +573,14 @@ input[type='radio']{
         5px 4px 1px #ccc, 4px 5px 1px #eee,
         6px 5px 1px #ccc, 5px 6px 1px #eee,
         7px 6px 1px #ccc;
-        padding: 1rem 0 1rem 10rem; 
+        padding: .75rem 0 1rem 10rem; 
         /* background: url('/static/images/rehan-mallick-734287-unsplash.jpg') no-repeat; */
         /* background-size: cover; */
         /* border-bottom: 2px solid #8787e6;
         border-bottom-right-radius: 60% 70%; */
     }
     .content {
-        padding: 10rem 1.5rem 1.5rem 1.5rem;
+        padding: 8rem 1.5rem 1.5rem 1.5rem;
     }
     .nav-bar {
         position: relative;
