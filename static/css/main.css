@@ -272,7 +272,8 @@ body a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 2% 15% 0% 9%;
+    padding: inherit;
+    /* padding: 2% 15% 0% 9%; */
 }
 /* .bust-circumference-field{
     display: flex;
@@ -294,6 +295,8 @@ body a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding: inherit;
+
 }
 .emoji-drawing-set {
     display: flex;
@@ -490,7 +493,7 @@ footer {
 .bra-care-div{
     margin: auto;
     max-width: 1300px;
-    padding-top: inherit;
+    /* padding-top: inherit; */
 }
 .login-message {
     display: flex;
@@ -590,5 +593,9 @@ input[type='radio']{
 }
 .faq-div{
     border-bottom: 2px solid rgb(19, 167, 136);
-
+    padding: 2%;
+}
+.resource-con{
+    border-bottom: 2px solid rgb(19, 167, 136);
+    padding: 3%;
 }
