@@ -56,8 +56,12 @@
     </section>
     <section class="suggestion-step sugg-step-two">
         <h3 id="bra-wire-label">Wire Preference</h3>
+        <br>
         <div class="suggestion-step-column">
-            <p>Bra frame are either supported with or without underwire.  Comfort here comes down to personal preferences and also the level of support that you want/need, with wire having more support and underwire usually having less.</p>
+            <p>Bra frames are either supported with or without underwire. Comfort here comes down to personal preference and also the level of support that you want/need, where bras with underwire usually have a bit more support than wireless bras.</p>
+            <br>
+            <label class="question" for="{{ form.bra_wire.id_for_label }}">What is your wire option preference?</label>
+            <br>
             <ul class="wire-frame-field currently-wearing-field">
                 {% for choice in form.bra_wire.field.choices %}
                 <li class="emoji-drawing-set">
@@ -74,7 +78,7 @@
                 </li>
                 {% endfor %}
             </ul>
-            <label for="{{ form.bra_wire.id_for_label }}">How do you feel about wires:</label>
+
 
         </div>
         <button class="sugg-step-two-next-button" type=button>Next</button>
