@@ -154,6 +154,7 @@ body a:hover {
 .hvrbox {
     flex-direction: column;
     max-width: 300px;
+    margin: 2rem;
 }    
 .hvrbox img {
     border: 2px dashed #8787e6;
@@ -182,6 +183,7 @@ body a:hover {
 .fitting-step, .suggestion-step {
     /* text-align: center; */
     /* padding: 1rem 4rem 1rem 4rem; */
+    padding: 2rem;
     border-radius: 2rem;
     border: 3px solid #3CBAA3;
 }
@@ -194,9 +196,6 @@ body a:hover {
 }
 .fitting-form, .suggestion-form {
     text-align: center;
-}
-.fitting-step {
-    padding: 2rem;
 }
 .fitting-block {
     display: flex;

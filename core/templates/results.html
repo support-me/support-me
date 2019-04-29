@@ -25,12 +25,9 @@
    {% endif %}
 {% if user.is_authenticated %}
     <br>
-    <p>Visit your <a href="{% url 'profile' %}">Profile</a> to view your bra history. And remember to resize yourself every 6 months to 1 year!</p>
-    <p>Want to make your <i>own</i> bra?? Here's a <a href="https://www.creativebug.com/search/results?query=bra" target="blank" class="button">Bra Sewing Tutorial</a>.Or order one <a href="https://madalynne.com/product-category/custom-lingerie/" target="blank" class="button">Custom </a>made.</p>
-
-
-{% else %}
-    <p>Here are some top <a href="{% url 'bra-care' %}">bra care</a> tips!</p>
-</div>
+    <p>Visit your <a href="{% url 'profile' %}">Profile</a> to view your bra history. And remember to resize yourself every 6 months to 1 year.</p>
 {% endif %}
+    <p>Here are some top <a href="{% url 'bra-care' %}">bra care</a> tips!</p>
+    <p>Want to make your <i>own</i> bra?? Here's a <a href="https://www.creativebug.com/search/results?query=bra" target="blank" class="button">Bra Sewing Tutorial</a>. Or order one <a href="https://madalynne.com/product-category/custom-lingerie/" target="blank" class="button">Custom </a>made.</p>
+</div>
 {% endblock %}
