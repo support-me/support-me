@@ -573,3 +573,6 @@ input[type='radio']{
         align-content: center;
     }
 }
+.question{
+    font-weight: 800;
+}
