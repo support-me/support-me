@@ -48,6 +48,12 @@ ul {
 #header {
     height: 100px;
 }
+.company-logo{
+    padding: 1rem 5rem 1rem 5rem;
+}
+.header-logo{
+    max-height: 200px;
+}
 .company-title{
     font-family: 'Sofia', cursive;
     font-size: 4rem;
@@ -233,6 +239,14 @@ body a:hover {
     max-width: 175px;
     max-height: 175px;
 }
+.care-image{
+    border: 2px dashed #8787e6;
+    padding: 1rem;
+    max-width: 175px;
+    max-height: 175px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
 .currently-wearing-field {
     display: flex;
     flex-direction: row;
@@ -393,11 +407,11 @@ ul li ul li{
 }
 
 /* BRA CARE PAGE */
-.care-image {
+/* .care-image {
     max-width: 250px;
     flex-wrap: wrap;
     margin: block;
-}
+} */
 .care-section{
     display: flex;
     flex-direction: column;
@@ -406,10 +420,17 @@ ul li ul li{
     align-content: left;
 }
 .care-option-section{
-    /* display: flex; */
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    
+    align-content: center;
+}
+.care-option-storage{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 1rem;
 }
 
 footer {
@@ -446,7 +467,6 @@ footer {
 .profile-images{
   float: right;
   padding: 3rem;
-  
 }
 .profile-text{
     border: 3px solid;
@@ -564,7 +584,9 @@ input[type='radio']{
     border-bottom: 2px solid rgb(19, 167, 136);
     padding: 3%;
 }
-
+.question{
+    font-weight: 800;
+}
 @media only screen and (max-width: 480px) {
 
     .content {
