@@ -555,6 +555,15 @@ input[type='radio']{
     padding: 3%;
 }
 
+@media only screen and (min-width: 481) and (max-width: 1024) {
+    .bra-fit-setup {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+}
+
 @media only screen and (max-width: 480px) {
     #header {
         height: 90px;
