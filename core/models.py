@@ -191,20 +191,27 @@ class Suggestion(models.Model):
     bra_frame = models.CharField(max_length=30, choices=BRA_FRAME_CHOICES, default='Demi')
 
 
-    def save(self, fitting_session, breast_shape, bra_padding, bra_frame, bra_wire, *args, **kwargs):
+    def save(self, fitting_session, breast_shape, bra_padding, bra_frame, bra_wire, breast_placement, *args, **kwargs):
         self.breast_shape = breast_shape
-        self.bra_frame = bra_frame
+        self.bra_frame = self.get_bra_frame(breast_shape)
         self.bra_padding = bra_padding
         self.bra_wire = bra_wire
         self.fitting_session = fitting_session
-        self.bra_suggestion = self.get_suggestion(bra_frame, bra_padding, bra_wire)
+        self.breast_placement = breast_placement
+        self.bra_suggestion = self.get_suggestion(bra_frame, bra_padding, bra_wire, breast_placement)
         super().save(*args, **kwargs)
     
-    def get_suggestion(self, bra_frame, bra_padding, bra_wire):
-        if bra_wire == 'Wireless':
-            self.bra_suggestion = f'{bra_frame} wireless frame with {bra_padding} cups'
+    def get_suggestion(self, bra_frame, bra_padding, bra_wire, breast_placement):
+        if breast_placement == 'Far':
+            if bra_wire == 'Wireless':
+                self.bra_suggestion = f'{bra_frame} wireless frame with a wide center gore and {bra_padding} cups'
+            else:
+                self.bra_suggestion = f'{bra_frame} frame with a wide center gore and {bra_padding} cups'
         else:
-            self.bra_suggestion = f'{bra_frame} frame with {bra_padding} cups'
+            if bra_wire == 'Wireless':
+                self.bra_suggestion = f'{bra_frame} wireless frame with a narrow center gore and {bra_padding} cups'
+            else:
+                self.bra_suggestion = f'{bra_frame} frame with a narrow center gore and {bra_padding} cups'
         return self.bra_suggestion
 
     def get_bra_frame(self, breast_shape):
@@ -213,7 +220,6 @@ class Suggestion(models.Model):
         else:
             self.bra_frame = 'Demi'
         return self.bra_frame
-
     def __str__(self):
         return self.bra_suggestion
     
