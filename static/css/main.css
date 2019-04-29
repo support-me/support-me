@@ -333,7 +333,8 @@ ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
 .key-word{
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 1.10rem;
 }
 
 
