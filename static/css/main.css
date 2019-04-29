@@ -277,16 +277,14 @@ body a:hover {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    padding-left: inherit;
-    padding-right: inherit;
-    padding-bottom: inherit;
 
 }
 .support-me-team-pics img {
-    width: 150px;
-    height: 150px;
     border: 2px dashed #8787e6;
-    padding: 3%;   
+    padding: 1rem;
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 1rem;  
 }
 
 .measurement-text{
@@ -318,20 +316,6 @@ body a:hover {
     justify-content: center;
 }
 
-/* .swal-button {
-    background-color: #8787e6;
-    color: #fff;
-    border: none;
-    box-shadow: none;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 24px;
-    margin: 0;
-    cursor: pointer;
-    height:500px;
-
-} */
 ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
@@ -341,7 +325,7 @@ ul.bra-suggestion-need-list{
 
 /* DROP DOWN MENU STUFF */
 .nav-menu {
-    padding: 0 4rem 0 4rem;
+    padding: 0 10rem;
     display: flex;
     flex-direction: row;
 }
@@ -530,14 +514,6 @@ input[type='radio']{
     background-clip:content-box;
     border-radius: 1rem;
 }
-/* .line-div{
-    border-bottom: 2px solid rgb(19, 167, 136);
-    box-shadow: 3px 3px 3px 2px rgb(19, 167, 136);
-    width: 50% ;
-    justify-content: left;
-
-
-} */
 .care-tips{
     padding-right: 3%;
     padding-bottom:3%;
@@ -589,12 +565,13 @@ input[type='radio']{
 .question{
     font-weight: 800;
 }
-.support-me-pic{
-    width: 25%;
-    height: 25%;
-}
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .nav-menu {
+        padding: 0 5rem;
+        display: flex;
+        flex-direction: row;
+    }
     .bra-fit-setup {
         flex-direction: column;
         margin: 0;
@@ -608,6 +585,13 @@ input[type='radio']{
         max-height: 300px;
         margin-bottom: 1rem;
     }
+    .support-me-team-pics img {
+        border: 2px dashed #8787e6;
+        padding: 1rem;
+        max-width: 200px;
+        max-height: 200px;
+        margin-bottom: 1rem;  
+    }
     
 }
 
@@ -617,6 +601,11 @@ input[type='radio']{
     }
     .content {
         padding: 8rem 1.5rem 1.5rem 1.5rem;
+    }
+    .nav-menu {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: row;
     }
     .nav-bar {
         position: relative;
@@ -678,6 +667,13 @@ input[type='radio']{
         max-width: 150px;
         max-height: 150px;
         margin: auto;
+    }
+    .support-me-team-pics img {
+        border: 2px dashed #8787e6;
+        padding: 1rem;
+        max-width: 200px;
+        max-height: 200px;
+        margin-bottom: 1rem;  
     }
 }
 
