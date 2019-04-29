@@ -166,7 +166,7 @@ body a:hover {
 
 /* INTRO -- EXTRA INFO */
 .intro-extra-info {
-    padding: 2rem 0 2rem 0;
+    padding: 0rem 0 2rem 0;
 }
 .get-fit-button a {
     font-size: 1.5rem; 
@@ -238,7 +238,7 @@ body a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     padding: inherit;
-    /* padding: 2% 15% 0% 9%; */
+    padding: 2% 15% 0% 9%;
 }
 /* .bust-circumference-field{
     display: flex;
