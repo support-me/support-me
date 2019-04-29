@@ -60,7 +60,7 @@
         <div class="suggestion-step-column">
             <p>Bra frames are either supported with or without underwire. Comfort here comes down to personal preference and also the level of support that you want/need, where bras with underwire usually have a bit more support than wireless bras.</p>
             <br>
-            <label class="question" for="{{ form.bra_wire.id_for_label }}">What is your wire option preference?</label>
+            <label class="question" for="{{ form.bra_wire.id_for_label }}">What is your wire preference?</label>
             <br>
             <ul class="wire-frame-field currently-wearing-field">
                 {% for choice in form.bra_wire.field.choices %}
@@ -85,9 +85,13 @@
     </section>
     <section class="suggestion-step sugg-step-three">
         <h3 id="breast-shape-label">Breast shape</h3>
+        <br>
         <div class="suggestion-step-column">
-            <p>Frames of bras(shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
+            <p>Frames of bras (shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
             </p>
+            <br>
+            <label class="question" for="{{ form.breast_shape.id_for_label }}">What breast shape do you most identify with?</label>
+            <br>
             <ul class="breast-shape-field currently-wearing-field">
                 {% for choice in form.breast_shape.field.choices %}
                 <li class="emoji-drawing-set">
@@ -107,7 +111,6 @@
                 </li>
                 {% endfor %}
             </ul>
-            <label for="{{ form.breast_shape.id_for_label }}">What breast shape do you most identify with:</label>
         </div>
         <button class="sugg-step-three-next-button" type=button>Next</button>
     </section>
