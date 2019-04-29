@@ -137,7 +137,7 @@ body a:hover {
     justify-content: center;
 }
 
-/* HOVER IMAGE SECTION */
+/* INDEX PAGE SECTION */
 .bra-fit-landing {
     padding: 2rem;
     border-radius: 2rem;
@@ -329,9 +329,6 @@ ul.bra-suggestion-need-list{
 
 
 
-
-
-
 /* DROP DOWN MENU STUFF */
 .nav-menu-drop {
     background-color: white;
@@ -392,13 +389,6 @@ ul li ul li{
     flex-direction: row;
     justify-content: center;
     
-}
-.care-part{
-    /* display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items:center; */
 }
 
 footer {
@@ -517,4 +507,14 @@ input[type='radio']{
     padding:3px;
     background-clip:content-box;
     border-radius: 1rem;
+}
+
+@media only screen and (max-width: 480px) {
+    .hvrbox img {
+        border: 2px dashed #8787e6;
+        padding: 1rem;
+        max-width: 200px;
+        max-height: 200px;
+        margin-bottom: 1rem;
+    }
 }
