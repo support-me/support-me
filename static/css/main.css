@@ -26,7 +26,7 @@
     stick nav codepen: https://codepen.io/renduh/pen/oBBGbK
 
     */
-    border: 1px dashed grey;
+    /* border: 1px dashed grey; */
 
 }
 
@@ -340,10 +340,11 @@ ul.bra-suggestion-need-list{
 }
 .nav-menu-drop {
     background-color: white;
-    border: 1px solid #8787e6;
+    padding: 0 1rem;
+    border: 1px solid #3CBAA3;
 }
 .nav-menu li{
-    text-align: center;
+    text-align: left;
     transition-duration: 0.5s;
 }
 .nav-menu li:hover,
