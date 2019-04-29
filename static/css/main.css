@@ -273,8 +273,13 @@ body a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 2% 15% 0% 9%;
-
 }
+/* .bust-circumference-field{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2% 15% 0% 9%;
+} */
 /* @media (min-width: 481px) and (max-width: 767px){
 .currently-wearing-field {
     display: flex;
