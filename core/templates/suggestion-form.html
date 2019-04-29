@@ -28,14 +28,14 @@
             <div class="suggestion-step-column">
                 <p>This is taken into account in order to determine what width the center gore should be for optimum comfort and support.</p>
                 
-                <ul class="breast-placement-field">
+                <ul class="breast-placement-field currently-wearing-field">
                 {% for choice in form.breast_placement.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Near' in choice %}
-                    <img id="emoji-near-drawing" src="{% static 'images/emoji-near-placement.png' %}" alt="near placement of breasts">
+                    <img id="emoji-near-drawing" src="{% static 'images/near_copy.png' %}" alt="near placement of breasts">
                 {% endif %}
                 {% if 'Far' in choice %}
-                    <img id="emoji-far-drawing" src="{% static 'images/emoji-far-placement.png' %}" alt="far placement of breasts">
+                    <img id="emoji-far-drawing" src="{% static 'images/far_copy.png' %}" alt="far placement of breasts">
                 {% endif %}
                     <p>
                     <input type="radio" name="breast_placement" value="{{ choice.0 }}"{% ifequal form.breast_placement.data choice.0 %} checked="checked" {% endifequal %}/>
@@ -56,8 +56,24 @@
         <h3 id="bra-wire-label">Wire Preference</h3>
         <div class="suggestion-step-column">
             <p>Bra frame are either supported with or without underwire.  Comfort here comes down to personal preferences and also the level of support that you want/need, with wire having more support and underwire usually having less.</p>
+            <ul class="wire-frame-field currently-wearing-field">
+                {% for choice in form.bra_wire.field.choices %}
+                <li class="emoji-drawing-set">
+                {% if 'Underwire' in choice %}
+                    <img id="emoji-underwire-drawing" src="{% static 'images/pushup_bra-bold.png' %}" alt="bra that has an underwire">
+                {% endif %}
+                {% if 'Wireless' in choice %}
+                    <img id="emoji-wireless-drawing" src="{% static 'images/bralette-bold.png' %}" alt="bra without underwire">
+                {% endif %}
+                    <p>
+                    <input type="radio" name="bra_wire" value="{{ choice.0 }}"{% ifequal form.bra_wire.data choice.0 %} checked="checked" {% endifequal %}/>
+                    <label for="">{{ choice.1 }}</label>
+                    </p>
+                </li>
+                {% endfor %}
+            </ul>
             <label for="{{ form.bra_wire.id_for_label }}">How do you feel about wires:</label>
-            {{ form.bra_wire }}
+
         </div>
         <button class="sugg-step-two-next-button" type=button>Next</button>
     </section>
@@ -66,8 +82,26 @@
         <div class="suggestion-step-column">
             <p>Frames of bras(shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
             </p>
+            <ul class="breast-shape-field currently-wearing-field">
+                {% for choice in form.breast_shape.field.choices %}
+                <li class="emoji-drawing-set">
+                {% if 'Teardrop' in choice %}
+                    <img id="emoji-teardrop-drawing" src="{% static 'images/tear_drop_copy.png' %}" alt="emoji with eye shape that looks like a teardrop to mimic a breast shape to looks like a teardrop">
+                {% endif %}
+                {% if 'Round' in choice %}
+                    <img id="emoji-round-drawing" src="{% static 'images/round_copy.png' %}" alt="emoji with eye shape that looks round to mimic a breast shape that is round">
+                {% endif %}
+                {% if 'Other' in choice %}
+                    <img id="emoji-other-drawing" src="{% static 'images/other_copy.png' %}" alt="emoji with its eyes closed toallow someone to choose another breast shape">
+                {% endif %}
+                    <p>
+                    <input type="radio" name="breast_shape" value="{{ choice.0 }}"{% ifequal form.breast_shape.data choice.0 %} checked="checked" {% endifequal %}/>
+                    <label for="">{{ choice.1 }}</label>
+                    </p>
+                </li>
+                {% endfor %}
+            </ul>
             <label for="{{ form.breast_shape.id_for_label }}">What breast shape do you most identify with:</label>
-            {{ form.breast_shape }}
         </div>
         <button class="sugg-step-three-next-button" type=button>Next</button>
     </section>
@@ -75,8 +109,30 @@
         <h3 id="bra-padding-label">Padding Preference</h3>
         <div class="suggestion-step-column">
             <p>Yes, level of padding is a preference when it comes to comfort. Although pushup and lightly-lined bras will give a bit more support.</p>
+            <ul class="bra-padding-field currently-wearing-field">
+                {% for choice in form.bra_padding.field.choices %}
+                <li class="emoji-drawing-set">
+                {% if 'Lightly-Lined' in choice %}
+                    <img id="emoji-lightly-lined-drawing" src="{% static 'images/lightly_lined_bra-bold.png' %}" alt="drawing for full frames lightly-lined bra with an underwire">
+                {% endif %}
+                {% if 'PushUp' in choice %}
+                    <img id="emoji-pushup-drawing" src="{% static 'images/pushup_bra-bold.png' %}" alt="drawing of demi cup push up bra with underwire">
+                {% endif %}
+                {% if 'Unlined' in choice %}
+                    <img id="emoji-unlined-drawing" src="{% static 'images/bralette-bold.png' %}" alt="drawing of a bralette that is wireless and has no padding">
+                {% endif %}
+                {% if 'Removable' in choice %}
+                <img id="emoji-removable-drawing" src="{% static 'images/sports-bra-bold.png' %}" alt="drawing of a sports bra that is wireless and has no padding">
+                {% endif %}
+                    <p>
+                    <input type="radio" name="bra_padding" value="{{ choice.0 }}"{% ifequal form.bra_padding.data choice.0 %} checked="checked" {% endifequal %}/>
+                    <label for="">{{ choice.1 }}</label>
+                    </p>
+                </li>
+                {% endfor %}
+            </ul>
             <label for="{{ form.bra_padding.id_for_label }}">What is the main type of padding that you are interested in:</label>
-            {{ form.bra_padding }}
+
         </div>
         <button type="submit" class="submit-button">See Recs!</button>
     </section>
