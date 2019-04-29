@@ -26,7 +26,7 @@
     stick nav codepen: https://codepen.io/renduh/pen/oBBGbK
 
     */
-    /* border: 1px dashed grey; */
+    border: 1px dashed grey;
 
 }
 
@@ -64,7 +64,7 @@ ul {
     7px 6px 1px #ccc;
     padding: 1rem 0 1rem 10rem; 
     /* background: url('/static/images/rehan-mallick-734287-unsplash.jpg') no-repeat; */
-    background-size: cover;
+    /* background-size: cover; */
     /* border-bottom: 2px solid #8787e6;
     border-bottom-right-radius: 60% 70%; */
 }
@@ -81,7 +81,7 @@ ul {
     margin-bottom: -100px;
     z-index: 3;
     background-color: white;
-    border-bottom-right-radius: 60% 70%;
+    /* border-bottom-right-radius: 60% 70%; */
     border-bottom: 3px solid #8787e6;
 
     /* padding: 2rem 0 2rem 3rem; */
@@ -556,9 +556,53 @@ input[type='radio']{
 }
 
 @media only screen and (max-width: 480px) {
-
+    #header {
+        height: 90px;
+    }
+    .company-title{
+        font-family: 'Sofia', cursive;
+        font-size: 2.5rem;
+        font-weight: 700;
+        /* letter-spacing: .4rem; */
+        color: #8787e6;
+        text-shadow: 
+        1px 0px 1px #ccc, 0px 1px 1px #eee, 
+        2px 1px 1px #ccc, 1px 2px 1px #eee,
+        3px 2px 1px #ccc, 2px 3px 1px #eee,
+        4px 3px 1px #ccc, 3px 4px 1px #eee,
+        5px 4px 1px #ccc, 4px 5px 1px #eee,
+        6px 5px 1px #ccc, 5px 6px 1px #eee,
+        7px 6px 1px #ccc;
+        padding: 1rem 0 1rem 10rem; 
+        /* background: url('/static/images/rehan-mallick-734287-unsplash.jpg') no-repeat; */
+        /* background-size: cover; */
+        /* border-bottom: 2px solid #8787e6;
+        border-bottom-right-radius: 60% 70%; */
+    }
     .content {
-        padding: 5rem 1.5rem 1.5rem 1.5rem;
+        padding: 10rem 1.5rem 1.5rem 1.5rem;
+    }
+    .nav-bar {
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 70px;
+        line-height: 70px;
+        margin-bottom: -70px;
+        z-index: 3;
+        background-color: white;
+        /* border-bottom-right-radius: 60% 70%; */
+        border-bottom: 3px solid #8787e6;
+        /* padding: 2rem 0 2rem 3rem;    */
+    }
+    .sticky-nav {
+        position: fixed;
+        top: 0;
+    }
+    .nav-item{
+        padding: 0 1rem 0 1rem;
+        font-size: 1rem;
     }
     .hvrbox img {
         border: 2px dashed #8787e6;
