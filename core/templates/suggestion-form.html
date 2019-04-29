@@ -9,12 +9,16 @@
     <h1 class="form-title">Support Profile</h1>
 
     <section class="suggestion-step sugg-step-start">
-        <h3>Your estimated bra size: <strong>{{bra_size}}</strong></h3>
+        <h3>Your estimated bra size is <strong>{{bra_size}}</strong>.</h3>
+        <br>
         <div class="suggestion-step-column">
-            <p>To get <strong class="key-word">band size</strong>, we added 4" if <strong class="key-word">band measurement</strong> is even, and 5" if measurement is odd.</p>
-            <p>The <strong class="key-word">cup size</strong> is determined by the <strong class="key-word">band size</strong> subtracted from the bust circumference, with some additional calculations based on what you're currently wearing. There is more to finding the bra that fits you best than <i>just</i> having a bra size! 
+            <p>To get <strong class="key-word">band size</strong>, we added 4" if <strong class="key-word">band measurement</strong> was even, and 5" if measurement was odd.
+                <br>
+            The <strong class="key-word">cup size</strong> is determined by the <strong class="key-word">band size</strong> subtracted from the <strong class="key-word">bust circumference</strong>, with some additional calculations based on what you're currently wearing.
             <br><br>
-            We also need to consider a few things about bras that impact what kind you may like.
+            There is more to finding the bra that fits you best than <i>just</i> having a bra size! 
+            <br>
+            We also need to consider a few things about bras that can impact what kind you may like.
             </p>
             {% else %}
             <p>Try the <a href="{% url 'brafitting' %}">form</a> again! Something wet wonky...</p>
@@ -26,8 +30,11 @@
     <section class="suggestion-step sugg-step-one">
         <h3 id="breast-placement-label">Breast placement</h3>
             <div class="suggestion-step-column">
-                <p>This is taken into account in order to determine what width the center gore should be for optimum comfort and support.</p>
-                
+                <br>
+                <p>Breast placement is taken into account to determine the best width of the center gore (space between bra cups) for optimum comfort and support.</p>
+                <br>
+                <label class="question" for="{{ form.breast_placement.id_for_label }}">Which placement do you most identify with?</label>
+                <br>
                 <ul class="breast-placement-field currently-wearing-field">
                 {% for choice in form.breast_placement.field.choices %}
                 <li class="emoji-drawing-set">
@@ -44,18 +51,17 @@
                 </li>
             {% endfor %}
             </ul>
-            <br>
-            <label for="{{ form.breast_placement.id_for_label }}">Choose the placement that you most identify with:</label>
-            </div>
-
-
-                
+            </div> 
         <button class="sugg-step-one-next-button" type=button>Next</button>
     </section>
     <section class="suggestion-step sugg-step-two">
         <h3 id="bra-wire-label">Wire Preference</h3>
+        <br>
         <div class="suggestion-step-column">
-            <p>Bra frame are either supported with or without underwire.  Comfort here comes down to personal preferences and also the level of support that you want/need, with wire having more support and underwire usually having less.</p>
+            <p>Bra frames are either supported with or without underwire. Comfort here comes down to personal preference and also the level of support that you want/need, where bras with underwire usually have a bit more support than wireless bras.</p>
+            <br>
+            <label class="question" for="{{ form.bra_wire.id_for_label }}">Which type of support do you prefer?</label>
+            <br>
             <ul class="wire-frame-field currently-wearing-field">
                 {% for choice in form.bra_wire.field.choices %}
                 <li class="emoji-drawing-set">
@@ -72,16 +78,20 @@
                 </li>
                 {% endfor %}
             </ul>
-            <label for="{{ form.bra_wire.id_for_label }}">How do you feel about wires:</label>
+
 
         </div>
         <button class="sugg-step-two-next-button" type=button>Next</button>
     </section>
     <section class="suggestion-step sugg-step-three">
         <h3 id="breast-shape-label">Breast shape</h3>
+        <br>
         <div class="suggestion-step-column">
-            <p>Frames of bras(shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
+            <p>Frames of bras (shape of cups) are each geered towards fully supporting a specific breast shape. Who knew? <i>We did!</i>
             </p>
+            <br>
+            <label class="question" for="{{ form.breast_shape.id_for_label }}">Which breast shape do you most identify with?</label>
+            <br>
             <ul class="breast-shape-field currently-wearing-field">
                 {% for choice in form.breast_shape.field.choices %}
                 <li class="emoji-drawing-set">
@@ -101,14 +111,16 @@
                 </li>
                 {% endfor %}
             </ul>
-            <label for="{{ form.breast_shape.id_for_label }}">What breast shape do you most identify with:</label>
         </div>
         <button class="sugg-step-three-next-button" type=button>Next</button>
     </section>
     <section class="suggestion-step sugg-step-four">
         <h3 id="bra-padding-label">Padding Preference</h3>
         <div class="suggestion-step-column">
-            <p>Yes, level of padding is a preference when it comes to comfort. Although pushup and lightly-lined bras will give a bit more support.</p>
+            <br>
+            <p>Yes, level of padding is a <strong class="key-word">preference </strong> when it comes to comfort. Although, push-up and lightly-lined bras will give a bit more support.</p>
+            <label class="question" for="{{ form.bra_padding.id_for_label }}">What is the main type of padding that you are interested in?</label>
+            <br>
             <ul class="bra-padding-field currently-wearing-field">
                 {% for choice in form.bra_padding.field.choices %}
                 <li class="emoji-drawing-set">
@@ -131,8 +143,6 @@
                 </li>
                 {% endfor %}
             </ul>
-            <label for="{{ form.bra_padding.id_for_label }}">What is the main type of padding that you are interested in:</label>
-
         </div>
         <button type="submit" class="submit-button">See Recs!</button>
     </section>

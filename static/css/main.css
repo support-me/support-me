@@ -333,7 +333,8 @@ ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
 .key-word{
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 1.10rem;
 }
 
 
@@ -454,7 +455,7 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgba(126, 204, 187, 0.75);
+    background-color: rgba(19, 167, 136, 0.75);
     border-radius: 1rem;
     width: 100%;
     margin: 0;
@@ -572,4 +573,7 @@ input[type='radio']{
         padding: 0;
         align-content: center;
     }
+}
+.question{
+    font-weight: 800;
 }
