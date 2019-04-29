@@ -117,7 +117,10 @@
     <section class="suggestion-step sugg-step-four">
         <h3 id="bra-padding-label">Padding Preference</h3>
         <div class="suggestion-step-column">
-            <p>Yes, level of padding is a preference when it comes to comfort. Although pushup and lightly-lined bras will give a bit more support.</p>
+            <br>
+            <p>Yes, level of padding is a <strong class="key-word">preference </strong> when it comes to comfort. Although, push-up and lightly-lined bras will give a bit more support.</p>
+            <label class="question" for="{{ form.bra_padding.id_for_label }}">What is the main type of padding that you are interested in?</label>
+            <br>
             <ul class="bra-padding-field currently-wearing-field">
                 {% for choice in form.bra_padding.field.choices %}
                 <li class="emoji-drawing-set">
@@ -140,7 +143,7 @@
                 </li>
                 {% endfor %}
             </ul>
-            <label for="{{ form.bra_padding.id_for_label }}">What is the main type of padding that you are interested in:</label>
+
 
         </div>
         <button type="submit" class="submit-button">See Recs!</button>
