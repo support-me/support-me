@@ -73,6 +73,7 @@ ul {
     
 }
 .sticky-nav {
+    padding-top: 2rem;
     position: fixed;
     top: 0;
 }
@@ -231,31 +232,16 @@ body a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: inherit;
     padding: 2% 15% 0% 9%;
 }
-/* .bust-circumference-field{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 2% 15% 0% 9%;
-} */
-/* @media (min-width: 481px) and (max-width: 767px){
-.currently-wearing-field {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: inherit;
-}
-} */
+
+
 /* Suggestion Form Styling */
 .breast-placement-field {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: inherit;
-
 }
 .emoji-drawing-set {
     display: flex;
@@ -442,7 +428,6 @@ footer {
 .bra-care-div{
     margin: auto;
     max-width: 1300px;
-    /* padding-top: inherit; */
 }
 .login-message {
     display: flex;
@@ -623,6 +608,7 @@ input[type='radio']{
     }
     .sticky-nav {
         position: fixed;
+        padding-top: 1rem;
         top: 0;
     }
     .nav-item{
@@ -645,8 +631,6 @@ input[type='radio']{
     .currently-wearing-field {
         display: flex;
         flex-direction: column;
-        /* flex-wrap: wrap; */
-        /* padding: inherit; */
         padding: 0;
     }
     .fitting-step, .suggestion-step {
