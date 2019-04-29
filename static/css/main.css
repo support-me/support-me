@@ -48,6 +48,12 @@ ul {
 #header {
     height: 100px;
 }
+.company-logo{
+    padding: 1rem 5rem 1rem 5rem;
+}
+.header-logo{
+    max-height: 200px;
+}
 .company-title{
     font-family: 'Sofia', cursive;
     font-size: 4rem;
