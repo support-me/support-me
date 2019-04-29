@@ -204,14 +204,26 @@ class Suggestion(models.Model):
     def get_suggestion(self, bra_frame, bra_padding, bra_wire, breast_placement):
         if breast_placement == 'Far':
             if bra_wire == 'Wireless':
-                self.bra_suggestion = f'{bra_frame} wireless frame with a wide center gore and {bra_padding} cups'
+                if bra_padding == 'Removable':
+                    self.bra_suggestion = f'{bra_frame} wireless frame with a wide center gore and {bra_padding} padding'
+                else:
+                    self.bra_suggestion = f'{bra_frame} wireless frame with a wide center gore and {bra_padding} cups' 
             else:
-                self.bra_suggestion = f'{bra_frame} frame with a wide center gore and {bra_padding} cups'
+                if bra_padding == 'Removable':
+                    self.bra_suggestion = f'{bra_frame} frame with a wide center gore and {bra_padding} padding'
+                else:
+                    self.bra_suggestion = f'{bra_frame} frame with a wide center gore and {bra_padding} cups'                    
         else:
             if bra_wire == 'Wireless':
-                self.bra_suggestion = f'{bra_frame} wireless frame with a narrow center gore and {bra_padding} cups'
+                if bra_padding == 'Removable':
+                    self.bra_suggestion = f'{bra_frame} wireless frame with a narrow center gore and {bra_padding} padding'
+                else:
+                    self.bra_suggestion = f'{bra_frame} wireless frame with a narrow center gore and {bra_padding} cups' 
             else:
-                self.bra_suggestion = f'{bra_frame} frame with a narrow center gore and {bra_padding} cups'
+                if bra_padding == 'Removable':
+                    self.bra_suggestion = f'{bra_frame}  frame with a narrow center gore and {bra_padding} padding'
+                else:
+                    self.bra_suggestion = f'{bra_frame}  frame with a narrow center gore and {bra_padding} cups'                
         return self.bra_suggestion
 
     def get_bra_frame(self, breast_shape):
@@ -220,7 +232,7 @@ class Suggestion(models.Model):
         else:
             self.bra_frame = 'Demi'
         return self.bra_frame
-        
+
     def __str__(self):
         return self.bra_suggestion
     
