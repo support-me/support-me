@@ -31,10 +31,12 @@
 }
 
 body{
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Cabin Condensed', sans-serif;
     font-size: 1rem;
     height: 100%;
     width: 100%;
+    font-weight:300;
+    /* height: 100%; */
 }
 ul {
     list-style: none;   
@@ -275,10 +277,16 @@ body a:hover {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    padding-left: inherit;
+    padding-right: inherit;
+    padding-bottom: inherit;
+
 }
 .support-me-team-pics img {
     width: 150px;
     height: 150px;
+    border: 2px dashed #8787e6;
+    padding: 3%;   
 }
 
 .measurement-text{
@@ -310,7 +318,7 @@ body a:hover {
     justify-content: center;
 }
 
-.swal-button {
+/* .swal-button {
     background-color: #8787e6;
     color: #fff;
     border: none;
@@ -321,14 +329,13 @@ body a:hover {
     padding: 10px 24px;
     margin: 0;
     cursor: pointer;
-}
+    height:500px;
+
+} */
 ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
-.key-word{
-    font-weight: bolder;
-    font-size: 1.10rem;
-}
+
 
 
 
@@ -539,8 +546,8 @@ input[type='radio']{
     margin: block;
 }
 .care-category{
-    text-align: center;
-    color: #8787e6;
+    font-weight: 800;
+    text-align: left;
     padding-bottom: 5%;
 }
 .faq-fitting-title{
@@ -558,7 +565,33 @@ input[type='radio']{
     padding: 3%;
 }
 .question{
+    font-weight: bolder;
+    font-size: 1.35rem;
+}
+.key-word{
+    font-family:'Titillium Web', sans-serif;
+    font-weight: 300;
+    font-size: 1.10rem;
+    font-style:italic;
+}
+.step-title{
+    font-weight:900;
+    font-size: 1.55rem;
+}
+.form-title{
+    font-weight:900;
+    font-size: 2.15rem;
+}
+.description-suggestion{
+    font-weight: 700;
+    font-size: 1.10rem;
+}
+.question{
     font-weight: 800;
+}
+.support-me-pic{
+    width: 25%;
+    height: 25%;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
@@ -647,3 +680,4 @@ input[type='radio']{
         margin: auto;
     }
 }
+

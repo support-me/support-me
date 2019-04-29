@@ -9,16 +9,18 @@
     <h1 class="form-title">Support Profile</h1>
 
     <section class="suggestion-step sugg-step-start">
-        <h3>Your estimated bra size is <strong>{{bra_size}}</strong>.</h3>
+        <h3 class="step-title">Your estimated bra size is <strong>{{bra_size}}</strong>.</h3>
         <br>
         <div class="suggestion-step-column">
             <p>To get <strong class="key-word">band size</strong>, we added 4" if <strong class="key-word">band measurement</strong> was even, and 5" if measurement was odd.
                 <br>
             The <strong class="key-word">cup size</strong> is determined by the <strong class="key-word">band size</strong> subtracted from the <strong class="key-word">bust circumference</strong>, with some additional calculations based on what you're currently wearing.
             <br><br>
-            There is more to finding the bra that fits you best than <i>just</i> having a bra size! 
+            <div class="description-suggestion">
+            There is more to finding the bra that fits you best than <i class="key-word">just</i> having a bra size! 
             <br>
             We also need to consider a few things about bras that can impact what kind you may like.
+            </div>
             </p>
             {% else %}
             <p>Try the <a href="{% url 'brafitting' %}">form</a> again! Something wet wonky...</p>
