@@ -220,14 +220,6 @@ body a:hover {
     max-width: 175px;
     max-height: 175px;
 }
-.care-image{
-    border: 2px dashed #8787e6;
-    padding: 1rem;
-    max-width: 175px;
-    max-height: 175px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
 .currently-wearing-field {
     display: flex;
     flex-direction: row;
@@ -357,11 +349,7 @@ ul li ul li{
 }
 
 /* BRA CARE PAGE */
-/* .care-image {
-    max-width: 250px;
-    flex-wrap: wrap;
-    margin: block;
-} */
+
 .care-section{
     display: flex;
     flex-direction: column;
@@ -369,30 +357,25 @@ ul li ul li{
     align-content: space-around;
     align-content: left;
 }
-.care-option-section{
+.care-option-section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: center;
 }
-.care-option-storage{
-    display: flex;
+.care-image {
+    border: 2px dashed #8787e6;
+    padding: 1rem;
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.care-option-storage {
+    padding: 1rem;
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: 1rem;
-}
-
-footer {
-    margin-top: 3rem;
-    padding: 1rem 0 2rem 0;
-    border-top: 2px solid #8787e6;
-    height: 100%;
-    width: 100%;
-    color: black;
-    text-align: center;
-    opacity: .8;
-    overflow: hidden;
 }
 
 /* Profile page Styles  */
@@ -549,6 +532,18 @@ input[type='radio']{
 }
 .question{
     font-weight: 800;
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 1rem 0 2rem 0;
+    border-top: 2px solid #8787e6;
+    height: 100%;
+    width: 100%;
+    color: black;
+    text-align: center;
+    opacity: .8;
+    overflow: hidden;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
