@@ -2,12 +2,13 @@
 {% block content %}
 {% load static %}
     <form class="fitting-form" method="POST">
-    <h1>Bra Fitting</h1>
+    <h1 class=
+    "form-title">Bra Fitting</h1>
     {% csrf_token %}
     {{ form.non_field_errors }}
 
     <section class="fitting-step step-one">
-        <h3 id="currently-wearing-title">Currently Wearing</h3>
+        <h3 class="step-title" id="currently-wearing-title">Currently Wearing</h3>
         <div class="fitting-step-column">
             <div class="form-question-info"><p>Please get as comfortable as possible - maybe put on a favorite t-shirt. If you have a bra you are more than welcome to wear one for the fitting.</p>
             <br>
@@ -47,13 +48,13 @@
     </section>
 
     <section class="fitting-step step-two">
-        <h3 id="band-measurement-wearing-title">Band Measurement</h3>
+        <h3  class="step-title" id="band-measurement-wearing-title">Band Measurement</h3>
         <div class="fitting-step-column">
             <div class="fitting-block-video-section">
                 <img class="fitting-block-pic" src="{% static 'images/band-measurement.gif' %}" alt="band measurement under bust">
             </div>
-            <div class="form-question-info"><p>This is not your band <i>size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement.<br>
-            <i>This number is a tool to find your best support not a definition of who you are!</i></p>
+            <div class="form-question-info"><p>This is not your band <i class="key-word">size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement.<br>
+            <i class="key-word">This number is a tool to find your best support not a definition of who you are!</i></p>
             <label class="question" for="{{ form.band_measurement.id_for_label }}">Enter band measurement (inches): </label>
             {{ form.band_measurement }}
             </div>
@@ -62,7 +63,7 @@
     </section>
 
     <section class="fitting-step step-three">
-        <h3 id="bust-measurement-wearing-title">Bust Measurement</h3>
+        <h3  class="step-title" id="bust-measurement-wearing-title">Bust Measurement</h3>
         <div class="fitting-step-column">
             <div class="fitting-block-video-section">
                 <img class="fitting-block-pic" src="{% static 'images/bust-measurement.gif' %}" alt="measuring bust half way, and all the way around">

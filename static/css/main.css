@@ -31,8 +31,9 @@
 }
 
 body{
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Cabin Condensed', sans-serif;
     font-size: 1rem;
+    font-weight:300;
     /* height: 100%; */
 }
 ul {
@@ -356,10 +357,7 @@ body a:hover {
 ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
-.key-word{
-    font-weight: bolder;
-    font-size: 1.10rem;
-}
+
 
 
 
@@ -566,8 +564,8 @@ input[type='radio']{
     margin: block;
 }
 .care-category{
-    text-align: center;
-    color: #8787e6;
+    font-weight: 800;
+    text-align: left;
     padding-bottom: 5%;
 }
 .faq-fitting-title{
@@ -585,7 +583,26 @@ input[type='radio']{
     padding: 3%;
 }
 .question{
-    font-weight: 800;
+    font-weight: bolder;
+    font-size: 1.35rem;
+}
+.key-word{
+    font-family:'Titillium Web', sans-serif;
+    font-weight: 300;
+    font-size: 1.10rem;
+    font-style:italic;
+}
+.step-title{
+    font-weight:900;
+    font-size: 1.55rem;
+}
+.form-title{
+    font-weight:900;
+    font-size: 2.15rem;
+}
+.description-suggestion{
+    font-weight: 700;
+    font-size: 1.10rem;
 }
 @media only screen and (max-width: 480px) {
 
