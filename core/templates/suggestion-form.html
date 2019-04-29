@@ -95,7 +95,7 @@
                     <img id="emoji-other-drawing" src="{% static 'images/other_copy.png' %}" alt="emoji with its eyes closed toallow someone to choose another breast shape">
                 {% endif %}
                     <p>
-                    <input type="radio" name="bra_wire" value="{{ choice.0 }}"{% ifequal form.breast_shape.data choice.0 %} checked="checked" {% endifequal %}/>
+                    <input type="radio" name="breast_shape" value="{{ choice.0 }}"{% ifequal form.breast_shape.data choice.0 %} checked="checked" {% endifequal %}/>
                     <label for="">{{ choice.1 }}</label>
                     </p>
                 </li>
@@ -132,6 +132,7 @@
                 {% endfor %}
             </ul>
             <label for="{{ form.bra_padding.id_for_label }}">What is the main type of padding that you are interested in:</label>
+
         </div>
         <button type="submit" class="submit-button">See Recs!</button>
     </section>
