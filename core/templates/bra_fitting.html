@@ -11,7 +11,7 @@
         <div class="fitting-step-column">
             <div class="form-question-info"><p>Please get as comfortable as possible - maybe put on a favorite t-shirt. If you have a bra you are more than welcome to wear one for the fitting.</p>
             <br>
-            <label class="question" for="{{ form.currently_wearing.id_for_label }}">Select the bra you are currently wearing:</label>
+            <label class="question" for="{{ form.currently_wearing.id_for_label }}">What type of support are you currently wearing?</label>
             <br><br>
             <ul class="currently-wearing-field">
             {% for choice in form.currently_wearing.field.choices %}
@@ -53,7 +53,7 @@
                 <img class="fitting-block-pic" src="{% static 'images/band-measurement.gif' %}" alt="band measurement under bust">
             </div>
             <div class="form-question-info"><p>This is not your band <i>size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement.<br>
-            This number is a tool to find your best support not a definition of who you are!</p>
+            <i>This number is a tool to find your best support not a definition of who you are!</i></p>
             <label class="question" for="{{ form.band_measurement.id_for_label }}">Enter band measurement (inches): </label>
             {{ form.band_measurement }}
             </div>
@@ -67,11 +67,15 @@
             <div class="fitting-block-video-section">
                 <img class="fitting-block-pic" src="{% static 'images/bust-measurement.gif' %}" alt="measuring bust half way, and all the way around">
             </div>
-            <div class="form-question-info"><p>Pick which breast you think needs the most support. You will measure that side only by using one hand to hold the measuring tape in the middle of your back. You will then bring the tape to the middle of the front of your chest with your other hand.</p>
-            <label for="{{ form.bust_measurement.id_for_label }}">Enter bust measurement (inches): </label>
+            <div class="form-question-info"><p>Pick which breast you think needs the most support. You will measure that side only by using one hand to hold the measuring tape in the middle of your back. You will then bring the tape to the middle of the front of your chest with your other hand.
+                <br>
+            Another option is to measure all the way around.
+            </p>
+            <label  class="question" for="{{ form.bust_measurement.id_for_label }}">Enter bust measurement (inches): </label>
             {{ form.bust_measurement }}
             </div>
-            <p><i>If you measured all the way around your bust that's fine!</i>
+            <p>
+                <p class="question"> Which measuring method did you choose?</p>
                 <ul class="bust-circumference-field currently-wearing-field">
                     {% for choice in form.bust_circumference.field.choices %}
                     <li class="emoji-drawing-set">
@@ -88,7 +92,7 @@
                     </li>
                     {% endfor %}
                 </ul>
-                <!-- <label for="{{ form.bust_circumference.id_for_label }}">{{ form.bust_circumference }}</label></p> -->
+            </p>
         </div>
     <button type="submit" class="fit-submit-button">Get Size</button>
     </section>
