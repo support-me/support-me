@@ -80,8 +80,6 @@
                 </li>
                 {% endfor %}
             </ul>
-
-
         </div>
         <button class="sugg-step-two-next-button" type=button>Next</button>
     </section>
@@ -103,7 +101,7 @@
                 {% if 'Round' in choice %}
                     <img id="emoji-round-drawing" src="{% static 'images/round.png' %}" alt="emoji with eye shape that looks round to mimic a breast shape that is round">
                 {% endif %}
-                {% if 'Other' in choice %}
+                {% if 'Neither Teardrop or Round' in choice %}
                     <img id="emoji-other-drawing" src="{% static 'images/neither.png' %}" alt="emoji with its eyes closed toallow someone to choose another breast shape">
                 {% endif %}
                     <p>

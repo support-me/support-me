@@ -159,7 +159,7 @@ class Suggestion(models.Model):
     SHAPE_CHOICES = (
         ('Teardrop', 'Teardrop'),
         ('Round', 'Round'),
-        ('None', 'Neither Teardrop or Round'),
+        ('None', 'Neither Teardrop nor Round'),
     )
     breast_shape = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
 
@@ -198,6 +198,7 @@ class Suggestion(models.Model):
         self.bra_wire = bra_wire
         self.fitting_session = fitting_session
         self.breast_placement = breast_placement
+        breakpoint()
         self.bra_suggestion = self.get_suggestion(bra_frame, bra_padding, bra_wire, breast_placement)
         super().save(*args, **kwargs)
     
