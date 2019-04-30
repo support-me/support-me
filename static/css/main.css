@@ -73,7 +73,7 @@ ul {
     
 }
 .sticky-nav {
-    padding-top: 2rem;
+    padding-top: 1rem;
     position: fixed;
     top: 0;
 }
@@ -223,11 +223,14 @@ body a:hover {
 
 
 /* Suggestion Form Styling */
-.breast-placement-field {
+.suggestion-emoji-field {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    padding: 0;
+}
+.bra-padding-field {
+    max-width: 747px;
 }
 .emoji-drawing-set {
     display: flex;
@@ -477,10 +480,6 @@ input[type='radio']{
     font-weight:900;
     font-size: 2.15rem;
 }
-.description-suggestion{
-    font-weight: 700;
-    font-size: 1.10rem;
-}
 .question{
     font-weight: 800;
 }
@@ -543,9 +542,9 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
-        height: 70px;
-        line-height: 70px;
-        margin-bottom: -70px;
+        height: 60px;
+        line-height: 35px;
+        margin-bottom: -60px;
         z-index: 3;
         background-color: white;
         /* border-bottom-right-radius: 60% 70%; */
@@ -554,11 +553,11 @@ footer {
     }
     .sticky-nav {
         position: fixed;
-        padding-top: 1rem;
+        padding-bottom: 1rem;
         top: 0;
     }
-    .nav-item{
-        padding: 0 1rem 0 1rem;
+    .nav-item {
+        padding: 0;
         font-size: 1rem;
     }
     .hvrbox img {
@@ -586,11 +585,11 @@ footer {
         border-radius: 2rem;
         border: 3px solid #3CBAA3;
     }
-    .emoji-drawing-set {
+    /* .emoji-drawing-set {
         display: flex;
         flex-direction: column;
         width: 200px
-    }
+    } */
     .emoji-drawing-set img {
         border: 2px dashed #8787e6;
         padding: .5rem;

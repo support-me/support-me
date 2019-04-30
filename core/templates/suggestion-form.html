@@ -12,14 +12,15 @@
         <h3 class="step-title">Your estimated bra size is <strong>{{bra_size}}</strong>.</h3>
         <br>
         <div class="suggestion-step-column">
+            <p>This may be different than what you are expecting, and that is ok. You know you're body best!</p>
             <p>To get <strong class="key-word">band size</strong>, we added 4" if <strong class="key-word">band measurement</strong> was even, and 5" if measurement was odd.
-                <br>
+            <br>
             The <strong class="key-word">cup size</strong> is determined by the <strong class="key-word">band size</strong> subtracted from the <strong class="key-word">bust circumference</strong>, with some additional calculations based on what you're currently wearing.
             <br><br>
             <div class="description-suggestion">
             There is more to finding the bra that fits you best than <i class="key-word">just</i> having a bra size! 
             <br>
-            We also need to consider a few things about bras that can impact what kind you may like.
+            We also need to consider a few things about bras that can impact what type of you may like.
             </div>
             </p>
             {% else %}
@@ -37,7 +38,7 @@
                 <br>
                 <label class="question" for="{{ form.breast_placement.id_for_label }}">Which placement do you most identify with?</label>
                 <br>
-                <ul class="breast-placement-field currently-wearing-field">
+                <ul class="suggestion-emoji-field">
                 {% for choice in form.breast_placement.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Near' in choice %}
@@ -60,11 +61,11 @@
         <h3 id="bra-wire-label">Wire Preference</h3>
         <br>
         <div class="suggestion-step-column">
-            <p>Bra frames are either supported with or without underwire. Comfort here comes down to personal preference and also the level of support that you want/need, where bras with underwire usually have a bit more support than wireless bras.</p>
+            <p>Bra frames are either supported with or without underwire. Comfort here comes down to personal preference and also the level of support that you want, where bras with underwire usually have a bit more support than wireless bras.</p>
             <br>
             <label class="question" for="{{ form.bra_wire.id_for_label }}">Which type of support do you prefer?</label>
             <br>
-            <ul class="wire-frame-field currently-wearing-field">
+            <ul class="wire-frame-field suggestion-emoji-field">
                 {% for choice in form.bra_wire.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Underwire' in choice %}
@@ -92,7 +93,7 @@
             <br>
             <label class="question" for="{{ form.breast_shape.id_for_label }}">Which breast shape do you most identify with?</label>
             <br>
-            <ul class="breast-shape-field currently-wearing-field">
+            <ul class="suggestion-emoji-field">
                 {% for choice in form.breast_shape.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Teardrop' in choice %}
@@ -121,7 +122,7 @@
             <p>Yes, level of padding is a <strong class="key-word">preference </strong> when it comes to comfort. Although, push-up and lightly-lined bras will give a bit more support.</p>
             <label class="question" for="{{ form.bra_padding.id_for_label }}">What is the main type of padding that you are interested in?</label>
             <br>
-            <ul class="bra-padding-field currently-wearing-field">
+            <ul class="bra-padding-field suggestion-emoji-field">
                 {% for choice in form.bra_padding.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Lightly-Lined' in choice %}
