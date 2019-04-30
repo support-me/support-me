@@ -98,13 +98,13 @@
                 {% for choice in form.breast_shape.field.choices %}
                 <li class="emoji-drawing-set">
                 {% if 'Teardrop' in choice %}
-                    <img id="emoji-teardrop-drawing" src="{% static 'images/tear_drop_copy.png' %}" alt="emoji with eye shape that looks like a teardrop to mimic a breast shape to looks like a teardrop">
+                    <img id="emoji-teardrop-drawing" src="{% static 'images/teardrop.png' %}" alt="emoji with eye shape that looks like a teardrop to mimic a breast shape to looks like a teardrop">
                 {% endif %}
                 {% if 'Round' in choice %}
-                    <img id="emoji-round-drawing" src="{% static 'images/round_copy.png' %}" alt="emoji with eye shape that looks round to mimic a breast shape that is round">
+                    <img id="emoji-round-drawing" src="{% static 'images/round.png' %}" alt="emoji with eye shape that looks round to mimic a breast shape that is round">
                 {% endif %}
                 {% if 'Other' in choice %}
-                    <img id="emoji-other-drawing" src="{% static 'images/other_copy.png' %}" alt="emoji with its eyes closed toallow someone to choose another breast shape">
+                    <img id="emoji-other-drawing" src="{% static 'images/neither.png' %}" alt="emoji with its eyes closed toallow someone to choose another breast shape">
                 {% endif %}
                     <p>
                     <input type="radio" name="breast_shape" value="{{ choice.0 }}"{% ifequal form.breast_shape.data choice.0 %} checked="checked" {% endifequal %}/>
