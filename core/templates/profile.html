@@ -25,7 +25,7 @@
                         {% endfor %}
                 </div>
                 <div class="profile-item"> 
-                    <small style="color:rgb(19, 167, 136);"> - Date measured : {{brafitting.date_sized}} </small> <br>
+                    <small style="color:rgb(19, 167, 136);">Date measured : {{brafitting.date_sized}} </small> <br>
                     <form class="delete-bra-item" method="GET">
                         {% csrf_token %}
                         {{ form.fitting_session }}
