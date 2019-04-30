@@ -10,10 +10,10 @@
     <section class="fitting-step step-one">
         <h3 class="step-title" id="currently-wearing-title">Currently Wearing</h3>
         <div class="fitting-step-column">
-            <div class="form-question-info"><p>Please get as comfortable as possible - maybe put on a favorite t-shirt. If you have a bra you are more than welcome to wear one for the fitting.</p>
+            <div class="form-question-info">
             <br>
             <label class="question" for="{{ form.currently_wearing.id_for_label }}">What type of support are you currently wearing?</label>
-            <br><br>
+            <br>
             <ul class="currently-wearing-field">
             {% for choice in form.currently_wearing.field.choices %}
                 <li class="bra-drawing-set">
@@ -51,9 +51,10 @@
         <h3  class="step-title" id="band-measurement-wearing-title">Band Measurement</h3>
         <div class="fitting-step-column">
             <div class="fitting-block-video-section">
+                <br>
                 <img class="fitting-block-pic" src="{% static 'images/band-measurement.gif' %}" alt="band measurement under bust">
             </div>
-            <div class="form-question-info"><p>This is not your band <i class="key-word">size</i>. Crazy right! Bra fitting is a funny thing indeed because a band size is actually calculated by adding a few more inches to your band measurement.<br>
+            <div class="form-question-info"><p>This is not your band <i class="key-word">size</i>. Crazy right! Bra fitting is a funny thing because a band size is actually calculated by adding a few more inches to your band measurement.<br>
             <i class="key-word">This number is a tool to find your best support not a definition of who you are!</i></p>
             <label class="question" for="{{ form.band_measurement.id_for_label }}">Enter band measurement (inches): </label>
             {{ form.band_measurement }}
@@ -66,6 +67,7 @@
         <h3  class="step-title" id="bust-measurement-wearing-title">Bust Measurement</h3>
         <div class="fitting-step-column">
             <div class="fitting-block-video-section">
+                <br>
                 <img class="fitting-block-pic" src="{% static 'images/bust-measurement.gif' %}" alt="measuring bust half way, and all the way around">
             </div>
             <div class="form-question-info"><p>Pick which breast you think needs the most support. You will measure that side only by using one hand to hold the measuring tape in the middle of your back. You will then bring the tape to the middle of the front of your chest with your other hand.
