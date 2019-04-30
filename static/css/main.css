@@ -352,29 +352,6 @@ ul li ul li{
 }
 
 /* Profile page Styles  */
-.profile-page{
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-content:flex-start;
-    padding:0;
-    margin:0;
-}
-.history-info{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-content:flex-start;
-    padding:0;
-    margin:0;
-}
-.history-box {
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-content:flex-start;
-    border-bottom: 3px solid rgb(19, 167, 136);
-}
 .username{
     color: rgb(19, 167, 136);
     font-size: 1.6rem;
@@ -475,6 +452,10 @@ input[type='radio']{
     padding: 2%;
 }
 .resource-con{
+    border-bottom: 2px solid rgb(19, 167, 136);
+    padding: 3%;
+}
+.resource-con-prof{
     border-bottom: 2px solid rgb(19, 167, 136);
     padding: 3%;
 }
