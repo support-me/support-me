@@ -11,8 +11,10 @@
 {% endif %}
 {% if bra_suggestion %}
    <div class="suggest-bra">  
-   <p>We think you may like a <b style="font-size: 1.25rem;"> {{bra_suggestion}}.</b> <br>Go to <a href="{% url 'about' %}">About/FAQ</a> for more information and remember to resize yourself every 6 months to 1 year.</p>
-    <p>Here are <i>some</i> places online one can purchase a bra.</p>
+   <p>We think you may like a <b style="font-size: 1.25rem;"> {{bra_suggestion}}.</b> <br>Go to <a href="{% url 'about' %}">About/FAQ</a> for more information.</p>
+   <p>Our bodies are always changing so remember to resize yourself every 6 months to 1 year.</p>
+    <p>Here are <i>some</i> places online one can purchase a bra:</p>
+
    </div>
    <div class="bra-site-box" >
         <button><a class="bra-site-button" href="https://www.target.com/c/bras-intimates-women-s-clothing/-/N-5xtcd"  target="blank" class="button">Target</a></button>
@@ -21,7 +23,7 @@
         <button><a class="bra-site-button" href="https://cacique.lanebryant.com/bras/P-11444" target="blank" class="button">Lane Bryant</a></button>
 </div>
    {% endif %}
-   <p>Our bodies are always changing so remember to resize yourself every 6 months to 1 year.</p>
+
 {% if user.is_authenticated %}
     <br>
     <p>Visit your <a href="{% url 'profile' %}">Profile</a> to view your bra history.</p>
