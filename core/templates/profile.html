@@ -4,15 +4,14 @@
 <!-- <div class="profile-images" > 
     <img src="https://i.ibb.co/ZdzHtb5/ezgif-com-video-to-gif-2.gif" alt="ezgif-com-video-to-gif-2" />
 </div> -->
-<div class="profile-welcome-div">
-    <p> Welcome <b style="color: rgb(19, 167, 136); font-size: 1.6rem;"> {{ user }}</b><br> your measurement history is listed down
-        below.</p>
-</div>
 <div class="profile-box">
+    <div class="profile-welcome-div">
+        <p> Welcome <b style="color: rgb(19, 167, 136); font-size: 1.6rem;"> {{ user }}</b><br> your measurement history is listed down
+            below.</p>
+    </div>
     <div class="history-info">
-
         {% if brafitting %}
-            {% for brafitting in brafitting %}
+        {% for brafitting in brafitting %}
             <div class="history-box">
                 <th>Estimated bra size: <div style=" font-size: 1.6rem;  color:  #8787e6;    "> {{brafitting.bra_size}}
                     </div>
@@ -29,18 +28,15 @@
                     <form class="delete-bra-item" method="GET">
                         {% csrf_token %}
                         {{ form.fitting_session }}
-                        
                         <button class=" bra-delete-button"> <a href="{% url 'delete' %}"> Delete </a> </button>
                     </form>
-
                 </p>
                 <br>
             </div>
-            {% endfor %}
-            {% else %}
-            <p> You have no measurements saved, click <a href="{% url 'brafitting' %}"> Here </a> to start.</p>
-            {% endif %}
-
+        {% endfor %}
+        {% else %}
+            <p> You have no measurements saved, click <a href="{% url 'brafitting' %}"> here </a> to find your best fit!</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
