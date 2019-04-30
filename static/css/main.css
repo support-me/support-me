@@ -117,12 +117,6 @@ body a:hover {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3rem;
 }
-.history-box{
-    display: flex;
-}
-.history-info{
-    justify-content: center;
-}
 
 /* INDEX PAGE SECTION */
 .bra-fit-landing {
@@ -279,15 +273,6 @@ body a:hover {
     text-align: center;
 
 }
-.results-title{
-
-}
-.bra-size-results{
-   
-}
-.suggest-bra{
-
-}
 .bra-site-box{
     display: flex;
     flex-wrap: wrap;
@@ -297,9 +282,6 @@ body a:hover {
 ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
-
-
-
 
 /* DROP DOWN MENU STUFF */
 .nav-menu {
@@ -370,34 +352,13 @@ ul li ul li{
 }
 
 /* Profile page Styles  */
-.profile-box {
-    /* border: 3px dashed black; */
-    display: flex;
-    padding-top: 3rem;
-    padding-left:.5rem;
-    padding-right: .5rem;
-    text-align: center;
-    justify-content: center;
+.username{
+    color: rgb(19, 167, 136);
+    font-size: 1.6rem;
 }
-
-.history-box {
-    flex-grow: 3;
-    justify-content: center;
-    display: block;
-    border-bottom: 3px solid rgb(19, 167, 136);
-
-    margin-bottom: 2rem;
-}
-.profile-images{
-  float: right;
-  padding: 3rem;
-}
-.profile-text{
-    border: 3px solid;
-    float: right;
-}
-.profile-welcome-div{
-    text-align: center;
+.bra-size-profile{
+    color: #8787e6;
+    font-size: 1.6rem;
 }
 .login-message {
     display: flex;
@@ -491,6 +452,10 @@ input[type='radio']{
     padding: 2%;
 }
 .resource-con{
+    border-bottom: 2px solid rgb(19, 167, 136);
+    padding: 3%;
+}
+.resource-con-prof{
     border-bottom: 2px solid rgb(19, 167, 136);
     padding: 3%;
 }
