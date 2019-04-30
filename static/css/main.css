@@ -32,7 +32,7 @@
 
 body{
     font-family: 'Cabin Condensed', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     height: 100%;
     width: 100%;
     font-weight:300;
@@ -466,7 +466,7 @@ input[type='radio']{
 .key-word{
     font-family:'Titillium Web', sans-serif;
     font-weight: 300;
-    font-size: 1.10rem;
+    font-size: 1.3rem;
     font-style:italic;
 }
 .step-title{
