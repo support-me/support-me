@@ -29,7 +29,7 @@
                     <form class="delete-bra-item" method="GET">
                         {% csrf_token %}
                         {{ form.fitting_session }}
-                        <button class=" bra-delete-button"> <a href="{% url 'delete' %}"> Delete </a> </button>
+                        <button class=" bra-delete-button"> <a href="{% url 'home' %}"> Delete </a> </button>
                     </form>
                 </div>
                 <br>
