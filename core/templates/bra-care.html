@@ -1,18 +1,16 @@
 {% extends "base.html"%}
 {% block content %}
 {% load static %}
-<div class="bra-care-div">
+<section class="bra-care-div">
     <div class="care-tips">
         <h2 class="care-category">Washing</h2>
         <div class="care-handwash">
-            <div class="description">    
-                <h3 class="care-option">Handwash</h3>
-                    <p class="care-option-description">If you can handwash your bra, then go for it! Make sure to use <strong class="key-word">light detergent</strong> when possible.</p>
-            </div>
-            <div class="question-answer">
-                <p class="question">Why handwash?</p>
-                <p class="care-answer">You have more controll over the treatment of your bra, especially how hard or soft it is scrubbed/spun, or what other  colored clothing it comes in contact with. </p>
-            </div>
+            <h3 class="care-option">Handwash</h3>
+                <p class="care-option-description">If you can handwash your bra, then go for it! Make sure to use <strong class="key-word">light detergent</strong> when possible.</p>
+        </div>
+        <div class="question-answer">
+            <p class="question">Why handwash?</p>
+            <p class="care-answer">You have more controll over the treatment of your bra, especially how hard or soft it is scrubbed/spun, or what other  colored clothing it comes in contact with. </p>
         </div>
         <div class="care-machine-wash">
             <h3 class="care-option">Machine wash</h3>
@@ -38,22 +36,22 @@
             everytime you wash your bra!</p>
         </div>
     </div>
-    <div id="care-storage" class="care-part">
+    <div class="care-part">
         <h2 class="care-category">Storage</h2>
         <p>One of the biggest tips is to not fold your bra, which
             causes cups and frames to deform over time. 
             Here are the two best ways to store your bra:</p>
         <h3>Let it hangout! &nbsp <i>or &nbsp</i> Let it sleep!</h3>
-        <section class="care-option-section">
-            <div class="care-option-storage">
-                <img class="care-image" id="hangout" src="{% static '/images/hanging_bra.jpg' %}" alt="Hanging bra on a clothes hanger">
-                <p class="care-option-description">Give your bra some time to hang out. <br> We all need to hangout after we support others all day! Connect the hooks to the loosest set of eyes on the band so the bra is relaxed as it hangs out.</p>
-            </div>
-            <div class="care-option-storage">
-                <img class="care-image" id="lay-flat" src="{% static 'images/laying_bra.jpg' %}" alt="Bras laid out in drawer, flat">
-                <p class="care-option-description">Make a space for your bras in one drawer.  Lay them flat and so that other clothing items are not impacting them. </p>
-            </div>
-        </section>
+    <section class="care-option-section">
+        <div class="care-option-storage">
+            <img class="care-image" id="hangout" src="{% static '/images/bra-hanging.jpg' %}" alt="Hanging bra on a clothes hanger">
+            <p class="care-option-description">Give your bra some time to hang out. <br> We all need to hangout after we support others all day! Connect the hooks to the loosest set of eyes on the band so the bra is relaxed as it hangs out.</p>
+        </div>
+        <div class="care-option-storage"> 
+            <img class="care-image" id="lay-flat" src="{% static 'images/bras-flat.jpg' %}" alt="Bras laid out in drawer, flat"> 
+            <p class="care-option-description">Make a space for your bras in one drawer.  Lay them flat and so that other clothing items are not impacting them.</p>
+        </div>
+    </section>
     </div>
-</div>
+</section>
 {% endblock %}

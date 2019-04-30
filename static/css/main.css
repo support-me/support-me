@@ -408,10 +408,6 @@ ul li ul li{
 .profile-welcome-div{
     text-align: center;
 }
-.bra-care-div{
-    margin: auto;
-    max-width: 1300px;
-}
 .login-message {
     display: flex;
     flex-direction: row;
