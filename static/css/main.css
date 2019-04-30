@@ -495,7 +495,10 @@ footer {
     opacity: .8;
     overflow: hidden;
 }
-
+#bra-suggestion{
+    font-size: 1.6rem;
+    font-style: bolder;
+}
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
     .nav-menu {
         padding: 0 5rem;
