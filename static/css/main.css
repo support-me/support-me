@@ -350,18 +350,13 @@ ul li ul li{
 
 /* BRA CARE PAGE */
 
-.care-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-    align-content: left;
-}
 .care-option-section {
     display: flex;
     flex-direction: row;
+    justify-content: start;
+
 }
-.care-image {
+ .care-image {
     border: 2px dashed #8787e6;
     padding: 1rem;
     max-width: 300px;
@@ -369,13 +364,9 @@ ul li ul li{
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
-.care-option-storage {
-    padding: 1rem;
-    max-width: 300px;
-    max-height: 300px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    flex-direction: column;
+.care-option-storage{
+    padding:1rem 1rem 1rem 0;
+    margin:0;
 }
 
 /* Profile page Styles  */

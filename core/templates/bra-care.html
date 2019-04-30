@@ -1,7 +1,7 @@
 {% extends "base.html"%}
 {% block content %}
 {% load static %}
-<section class="bra-care-div">
+<div class="bra-care-div">
     <div class="care-tips">
         <h2 class="care-category">Washing</h2>
         <div class="care-handwash">
@@ -42,7 +42,7 @@
             causes cups and frames to deform over time. 
             Here are the two best ways to store your bra:</p>
         <h3>Let it hangout! &nbsp <i>or &nbsp</i> Let it sleep!</h3>
-    <section class="care-option-section">
+    <div class="care-option-section">
         <div class="care-option-storage">
             <img class="care-image" id="hangout" src="{% static '/images/bra-hanging.jpg' %}" alt="Hanging bra on a clothes hanger">
             <p class="care-option-description">Give your bra some time to hang out. <br> We all need to hangout after we support others all day! Connect the hooks to the loosest set of eyes on the band so the bra is relaxed as it hangs out.</p>
@@ -51,7 +51,7 @@
             <img class="care-image" id="lay-flat" src="{% static 'images/bras-flat.jpg' %}" alt="Bras laid out in drawer, flat"> 
             <p class="care-option-description">Make a space for your bras in one drawer.  Lay them flat and so that other clothing items are not impacting them.</p>
         </div>
-    </section>
     </div>
-</section>
+    </div>
+</div>
 {% endblock %}
