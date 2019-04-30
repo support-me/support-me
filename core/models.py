@@ -159,7 +159,7 @@ class Suggestion(models.Model):
     SHAPE_CHOICES = (
         ('Teardrop', 'Teardrop'),
         ('Round', 'Round'),
-        ('None', 'Other'),
+        ('None', 'Neither Teardrop nor Round'),
     )
     breast_shape = models.CharField(max_length=30, choices=SHAPE_CHOICES, default='None')
 
