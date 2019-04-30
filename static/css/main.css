@@ -354,7 +354,6 @@ ul li ul li{
     display: flex;
     flex-direction: row;
     justify-content: start;
-
 }
  .care-image {
     border: 2px dashed #8787e6;
@@ -366,7 +365,8 @@ ul li ul li{
 }
 .care-option-storage{
     padding:1rem 1rem 1rem 0;
-    margin:0;
+    margin-top: 0;
+    max-width: 320px;
 }
 
 /* Profile page Styles  */
