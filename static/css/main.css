@@ -73,6 +73,7 @@ ul {
     
 }
 .sticky-nav {
+    padding-top: 2rem;
     position: fixed;
     top: 0;
 }
@@ -219,43 +220,20 @@ body a:hover {
     max-width: 175px;
     max-height: 175px;
 }
-.care-image{
-    border: 2px dashed #8787e6;
-    padding: 1rem;
-    max-width: 175px;
-    max-height: 175px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
 .currently-wearing-field {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: inherit;
     padding: 2% 15% 0% 9%;
 }
-/* .bust-circumference-field{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 2% 15% 0% 9%;
-} */
-/* @media (min-width: 481px) and (max-width: 767px){
-.currently-wearing-field {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: inherit;
-}
-} */
+
+
 /* Suggestion Form Styling */
 .breast-placement-field {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: inherit;
-
 }
 .emoji-drawing-set {
     display: flex;
@@ -277,16 +255,14 @@ body a:hover {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    padding-left: inherit;
-    padding-right: inherit;
-    padding-bottom: inherit;
 
 }
 .support-me-team-pics img {
-    width: 150px;
-    height: 150px;
     border: 2px dashed #8787e6;
-    padding: 3%;   
+    padding: 1rem;
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 1rem;  
 }
 
 .measurement-text{
@@ -318,20 +294,6 @@ body a:hover {
     justify-content: center;
 }
 
-/* .swal-button {
-    background-color: #8787e6;
-    color: #fff;
-    border: none;
-    box-shadow: none;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 24px;
-    margin: 0;
-    cursor: pointer;
-    height:500px;
-
-} */
 ul.bra-suggestion-need-list{
     list-style-type: url('/images/Bra-3-extra.jpg');
 }
@@ -341,7 +303,7 @@ ul.bra-suggestion-need-list{
 
 /* DROP DOWN MENU STUFF */
 .nav-menu {
-    padding: 0 4rem 0 4rem;
+    padding: 0 10rem;
     display: flex;
     flex-direction: row;
 }
@@ -387,42 +349,24 @@ ul li ul li{
 }
 
 /* BRA CARE PAGE */
-/* .care-image {
-    max-width: 250px;
-    flex-wrap: wrap;
-    margin: block;
-} */
-.care-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-    align-content: left;
-}
-.care-option-section{
+
+.care-option-section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: center;
+    justify-content: start;
+}
+ .care-image {
+    border: 2px dashed #8787e6;
+    padding: 1rem;
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 .care-option-storage{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: 1rem;
-}
-
-footer {
-    margin-top: 3rem;
-    padding: 1rem 0 2rem 0;
-    border-top: 2px solid #8787e6;
-    height: 100%;
-    width: 100%;
-    color: black;
-    text-align: center;
-    opacity: .8;
-    overflow: hidden;
+    padding:1rem 1rem 1rem 0;
+    margin-top: 0;
+    max-width: 320px;
 }
 
 /* Profile page Styles  */
@@ -454,11 +398,6 @@ footer {
 }
 .profile-welcome-div{
     text-align: center;
-}
-.bra-care-div{
-    margin: auto;
-    max-width: 1300px;
-    /* padding-top: inherit; */
 }
 .login-message {
     display: flex;
@@ -530,20 +469,11 @@ input[type='radio']{
     background-clip:content-box;
     border-radius: 1rem;
 }
-/* .line-div{
-    border-bottom: 2px solid rgb(19, 167, 136);
-    box-shadow: 3px 3px 3px 2px rgb(19, 167, 136);
-    width: 50% ;
-    justify-content: left;
-
-
-} */
 .care-tips{
     padding-right: 3%;
     padding-bottom:3%;
     padding-top: 3%;
     border-bottom: 2px solid rgb(19, 167, 136);
-    margin: block;
 }
 .care-category{
     font-weight: 800;
@@ -589,12 +519,25 @@ input[type='radio']{
 .question{
     font-weight: 800;
 }
-.support-me-pic{
-    width: 25%;
-    height: 25%;
+
+footer {
+    margin-top: 3rem;
+    padding: 1rem 0 2rem 0;
+    border-top: 2px solid #8787e6;
+    height: 100%;
+    width: 100%;
+    color: black;
+    text-align: center;
+    opacity: .8;
+    overflow: hidden;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .nav-menu {
+        padding: 0 5rem;
+        display: flex;
+        flex-direction: row;
+    }
     .bra-fit-setup {
         flex-direction: column;
         margin: 0;
@@ -608,6 +551,13 @@ input[type='radio']{
         max-height: 300px;
         margin-bottom: 1rem;
     }
+    .support-me-team-pics img {
+        border: 2px dashed #8787e6;
+        padding: 1rem;
+        max-width: 200px;
+        max-height: 200px;
+        margin-bottom: 1rem;  
+    }
     
 }
 
@@ -617,6 +567,11 @@ input[type='radio']{
     }
     .content {
         padding: 8rem 1.5rem 1.5rem 1.5rem;
+    }
+    .nav-menu {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: row;
     }
     .nav-bar {
         position: relative;
@@ -634,6 +589,7 @@ input[type='radio']{
     }
     .sticky-nav {
         position: fixed;
+        padding-top: 1rem;
         top: 0;
     }
     .nav-item{
@@ -656,8 +612,6 @@ input[type='radio']{
     .currently-wearing-field {
         display: flex;
         flex-direction: column;
-        /* flex-wrap: wrap; */
-        /* padding: inherit; */
         padding: 0;
     }
     .fitting-step, .suggestion-step {
@@ -678,6 +632,13 @@ input[type='radio']{
         max-width: 150px;
         max-height: 150px;
         margin: auto;
+    }
+    .support-me-team-pics img {
+        border: 2px dashed #8787e6;
+        padding: 1rem;
+        max-width: 200px;
+        max-height: 200px;
+        margin-bottom: 1rem;  
     }
 }
 

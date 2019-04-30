@@ -2,43 +2,24 @@
 {% block content %}
 {% load static %}
 <div class="bra-care-div">
-
-    <!-- <h1>Bra Care</h1>
-    <p>Bras are an important peice of clothing that you may <br> or not may be wearing everyday. Here are some tips <br>to keep
-        your bras in the best shape.</p>
-    </div>
-    <div class="line-div"> </div> -->
-
-    <div class="care-section">
-        <div id="care-washing" class="care-part">
-            <div class="care-tips">
-            <h2 class="care-category">Washing</h2>
-            <!-- <p style="text-align: center;">There are a few ways that you can wash your bra:</p> -->
-            
-            <div class="care-handwash">
-                <div class="description">    
-                    <h3 class="care-option">Handwash</h3>
-                        <p class="care-option-description">If you can handwash your bra, then go for it! Make sure to use <strong class="key-word">light detergent</strong> when possible.</p>
-                    <!-- <img class="care-image" id="handwash-image" src="#" alt=""> -->
-                </div>
-                <div class="line-div"> </div>
-                <div class="question-answer">
-                    <p class="question">Why handwash?</p>
-                    <p class="care-answer">You have more controll over the treatment of your bra, especially how hard or soft it is scrubbed/spun, or what other  colored clothing it comes in contact with. </p>
-                </div>
-            </div>
-            <div class="line-div-between"> </div>
-            <div class="care-machine-wash">
-                <h3 class="care-option">Machine wash</h3>
-                <p class="care-option-description">Let's be real: not everyone has the time to handwash their bras so they use a washing machine. That is okay!
-                <br>
-                There are more options for damage to your bra because hooks, lace and straps can easily get caught on other peices of clothing. So put your bra in a bra bag or pillow case to decrease the possibility of damges.</p>
-                <!-- <img class="care-image" id="bra-bag-image" src="#" alt="">
-                <img class="care-image" id="pillow-case-image" src="#" alt=""> -->
-            </div>
-            <div class="line-div"> </div>
+    <div class="care-tips">
+        <h2 class="care-category">Washing</h2>
+        <div class="care-handwash">
+            <h3 class="care-option">Handwash</h3>
+                <p class="care-option-description">If you can handwash your bra, then go for it! Make sure to use <strong class="key-word">light detergent</strong> when possible.</p>
         </div>
-        <div class="care-tips">
+        <div class="question-answer">
+            <p class="question">Why handwash?</p>
+            <p class="care-answer">You have more controll over the treatment of your bra, especially how hard or soft it is scrubbed/spun, or what other  colored clothing it comes in contact with. </p>
+        </div>
+        <div class="care-machine-wash">
+            <h3 class="care-option">Machine wash</h3>
+            <p class="care-option-description">Let's be real: not everyone has the time to handwash their bras so they use a washing machine. That is okay!
+            <br>
+            There are more options for damage to your bra because hooks, lace and straps can easily get caught on other peices of clothing. So put your bra in a bra bag or pillow case to decrease the possibility of damges.</p>
+        </div>
+    </div>
+    <div class="care-tips">
         <div id="care-drying" class="care-part">
             <h2 class="care-category">Drying</h2>
             <div class="care-dryer">
@@ -46,36 +27,31 @@
                 <p class="care-option-description">Even if your bra is wireless a dryer will put more wear on your bra and will give it a shorter life span. It can lose it's shape quickly, and we want this bra to last as long as it can.</p>
             </div>
         </div>
-            <div class="question-answer">
-                <p class="question">How should I dry my bra then?</p>
-                <p class="care-answer">Hang it up or lay it flat. Hanging a bra up to dry allows for more airflow than if it were laying flat, but either option is a great way to dry your bra.</p>
+        <div class="question-answer">
+            <p class="question">How should I dry my bra then?</p>
+            <p class="care-answer">Hang it up or lay it flat. Hanging a bra up to dry allows for more airflow than if it were laying flat, but either option is a great way to dry your bra.</p>
 
-                <p class="question">I just washed my bra and have an event, how do I dry it quickly?</p>
-                <p class="care-answer">This is totally your call, it is your bra! If you have a hair dryer you can use it to dry the cup, or put your bra in the dryer on the delicate cycle. We just suggest you don't use the dryer
-                everytime you wash your bra!</p>
-            </div>
+            <p class="question">I just washed my bra and have an event, how do I dry it quickly?</p>
+            <p class="care-answer">This is totally your call, it is your bra! If you have a hair dryer you can use it to dry the cup, or put your bra in the dryer on the delicate cycle. We just suggest you don't use the dryer
+            everytime you wash your bra!</p>
         </div>
     </div>
-
-
-    </div>
-
-    <div id="care-storage" class="care-part">
+    <div class="care-part">
         <h2 class="care-category">Storage</h2>
-        <p>One of the biggest tips is to<strong> not fold </strong> your bra, which
+        <p>One of the biggest tips is to not fold your bra, which
             causes cups and frames to deform over time. 
             Here are the two best ways to store your bra:</p>
-
         <h3>Let it hangout! &nbsp <i>or &nbsp</i> Let it sleep!</h3>
-        <section class="care-option-section">
-            <div class="care-option-storage">
-                <img class="care-image" id="hangout" src="{% static '/images/hanging_bra.jpg' %}" alt="">
-                <p class="care-option-description">Give your bra some time to hang out. <br> We all need to hangout after we support others all day! Connect the hooks to the loosest set of eyes on the band so the bra is relaxed as it hangs out.</p>
-            </div>
-            <div class="care-option-storage">
-                <img class="care-image" id="lay-flat" src="{% static 'images/laying_bra.jpg' %}" alt="" />
-                <p class="care-option-description">Make a space for your bras in one drawer.  Lay them flat and so that other clothing items are not impacting them. </p>
-            </div>
-        </section>
+    <div class="care-option-section">
+        <div class="care-option-storage">
+            <img class="care-image" id="hangout" src="{% static '/images/bra-hanging.jpg' %}" alt="Hanging bra on a clothes hanger">
+            <p class="care-option-description">Give your bra some time to hang out. <br> We all need to hangout after we support others all day! Connect the hooks to the loosest set of eyes on the band so the bra is relaxed as it hangs out.</p>
+        </div>
+        <div class="care-option-storage"> 
+            <img class="care-image" id="lay-flat" src="{% static 'images/bras-flat.jpg' %}" alt="Bras laid out in drawer, flat"> 
+            <p class="care-option-description">Make a space for your bras in one drawer.  Lay them flat and so that other clothing items are not impacting them.</p>
+        </div>
     </div>
+    </div>
+</div>
 {% endblock %}
