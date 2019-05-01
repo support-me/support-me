@@ -149,7 +149,7 @@ body a:hover {
 .intro-extra-info {
     padding: 0rem 0 2rem 0;
 }
-.get-fit-button a {
+a .get-fit-button {
     font-size: 1.5rem; 
     text-decoration: none;
 }
@@ -218,7 +218,8 @@ body a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 2% 15% 0% 9%;
+    max-width: 690px;
+    padding-inline-start: 0;
 }
 
 

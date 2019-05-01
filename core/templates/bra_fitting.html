@@ -13,7 +13,7 @@
             <div class="form-question-info">
             <br>
             <label class="question" for="{{ form.currently_wearing.id_for_label }}">What type of support are you currently wearing?</label>
-            <br>
+            <br><br>
             <ul class="currently-wearing-field">
             {% for choice in form.currently_wearing.field.choices %}
                 <li class="bra-drawing-set">
@@ -79,6 +79,7 @@
             </div>
             <p>
                 <p class="question"> Which measuring method did you choose?</p>
+                <br>
                 <ul class="bust-circumference-field currently-wearing-field">
                     {% for choice in form.bust_circumference.field.choices %}
                     <li class="emoji-drawing-set">
