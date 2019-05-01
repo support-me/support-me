@@ -40,7 +40,7 @@ class BraFitting(models.Model):
 
 
     class Meta:
-        ordering = ['date_sized']
+        ordering = ['-date_sized']
 
 
     def save(self, fitting_user, currently_wearing, band_measurement, bust_measurement, bust_circumference, *args, **kwargs):
