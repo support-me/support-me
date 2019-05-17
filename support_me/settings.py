@@ -39,6 +39,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     'supportmebras.herokuapp.com',
+    '5432',
 ]
 
 
